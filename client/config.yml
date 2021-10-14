@@ -1,0 +1,59 @@
+version: 2
+jobs:
+  backend:
+    docker:
+      - image: circleci/node:8.12
+      - image: circleci/mongo:3.6.3
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - backend-dependencies-{{ checksum "package.json" }}
+            - backend-dependencies-
+
+      - run:
+          name: Install Backend Dependencies
+          command: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: backend-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Running Backend Testing
+          command: npm test
+
+  frontend:
+    docker:
+      - image: circleci/node:8.12
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - frontend-dependencies-{{ checksum "client/package.json" }}
+            - frontend-dependencies-
+
+      - run:
+          name: Install Frontend Dependencies
+          command: cd client && npm install
+
+      - save_cache:
+          paths:
+            - client/node_modules
+          key: frontend-dependencies-{{ checksum "client/package.json" }}
+
+      - run:
+          name: Running Frontend Build
+          command: cd client && npm run build
+
+workflows:
+  version: 2
+  backend_and_frontend:
+    jobs:
+      - frontend
+      - backend
