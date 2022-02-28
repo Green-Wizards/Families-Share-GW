@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Green-Wizards.iml" filepath="$PROJECT_DIR$/.idea/Green-Wizards.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Families_Share.iml" filepath="$PROJECT_DIR$/.idea/modules/Families_Share.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Families_Share.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Families_Share.app.iml" />
     </modules>
   </component>
 </project>
