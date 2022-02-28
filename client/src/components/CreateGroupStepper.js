@@ -157,6 +157,7 @@ class CreateGroupStepper extends React.Component {
   };
 
   createGroup = () => {
+    console.log("client/src/components/CreateGroupStepper [160] createGroup chiamato")
     const user = JSON.parse(localStorage.getItem("user"));
     const { history } = this.props;
     this.setState({ creatingGroup: true });
