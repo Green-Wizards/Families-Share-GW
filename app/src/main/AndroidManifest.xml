@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.familiesshare" >
+    package="com.example.familiesshare">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FamiliesShare" >
+        android:theme="@style/Theme.FamiliesShare">
+        <activity
+            android:name=".NewGroupCreation"
+            android:parentActivityName=".Menu"
+            android:exported="false" />
+        <activity
+            android:name=".Menu"
+            android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="false"
@@ -23,7 +30,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -3,7 +3,11 @@
     <string name="accedi">Accedi</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="accedi">Accedi</string>
-    <string name="accedi">Accedi</string>
     <string name="conferma">Conferma</string>
+    <string name="unisciti_a_un_gruppo">UNISCITI A UN GRUPPO</string>
+    <string name="crea_un_nuovo_gruppo">CREA UN NUOVO GRUPPO</string>
+    <string name="nome">Nome</string>
+    <string name="descrizione">Descrizione</string>
+    <string name="continua">CONTINUA</string>
+    <string name="cancella">CANCELLA</string>
 </resources>
