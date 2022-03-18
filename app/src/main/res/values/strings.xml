@@ -2,6 +2,8 @@
     <string name="app_name">Families Share</string>
     <string name="accedi">Accedi</string>
     <string name="email">Email</string>
+    <string name="telefono">Telefono</string>
+    <string name="termina">Termina</string>
     <string name="password">Password</string>
     <string name="conferma">Conferma</string>
     <string name="unisciti_a_un_gruppo">UNISCITI A UN GRUPPO</string>
@@ -10,4 +12,7 @@
     <string name="descrizione">Descrizione</string>
     <string name="continua">CONTINUA</string>
     <string name="cancella">CANCELLA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="altri_utenti_non_possono_trovare_il_gruppo">Altri utenti NON possono trovare il gruppo</string>
 </resources>

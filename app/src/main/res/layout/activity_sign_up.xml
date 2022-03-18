@@ -8,9 +8,10 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="350dp"
         android:layout_height="48dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
         android:ems="10"
         android:hint="Nome"
         android:inputType="textPersonName"
@@ -20,9 +21,10 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
-        android:layout_width="350dp"
         android:layout_height="48dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
         android:ems="10"
         android:hint="Cognome"
         android:inputType="textPersonName"
@@ -32,9 +34,10 @@
 
     <EditText
         android:id="@+id/editTextPhone"
-        android:layout_width="350dp"
         android:layout_height="48dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
         android:ems="10"
         android:hint="Numero di telefono (facoltativo)"
         android:inputType="phone"
@@ -44,9 +47,10 @@
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
-        android:layout_width="350dp"
         android:layout_height="48dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
@@ -56,9 +60,10 @@
 
     <EditText
         android:id="@+id/editTextTextPassword2"
-        android:layout_width="350dp"
         android:layout_height="48dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -68,9 +73,10 @@
 
     <EditText
         android:id="@+id/editTextTextPassword3"
-        android:layout_width="350dp"
         android:layout_height="48dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
         android:ems="10"
         android:hint="Ripeti password"
         android:inputType="textPassword"
@@ -82,6 +88,8 @@
         android:id="@+id/button2"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
         android:layout_marginBottom="24dp"
         android:onClick="signUp_conferma"
         android:text="@string/conferma"

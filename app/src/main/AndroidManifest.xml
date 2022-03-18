@@ -11,9 +11,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FamiliesShare">
         <activity
-            android:name=".NewGroupCreation"
-            android:parentActivityName=".Menu"
+            android:name=".NewGroupCreation5"
             android:exported="false" />
+        <activity
+            android:name=".NewGroupCreation4"
+            android:exported="false" />
+        <activity
+            android:name=".NewGroupCreation3"
+            android:exported="false" />
+        <activity
+            android:name=".NewGroupCreation2"
+            android:exported="false" />
+        <activity
+            android:name=".NewGroupCreation"
+            android:exported="false"
+            android:parentActivityName=".Menu" />
         <activity
             android:name=".Menu"
             android:exported="false" />
