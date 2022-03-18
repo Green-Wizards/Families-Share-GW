@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.familiesshare">
 
     <application
@@ -11,37 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FamiliesShare">
         <activity
-            android:name=".NewGroupCreation5"
-            android:exported="false" />
-        <activity
-            android:name=".NewGroupCreation4"
-            android:exported="false" />
-        <activity
-            android:name=".NewGroupCreation3"
-            android:exported="false" />
-        <activity
-            android:name=".NewGroupCreation2"
-            android:exported="false" />
-        <activity
-            android:name=".NewGroupCreation"
-            android:exported="false"
-            android:parentActivityName=".Menu" />
-        <activity
-            android:name=".Menu"
-            android:exported="false" />
-        <activity
-            android:name=".Login"
-            android:exported="false"
-            android:label="Accedi"
-            android:parentActivityName=".MainActivity"
-            tools:ignore="Instantiatable" />
-        <activity
-            android:name=".SignUp"
-            android:exported="false"
-            android:label="Registrati"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
