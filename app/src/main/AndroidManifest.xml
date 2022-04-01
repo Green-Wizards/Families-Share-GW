@@ -11,9 +11,42 @@
         android:theme="@style/Theme.FamiliesShare">
         <activity
             android:name=".activities.UtentiCarico"
+            android:parentActivityName=".activities.Menu"
             android:exported="false" />
         <activity
             android:name=".activities.AccountActivity"
+            android:parentActivityName=".activities.Menu"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SignUp"
+            android:parentActivityName=".activities.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Login"
+            android:parentActivityName=".activities.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Menu"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NewGroupCreation5"
+            android:parentActivityName=".activities.Menu"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NewGroupCreation4"
+            android:parentActivityName=".activities.Menu"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NewGroupCreation3"
+            android:parentActivityName=".activities.Menu"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NewGroupCreation2"
+            android:parentActivityName=".activities.Menu"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NewGroupCreation"
+            android:parentActivityName=".activities.Menu"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"

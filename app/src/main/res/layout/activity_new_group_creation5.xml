@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewGroupCreation5">
+    tools:context=".activities.NewGroupCreation5">
 
     <Button
         android:id="@+id/button13"

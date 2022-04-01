@@ -13,16 +13,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5da9c359-50bc-4432-8a71-193142412c32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/UtentiCarico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/black_mail_icon_png_8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/images.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/png_transparent_google_map_maker_computer_icons_google_maps_map_angle_wikimedia_commons_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_utenti_carico.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_account.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/NewGroupCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/NewGroupCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/NewGroupCreation2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/NewGroupCreation2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/NewGroupCreation3.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/NewGroupCreation3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/NewGroupCreation4.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/NewGroupCreation4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/NewGroupCreation5.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/NewGroupCreation5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/AccountActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/AccountActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_group_creation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_group_creation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_group_creation2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_group_creation2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_group_creation3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_group_creation3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_group_creation4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_group_creation4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_group_creation5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_group_creation5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

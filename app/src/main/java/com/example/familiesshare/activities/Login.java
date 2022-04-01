@@ -1,10 +1,12 @@
-package com.example.familiesshare;
+package com.example.familiesshare.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.familiesshare.R;
 
 public class Login extends AppCompatActivity {
 

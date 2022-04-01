@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.familiesshare.R;
+
 public class AccountActivity extends AppCompatActivity {
 
     @Override
