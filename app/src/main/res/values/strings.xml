@@ -17,5 +17,17 @@
     <string name="altri_utenti_non_possono_trovare_il_gruppo">Altri utenti NON possono trovare il gruppo</string>
     <string name="accountname">AccountName</string>
     <string name="info">INFO</string>
-    <string name="bambini">BAMBINI</string>
+    <string name="bambini">UTENTI A CARICO</string>
+    <string name="indirizzo">Indirizzo</string>
+    <string name="AggFigl">Non hai ancora aggiunto utenti a carico. Fare clic sull\'icona in basso a destra per agiungere un nuovo utente a carico</string>
+    <string name="non_specificato">Non specificato</string>
+    <string name="contatto_personale">Contatto personale</string>
+    <string name="descrizione">Descrizione</string>
+    <string name="phone">Phone</string>
+    <string name="avatar">Avatar</string>
+    <string name="riga">riga</string>
+    <string name="location">location</string>
+    <string name="mail">mail</string>
+    <string name="sfondo">sfondo</string>
+    <string name="adduser">addUser</string>
 </resources>

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FamiliesShare">
         <activity
+            android:name=".activities.UtentiCarico"
+            android:exported="false" />
+        <activity
             android:name=".activities.AccountActivity"
             android:exported="false" />
         <activity
