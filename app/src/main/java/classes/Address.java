@@ -7,4 +7,11 @@ public class Address {
     public String street;
     public String number;
     public String city;
+
+    public Address(String address_id, String street, String number, String city) {
+        this.address_id = address_id;
+        this.street = street;
+        this.number = number;
+        this.city = city;
+    }
 }
