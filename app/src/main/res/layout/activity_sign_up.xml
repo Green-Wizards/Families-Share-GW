@@ -13,7 +13,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="28dp"
         android:ems="10"
-        android:hint="Nome"
+        android:hint="@string/nome"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="28dp"
         android:ems="10"
-        android:hint="Cognome"
+        android:hint="@string/cognome"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,11 +39,12 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="28dp"
         android:ems="10"
-        android:hint="Numero di telefono (facoltativo)"
+        android:hint="@string/numero_di_telefono_facoltativo"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
@@ -52,7 +53,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="28dp"
         android:ems="10"
-        android:hint="E-mail"
+        android:hint="@string/e_mail"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +66,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="28dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,11 +79,12 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="28dp"
         android:ems="10"
-        android:hint="Ripeti password"
+        android:hint="@string/ripeti_password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/button2"
@@ -104,7 +106,7 @@
         android:layout_marginTop="72dp"
         android:layout_marginEnd="28dp"
         android:checked="true"
-        android:text="Rendi il mio profilo visibile agli altri utenti"
+        android:text="@string/Text1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
 
@@ -113,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="La password deve contenere almeno 8 caratteri"
+        android:text="@string/Pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />

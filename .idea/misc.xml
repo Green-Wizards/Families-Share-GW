@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_account.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_add_user.xml" value="0.5" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_menu.xml" value="0.36666666666666664" />
@@ -14,6 +15,7 @@
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_new_group_creation5.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_sign_up.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_utenti_carico.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/dropdown_item.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/fragment_blank.xml" value="0.36666666666666664" />
       </map>
     </option>
