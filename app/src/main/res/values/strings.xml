@@ -210,4 +210,7 @@
         <item>2021</item>
         <item>2022</item>
     </integer-array>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

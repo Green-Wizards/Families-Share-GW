@@ -38,27 +38,8 @@
         app:layout_constraintStart_toEndOf="@+id/textView38"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="308dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/button14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/button"
-            tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
-        <Button
-            android:id="@+id/button15"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/button" />
 
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

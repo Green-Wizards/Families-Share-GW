@@ -17,6 +17,16 @@
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_utenti_carico.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/dropdown_item.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/fragment_blank.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/drawable/ic_add.xml" value="0.25052083333333336" />
+        <entry key="app/src/main/res/drawable/ic_profile.xml" value="0.25052083333333336" />
+        <entry key="app/src/main/res/layout/activity_account.xml" value="0.20923913043478262" />
+        <entry key="app/src/main/res/layout/activity_add_user.xml" value="0.22026431718061673" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.20923913043478262" />
+        <entry key="app/src/main/res/layout/activity_menu.xml" value="0.20923913043478262" />
+        <entry key="app/src/main/res/layout/activity_nav_drawermenu.xml" value="0.11398176291793313" />
+        <entry key="app/src/main/res/layout/activity_new_group_creation.xml" value="0.11398176291793313" />
+        <entry key="app/src/main/res/layout/nav_header.xml" value="0.20923913043478262" />
+        <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.234375" />
       </map>
     </option>
   </component>
@@ -25,5 +35,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22026431718061673" />
+      </ProjectState>
+    </option>
   </component>
 </project>
