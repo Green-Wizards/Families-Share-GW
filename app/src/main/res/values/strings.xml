@@ -39,6 +39,10 @@
     <string name="giorno">Giorno</string>
     <string name="mese">Mese</string>
     <string name="anno">Anno</string>
+    <string-array name="metodo">
+        <item>EMAIL</item>
+        <item>Numero di Telefono</item>
+    </string-array>
     <string-array name="dayes">
         <item>1</item>
         <item>2</item>
@@ -213,4 +217,10 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="imposta_la_visibilit_del_gruppo">Imposta la visibilità del gruppo</string>
+    <string name="fornisci_nome_e_definizione">Fornisci nome e definizione</string>
+    <string name="fornire_l_area">Fornire l\'area</string>
+    <string name="fornire_le_informazioni_di_contatto">Fornire le informazioni di contatto</string>
+    <string name="invita_persone">Invita persone</string>
+    <string name="aggiungi_membri">Aggiungi membri</string>
 </resources>
