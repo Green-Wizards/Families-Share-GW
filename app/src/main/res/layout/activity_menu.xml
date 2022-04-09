@@ -31,6 +31,7 @@
         android:id="@+id/button4"
         android:layout_width="150dp"
         android:layout_height="60dp"
+        android:onClick="create"
         android:text="@string/crea_un_nuovo_gruppo"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintBottom_toBottomOf="parent"
