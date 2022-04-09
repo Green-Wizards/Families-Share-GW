@@ -21,10 +21,13 @@
         <entry key="app/src/main/res/drawable/ic_profile.xml" value="0.25052083333333336" />
         <entry key="app/src/main/res/layout/activity_account.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/activity_add_user.xml" value="0.22026431718061673" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.234375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.20923913043478262" />
-        <entry key="app/src/main/res/layout/activity_nav_drawermenu.xml" value="0.11398176291793313" />
-        <entry key="app/src/main/res/layout/activity_new_group_creation.xml" value="0.11398176291793313" />
+        <entry key="app/src/main/res/layout/activity_nav_drawermenu.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_new_group_creation.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_new_group_creation2.xml" value="0.234375" />
+        <entry key="app/src/main/res/layout/activity_utenti_carico.xml" value="0.335" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.234375" />
       </map>
