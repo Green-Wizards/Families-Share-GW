@@ -2,6 +2,7 @@ package com.example.familiesshare.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,5 +18,8 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
     }
 
-    public void signUp_conferma(View v){}
+    public void signUp_conferma(View v){
+        Intent i = new Intent(this, Menu.class);
+        startActivity(i);
+    }
 }
