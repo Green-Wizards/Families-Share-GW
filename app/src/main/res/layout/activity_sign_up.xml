@@ -7,7 +7,7 @@
     tools:context=".activities.SignUp">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/et_given_name"
         android:layout_height="48dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
@@ -17,10 +17,12 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/et_family_name"
+        android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
@@ -30,10 +32,11 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/et_given_name" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/et_phone"
+        android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
@@ -43,11 +46,12 @@
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/et_family_name"
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/et_email"
+        android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
@@ -57,10 +61,11 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/et_phone" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/et_password"
+        android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
@@ -70,10 +75,11 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/et_repeat_password"
+        android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
@@ -83,11 +89,11 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_sign_up"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -100,7 +106,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/switch_visible"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="72dp"
@@ -108,7 +114,7 @@
         android:checked="true"
         android:text="@string/Text1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
+        app:layout_constraintTop_toBottomOf="@+id/et_repeat_password" />
 
     <TextView
         android:id="@+id/textView"
@@ -118,6 +124,6 @@
         android:text="@string/Pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
+        app:layout_constraintTop_toBottomOf="@+id/et_repeat_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
