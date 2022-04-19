@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.familiesshare.R;
 import com.google.android.material.navigation.NavigationView;
@@ -48,13 +49,18 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
         navigationView.setCheckedItem(R.id.nav_homepage);}*/
     }
 
+    public void create(View v){
+        Intent i = new Intent(this, NewGroupCreation.class);
+        startActivity(i);
+    }
+
     //per aprire le activity dal menu
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id =item.getItemId();
         switch (id){
             case R.id.nav_homepage://prendo gli id da drawer_menu
-                Intent intent = new Intent(this, Menu.class);
+                Intent intent = new Intent(this, DrawerMenu.class);
                 startActivity(intent);
                 break;
             case R.id.nav_profile:
@@ -65,6 +71,10 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
             case R.id.group_create:
                 Intent creagruppo = new Intent(this, NewGroupCreation.class);
                 startActivity(creagruppo);
+                break;
+            case R.id.nav_exit:
+                Intent esci = new Intent(this, MainActivity.class);
+                startActivity(esci);
                 break;
             //AGGIUNGERE CREA ATTIVITà INDIPENDENTE E IL RESTO
         }

@@ -24,7 +24,7 @@ public class Login extends AppCompatActivity {
         this.email = input1.getText().toString();
         TextView input2 = findViewById(R.id.editTextTextPassword);
         this.password = input2.getText().toString();
-        Intent i = new Intent(this, Menu.class);
+        Intent i = new Intent(this, DrawerMenu.class);
         startActivity(i);
     }
 }

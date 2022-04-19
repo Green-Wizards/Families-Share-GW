@@ -22,7 +22,7 @@ public class NewGroupCreation5 extends AppCompatActivity {
     }
 
     public void end(View v){
-        Intent i = new Intent(this, Menu.class);
+        Intent i = new Intent(this, DrawerMenu.class);
         startActivity(i);
     }
 }

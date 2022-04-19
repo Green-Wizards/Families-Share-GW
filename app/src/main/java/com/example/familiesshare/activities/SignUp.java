@@ -19,7 +19,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     public void signUp_conferma(View v){
-        Intent i = new Intent(this, Menu.class);
+        Intent i = new Intent(this, DrawerMenu.class);
         startActivity(i);
     }
 }

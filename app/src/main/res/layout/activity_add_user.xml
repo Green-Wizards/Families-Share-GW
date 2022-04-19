@@ -30,13 +30,15 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="@+id/textView39"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView39"
         android:layout_width="1dp"
         android:layout_height="1dp"
         android:layout_marginTop="16dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
@@ -50,7 +52,6 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="@string/cognome"
-        android:textColorHint="#757575"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,35 +61,34 @@
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="54dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:entries="@array/years"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
 
     <Spinner
         android:id="@+id/spinner3"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="54dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="16dp"
         android:entries="@array/dayes"
-        app:layout_constraintEnd_toStartOf="@+id/spinner2"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Spinner
         android:id="@+id/spinner4"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="54dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="16dp"
         android:entries="@array/months"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
 
     <TextView
         android:id="@+id/textView44"
@@ -113,5 +113,42 @@
         android:text="@string/anno"
         app:layout_constraintStart_toStartOf="@+id/spinner2"
         app:layout_constraintTop_toTopOf="@+id/spinner2" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/grado_di_parentela"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner4"
+        tools:ignore="TextContrastCheck" />
+
+    <Spinner
+        android:id="@+id/spinner5"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:entries="@array/gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/genere"
+        app:layout_constraintStart_toStartOf="@+id/spinner5"
+        app:layout_constraintTop_toTopOf="@+id/spinner5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

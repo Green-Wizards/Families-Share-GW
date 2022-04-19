@@ -43,6 +43,11 @@
         <item>EMAIL</item>
         <item>Numero di Telefono</item>
     </string-array>
+    <string-array name="gender">
+        <item>Non Specificato</item>
+        <item>Maschio</item>
+        <item>Femmina</item>
+    </string-array>
     <string-array name="dayes">
         <item>1</item>
         <item>2</item>
@@ -223,4 +228,6 @@
     <string name="fornire_le_informazioni_di_contatto">Fornire le informazioni di contatto</string>
     <string name="invita_persone">Invita persone</string>
     <string name="aggiungi_membri">Aggiungi membri</string>
+    <string name="grado_di_parentela">Grado di Parentela</string>
+    <string name="genere">Genere</string>
 </resources>
