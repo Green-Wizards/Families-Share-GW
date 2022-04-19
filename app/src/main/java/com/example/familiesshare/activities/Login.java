@@ -26,6 +26,11 @@ public class Login extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
     }
 
+    public void Switch2(View v){
+        Intent i = new Intent(this, Login.class);
+        startActivity(i);
+    }
+
     public void confirm (View v){
         TextView input1 = findViewById(R.id.editTextTextEmailAddress);
         this.email = input1.getText().toString();

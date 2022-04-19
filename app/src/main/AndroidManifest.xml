@@ -14,10 +14,12 @@
             android:exported="false" />
         <activity
             android:name=".activities.UtentiCarico"
+            android:label=" "
             android:exported="false"
             android:parentActivityName=".activities.DrawerMenu" />
         <activity
             android:name=".activities.AccountActivity"
+            android:label=" "
             android:exported="false"
             android:parentActivityName=".activities.DrawerMenu" />
         <activity

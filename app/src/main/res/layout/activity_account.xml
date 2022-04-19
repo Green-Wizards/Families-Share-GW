@@ -6,16 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".activities.AccountActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar7"
         android:layout_width="0dp"
-        android:layout_height="248dp"
-        android:contentDescription="@string/sfondo"
+        android:layout_height="269dp"
+        android:background="@color/teal_700"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="?attr/colorSecondaryVariant" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:onClick="utentiCarico"
+        android:text="@string/bambini"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView32"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView30"
@@ -24,7 +37,7 @@
         android:layout_marginBottom="16dp"
         android:text="@string/info"
         android:textColor="#FFFFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar7"
         app:layout_constraintEnd_toStartOf="@+id/textView32"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck" />
@@ -45,25 +58,13 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar7"
         tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/bambini"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView32"
-        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView32"
@@ -82,7 +83,7 @@
         android:layout_width="0dp"
         android:layout_height="5dp"
         android:contentDescription="@string/riga"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar7"
         app:layout_constraintEnd_toStartOf="@+id/textView32"
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,11 +94,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
         android:text="@string/non_specificato"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toEndOf="@+id/imageView8" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -107,7 +107,7 @@
         android:layout_marginTop="24dp"
         android:contentDescription="@string/phone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar7"
         app:srcCompat="@android:drawable/ic_menu_call"
         tools:ignore="ImageContrastCheck" />
 
@@ -127,11 +127,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
         android:text="@string/indirizzo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView40" />
+        app:layout_constraintStart_toEndOf="@+id/imageView9" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -151,11 +150,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
         android:text="@string/contatto_personale"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView41" />
+        app:layout_constraintStart_toEndOf="@+id/imageView10" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -174,20 +172,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
         android:text="@string/descrizione"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView11"
-        app:layout_constraintTop_toBottomOf="@+id/textView42" />
-
-    <Button
-        android:id="@+id/button17"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:onClick="utentiCarico"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView32" />
+        app:layout_constraintStart_toEndOf="@+id/imageView11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -51,6 +51,11 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
     }
 
+    public void Switch(View v){
+        Intent i = new Intent(this, Login.class);
+        startActivity(i);
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {

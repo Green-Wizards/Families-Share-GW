@@ -8,28 +8,17 @@
     android:outlineSpotShadowColor="#FFFFFF"
     tools:context=".activities.UtentiCarico">
 
-    <ImageView
-        android:id="@+id/imageView4"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar9"
         android:layout_width="0dp"
-        android:layout_height="248dp"
-        android:contentDescription="@string/sfondo"
+        android:layout_height="269dp"
+        android:background="@color/teal_700"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="?attr/colorSecondaryVariant" />
-
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/info"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toStartOf="@+id/textView36"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView34"
@@ -47,7 +36,7 @@
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +51,7 @@
         android:layout_marginBottom="16dp"
         android:text="@string/bambini"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView36"
         tools:ignore="TextContrastCheck" />
@@ -82,7 +71,7 @@
         android:layout_width="0dp"
         android:layout_height="5dp"
         android:contentDescription="@string/riga"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView36"
         tools:srcCompat="@color/white" />
@@ -107,26 +96,19 @@
         android:text="@string/AggFigl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:onClick="aggiungiUtenteCarico"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/toolbar9" />
 
     <Button
         android:id="@+id/button18"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
         android:onClick="account"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        android:text="@string/info"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar9"
         app:layout_constraintEnd_toStartOf="@+id/textView36"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

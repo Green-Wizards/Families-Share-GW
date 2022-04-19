@@ -231,4 +231,5 @@
     <string name="genere">Genere</string>
     <string name="registrati">Registrati</string>
     <string name="accedi">Accedi</string>
+    <string name="hai_gi_un_account_accedi">Hai già un account? Accedi</string>
 </resources>
