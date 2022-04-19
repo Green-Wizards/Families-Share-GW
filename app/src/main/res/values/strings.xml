@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Families Share</string>
-    <string name="accedi">Accedi</string>
     <string name="email">Email</string>
     <string name="telefono">Telefono</string>
     <string name="termina">Termina</string>
@@ -230,4 +229,6 @@
     <string name="aggiungi_membri">Aggiungi membri</string>
     <string name="grado_di_parentela">Grado di Parentela</string>
     <string name="genere">Genere</string>
+    <string name="registrati">Registrati</string>
+    <string name="accedi">Accedi</string>
 </resources>

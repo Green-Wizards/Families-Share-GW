@@ -76,11 +76,6 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 Intent esci = new Intent(this, MainActivity.class);
                 startActivity(esci);
                 break;
-            //AGGIUNGERE CREA ATTIVITà INDIPENDENTE E IL RESTO
-            case R.id.nav_exit: //per adesso porta solo alla pagina di signup per comodità e per testing
-                Intent signup = new Intent(this, SignUp.class);
-                startActivity(signup);
-                break;
         }
         //prova
         drawer.closeDrawer(GravityCompat.START);

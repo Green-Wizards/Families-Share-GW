@@ -1,6 +1,8 @@
 package com.example.familiesshare.activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +29,11 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar4);
+        setSupportActionBar(toolbar);
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
 
         //acquisizione istanza del db firebase
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -100,7 +107,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
         createNewProfile(nome, cognome, indirizzo, pw, ntelefono, true);
 
-        Intent i = new Intent(this, Menu.class);
+        Intent i = new Intent(this, DrawerMenu.class);
         startActivity(i);
     }
 

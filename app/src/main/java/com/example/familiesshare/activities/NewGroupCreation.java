@@ -1,5 +1,6 @@
 package com.example.familiesshare.activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -19,8 +20,9 @@ public class NewGroupCreation extends AppCompatActivity{
         setContentView(R.layout.activity_new_group_creation);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
-        setSupportActionBar(toolbar); //mi fa crashare l'app,dovrebbe rimpiazzare actionbar
-        //implemento la possibilità di selezionare un item del menu e aprire l'activity corrispondente
+        setSupportActionBar(toolbar);
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
     }
 
     public void go2(View v){

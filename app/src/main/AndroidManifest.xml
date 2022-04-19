@@ -22,10 +22,12 @@
             android:parentActivityName=".activities.DrawerMenu" />
         <activity
             android:name=".activities.SignUp"
+            android:label="Registrati"
             android:exported="false"
             android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.Login"
+            android:label="Accedi"
             android:exported="false"
             android:parentActivityName=".activities.MainActivity" />
         <activity

@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     tools:context=".activities.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/signup"
@@ -13,9 +25,9 @@
         android:layout_marginTop="104dp"
         android:layout_marginEnd="16dp"
         android:onClick="signup_class"
-        android:text="Registrati"
+        android:text="@string/registrati"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar6" />
 
     <Button
         android:id="@+id/login"
@@ -24,8 +36,8 @@
         android:layout_marginTop="104dp"
         android:layout_marginEnd="12dp"
         android:onClick="login_class"
-        android:text="Accedi"
+        android:text="@string/accedi"
         app:layout_constraintEnd_toStartOf="@+id/signup"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
