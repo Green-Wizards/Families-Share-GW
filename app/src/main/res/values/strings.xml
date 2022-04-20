@@ -11,8 +11,6 @@
     <string name="descrizione">Descrizione</string>
     <string name="continua">CONTINUA</string>
     <string name="cancella">CANCELLA</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="altri_utenti_non_possono_trovare_il_gruppo">Altri utenti NON possono trovare il gruppo</string>
     <string name="accountname">AccountName</string>
     <string name="info">INFO</string>
@@ -232,4 +230,16 @@
     <string name="registrati">Registrati</string>
     <string name="accedi">Accedi</string>
     <string name="hai_gi_un_account_accedi">Hai già un account? Accedi</string>
+    <string name="votaci">Votaci</string>
+    <string name="home_page">Home page</string>
+    <string name="il_mio_profilo">Il mio profilo</string>
+    <string name="il_mio_calendario">Il mio calendario</string>
+    <string name="crea_un_gruppo">Crea un gruppo</string>
+    <string name="crea_un_attivit_indipedente">Crea un\'attività indipedente</string>
+    <string name="invita_amici">Invita amici</string>
+    <string name="guida_all_avviamento">Guida all\'avviamento</string>
+    <string name="faqs">FAQs</string>
+    <string name="string_faqs">FAQs</string>
+    <string name="il_progetto">Il progetto</string>
+    <string name="esci">Esci</string>
 </resources>

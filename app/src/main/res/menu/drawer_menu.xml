@@ -8,23 +8,23 @@
         <item
             android:id="@+id/nav_homepage"
             android:icon="@drawable/ic_home_page"
-            android:title="Home page" />
+            android:title="@string/home_page" />
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_profile"
-            android:title="Il mio profilo" />
+            android:title="@string/il_mio_profilo" />
         <item
             android:id="@+id/nav_calendar"
             android:icon="@drawable/ic_calendar"
-            android:title="Il mio calendario" />
+            android:title="@string/il_mio_calendario" />
         <item
             android:id="@+id/group_create"
             android:icon="@drawable/ic_search_group"
-            android:title="Crea un gruppo" />
+            android:title="@string/crea_un_gruppo" />
         <item
             android:id="@+id/nav_activity_create"
             android:icon="@drawable/ic_search_group"
-            android:title="Crea un'attività indipedente" />
+            android:title="@string/crea_un_attivit_indipedente" />
 
     </group>
 
@@ -32,37 +32,36 @@
 
     <item android:id="@+id/nav_invite_friends"
         android:icon="@drawable/ic_invite_friends"
-        android:title="Invita amici" />
+        android:title="@string/invita_amici" />
 
 
 
     <group android:checkableBehavior="single">
         <item android:id="@+id/nav_faqs"
             android:icon="@drawable/ic_faqs"
-            android:title="FAQs" />
+            android:title="@string/string_faqs" />
     </group>
 
 
     <item android:id="@+id/nav_guida"
         android:icon="@drawable/ic_invite_friends"
-        android:title="Guida all'avviamento" />
+        android:title="@string/guida_all_avviamento" />
 
 
     <group android:checkableBehavior="single">
         <item android:id="@+id/nav_info"
             android:icon="@drawable/ic_faqs"
-            android:title="Il progetto" />
+            android:title="@string/il_progetto" />
     </group>
 
 
-    <item android:id="@+id/nav_votaci"
+    <item
+        android:id="@+id/nav_votaci"
         android:icon="@drawable/ic_votaci"
-        android:title="Votaci" />
-
-
+        android:title="@string/votaci" />
     <group android:checkableBehavior="single">
         <item android:id="@+id/nav_exit"
             android:icon="@drawable/ic_exit"
-            android:title="Esci" />
+            android:title="@string/esci" />
     </group>
 </menu>
