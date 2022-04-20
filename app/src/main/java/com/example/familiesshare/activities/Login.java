@@ -27,7 +27,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void Switch2(View v){
-        Intent i = new Intent(this, Login.class);
+        Intent i = new Intent(this, SignUp.class);
         startActivity(i);
     }
 
