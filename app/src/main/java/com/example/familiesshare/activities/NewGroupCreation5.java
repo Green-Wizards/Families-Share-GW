@@ -10,24 +10,26 @@ import android.view.View;
 
 import com.example.familiesshare.R;
 
-public class MainActivity extends AppCompatActivity {
+public class NewGroupCreation5 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_new_group_creation5);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar6);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar3);
         setSupportActionBar(toolbar);
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
     }
 
-    public void signup_class(View v){
-        Intent i = new Intent(this, SignUp.class);
+    public void go4(View v){
+        Intent i = new Intent(this, NewGroupCreation4.class);
         startActivity(i);
     }
 
-    public void login_class(View v){
-        Intent i = new Intent(this, Login.class);
+    public void end(View v){
+        Intent i = new Intent(this, DrawerMenu.class);
         startActivity(i);
     }
 }

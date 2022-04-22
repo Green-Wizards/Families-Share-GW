@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "72564244344",
+    "firebase_url": "https://familiessharegw-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "familiessharegw",
+    "storage_bucket": "familiessharegw.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72564244344:android:8eab7a12f15fda6e66128d",
+        "android_client_info": {
+          "package_name": "com.example.familiesshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72564244344-8o8vbtpa6uj2fgfj7hogamb3l5gf16qg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh9PilCR-94H5gavuBP-6jl5k34lM5S_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72564244344-8o8vbtpa6uj2fgfj7hogamb3l5gf16qg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
