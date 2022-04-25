@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.example.familiesshare.R;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.appcompat.widget.Toolbar;
 
@@ -73,6 +74,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 startActivity(creagruppo);
                 break;
             case R.id.nav_exit:
+                FirebaseAuth.getInstance().signOut();
                 Intent esci = new Intent(this, MainActivity.class);
                 startActivity(esci);
                 break;

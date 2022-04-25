@@ -1,5 +1,6 @@
 package com.example.familiesshare.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -11,8 +12,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.example.familiesshare.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -21,6 +28,7 @@ import classes.Profile;
 public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
     private DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
     private EditText given_name, family_name, phone,email,password, password_confirm;
     private Button signUp;
     private Switch visibile;
@@ -37,6 +45,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
         //acquisizione istanza del db firebase
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
 
         given_name = (EditText) findViewById(R.id.et_given_name);
         family_name = (EditText) findViewById(R.id.et_family_name);
@@ -110,21 +119,39 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
             return;
         }
 
-        createNewProfile(nome, cognome, indirizzo, pw, ntelefono, true);
+        mAuth.createUserWithEmailAndPassword(indirizzo, pw)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if (task.isSuccessful()) {
+
+                            Profile profilo = new Profile(nome, cognome, indirizzo, pw, ntelefono, true);
+
+                            FirebaseDatabase.getInstance().getReference("Profiles")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(profilo).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(SignUp.this, "Registrazione avvenuta con successo!", Toast.LENGTH_LONG).show();
+                                    } else {
+                                        Toast.makeText(SignUp.this, "Registrazione fallita!", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+
+                        } else {
+                            Toast.makeText(SignUp.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
 
         Intent i = new Intent(this, DrawerMenu.class);
         startActivity(i);
     }
 
-    public void createNewProfile(String nome, String cognome, String email,
-                                 String password, int phone, boolean visible){
-
-        Profile newProfile = new Profile(nome, cognome, email, password, phone, visible);
-
-        DatabaseReference profilesRef = mDatabase.child("Profiles");
-        profilesRef.push().setValue(newProfile);
-
-    }
 
 
 }
