@@ -12,7 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FamiliesShare">
         <activity
+<<<<<<< Updated upstream
             android:name=".activities.Calendar"
+=======
+            android:name=".activities.Faq"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Template"
+>>>>>>> Stashed changes
             android:exported="false" />
         <activity
             android:name=".activities.addUser"
