@@ -242,4 +242,6 @@
     <string name="string_faqs">FAQs</string>
     <string name="il_progetto">Il progetto</string>
     <string name="esci">Esci</string>
+    <string name="calendario_del_gruppo">Calendario del gruppo</string>
+    <string name="set_the_date">Set the date</string>
 </resources>
