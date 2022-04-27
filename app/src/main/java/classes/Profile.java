@@ -11,7 +11,7 @@ public class Profile implements Serializable {
     public String address_id;
     public String email;
     public String password;
-    public int phone;
+    public String phone;
     public String phone_type;
     public String contact_option;       // Il valore di default dovrebbe essere "email"
     public String description;
@@ -26,7 +26,7 @@ public class Profile implements Serializable {
     }
 
     public Profile(/*String address_id,*/ String given_name, String family_name, String email,
-                   String password, int phone, boolean visible) {
+                   String password, String phone, boolean visible) {
         this.email = email;
         this.password = password;
         this.phone = phone;

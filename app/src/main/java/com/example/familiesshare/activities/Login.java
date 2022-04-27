@@ -83,8 +83,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(Login.this, "Login avvenuto con successo!", Toast.LENGTH_LONG).show();
                             FirebaseUser profile = mAuth.getCurrentUser();
-                            Intent goToMainMenu = new Intent(Login.this, MainActivity.class);
-                            startActivity(goToMainMenu);
+                            Intent goToDrawerMenu = new Intent(Login.this, DrawerMenu.class);
+                            startActivity(goToDrawerMenu);
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(Login.this, "Login fallito!", Toast.LENGTH_LONG).show();

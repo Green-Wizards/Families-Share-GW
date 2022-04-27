@@ -78,7 +78,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
         String nome = given_name.getText().toString().trim();
         String cognome = family_name.getText().toString().trim();
-        int ntelefono = Integer.parseInt(phone.getText().toString().trim());
+        String ntelefono = phone.getText().toString().trim();
         String indirizzo = email.getText().toString().trim();
         String pw = password.getText().toString().trim();
         String pw_conferma = password_confirm.getText().toString().trim();
@@ -91,6 +91,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         if(cognome.isEmpty()){
             family_name.setError("Cognome richiesto!");
             family_name.requestFocus();
+            return;
+        }
+        if(indirizzo.isEmpty()){
             return;
         }
         if(indirizzo.isEmpty()){
@@ -135,6 +138,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         Toast.makeText(SignUp.this, "Registrazione avvenuta con successo!", Toast.LENGTH_LONG).show();
+                                        Intent i = new Intent(SignUp.this, DrawerMenu.class);
+                                        startActivity(i);
                                     } else {
                                         Toast.makeText(SignUp.this, "Registrazione fallita!", Toast.LENGTH_LONG).show();
                                     }
@@ -147,9 +152,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                     }
                 });
 
-
-        Intent i = new Intent(this, DrawerMenu.class);
-        startActivity(i);
     }
 
 
