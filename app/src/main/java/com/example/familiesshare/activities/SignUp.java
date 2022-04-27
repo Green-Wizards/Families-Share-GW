@@ -94,9 +94,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
             return;
         }
         if(indirizzo.isEmpty()){
-            return;
-        }
-        if(indirizzo.isEmpty()){
             email.setError("Email richiesta!");
             email.requestFocus();
             return;
