@@ -23,6 +23,7 @@
     <string name="cognome">Cognome</string>
     <string name="phone">Phone</string>
     <string name="avatar">Avatar</string>
+    <string name="back">Back</string>
     <string name="riga">riga</string>
     <string name="location">location</string>
     <string name="mail">mail</string>
