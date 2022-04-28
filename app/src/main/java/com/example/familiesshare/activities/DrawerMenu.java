@@ -27,10 +27,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawer;
-    private TextView welcometxt;
-    private DatabaseReference mDatabase;
-    private FirebaseUser user;
-    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,31 +42,6 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
         navigationView.setNavigationItemSelectedListener(this);
 
         drawer = findViewById(R.id.drawer_layout);
-
-
-        //TEST read dal db firebase
-        welcometxt = findViewById(R.id.welcometext);
-        //acquisizione istanza del db firebase
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        mAuth = FirebaseAuth.getInstance();
-
-        if(mAuth.getCurrentUser() != null) {
-            Task<DataSnapshot> nome = mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("given_name").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    if (!task.isSuccessful()) {
-                        Toast.makeText(DrawerMenu.this, "NON SO CHI SEI", Toast.LENGTH_LONG).show();
-                    } else {
-                        String nome = task.getResult().getValue().toString();
-                        welcometxt.setText(nome);
-                    }
-                }
-            });
-
-        }
-
-
-
 
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle( this,drawer,toolbar,
