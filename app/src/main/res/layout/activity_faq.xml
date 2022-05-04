@@ -23,6 +23,7 @@
         android:layout_width="53dp"
         android:layout_height="48dp"
         android:backgroundTint="@color/teal_700"
+        android:contentDescription="@string/back"
         android:onClick="goBack"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar6"
         app:layout_constraintStart_toStartOf="parent"

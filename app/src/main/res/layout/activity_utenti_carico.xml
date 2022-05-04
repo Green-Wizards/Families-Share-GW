@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView34"
+        android:id="@+id/tv_accountNameUC"
         android:layout_width="139dp"
         android:layout_height="25dp"
         android:gravity="center"
@@ -67,7 +67,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_accountNameUC" />
 
     <ImageView
         android:id="@+id/imageView7"

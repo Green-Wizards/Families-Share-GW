@@ -1,6 +1,8 @@
 package classes;
 
-public class Group {
+import java.io.Serializable;
+
+public class Group implements Serializable {
 
     /** ATTRIBUTI **/
     public String group_id;
@@ -14,4 +16,16 @@ public class Group {
     public String owner_id;
     public String contact_info;
     public String contact_type;
+
+    public Group() {
+        // Default constructor required for calls to DataSnapshot.getValue(Profile.class)
+    }
+
+    public Group(String name, String description, String location, String settings_id, String owner_id) {
+        this.name = name;
+        this.description = description;
+        this.location = location;
+        this.settings_id = settings_id;
+        this.owner_id = owner_id;
+    }
 }
