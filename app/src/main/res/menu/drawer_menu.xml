@@ -40,15 +40,12 @@
         <item android:id="@+id/nav_faqs"
             android:icon="@drawable/ic_faqs"
             android:title="@string/string_faqs" />
-    </group>
 
 
-    <item android:id="@+id/nav_guida"
-        android:icon="@drawable/ic_invite_friends"
-        android:title="@string/guida_all_avviamento" />
+        <item android:id="@+id/nav_guida"
+            android:icon="@drawable/ic_invite_friends"
+            android:title="@string/guida_all_avviamento" />
 
-
-    <group android:checkableBehavior="single">
         <item android:id="@+id/nav_info"
             android:icon="@drawable/ic_faqs"
             android:title="@string/il_progetto" />

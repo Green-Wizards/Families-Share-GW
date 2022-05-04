@@ -84,6 +84,9 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
         Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
         navigationView.setCheckedItem(R.id.nav_homepage);}*/
+
+        //IMPLEMENTO APERTURA NOTIFICA
+
     }
 
     public void create(View v){
@@ -109,6 +112,17 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 Intent creagruppo = new Intent(this, NewGroupCreation.class);
                 startActivity(creagruppo);
                 break;
+            //CREA ATTIVITà IND
+            //INVITA AMICI
+            case R.id.nav_faqs:
+                Intent faq = new Intent(this, Faq.class);
+                startActivity(faq);
+                break;
+            case R.id.nav_guida:
+                Intent guida = new Intent(this, GuidaAvviamento.class);
+                startActivity(guida);
+                break;
+
             case R.id.nav_exit:
                 FirebaseAuth.getInstance().signOut();
                 Intent esci = new Intent(this, MainActivity.class);
