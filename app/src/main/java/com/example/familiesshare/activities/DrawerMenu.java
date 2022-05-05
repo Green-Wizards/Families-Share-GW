@@ -6,14 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.example.familiesshare.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,7 +33,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawermenu);
 
-        Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar=  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar); //mi fa crashare l'app,dovrebbe rimpiazzare actionbar
         //implemento la possibilità di selezionare un item del menu e aprire l'activity corrispondente
 
@@ -59,18 +56,14 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
         startActivity(intent);
         navigationView.setCheckedItem(R.id.nav_homepage);}*/
 
-        //IMPLEMENTO APERTURA NOTIFICA
-         ImageButton bell= (ImageButton) findViewById(R.id.bell);
-         bell.setOnClickListener(new View.OnClickListener() {
+        //IMPLEMENTO APERTURA NOTIFICA CRASHAA
 
-            @Override
-            public void onClick(View v) {
 
-                PopupNotifiche popUpClass = new PopupNotifiche();
-                popUpClass.showPopupWindow(v);
-            }
-        });
+    }
 
+    public void apriNotifiche(View vi){
+        Intent io = new Intent(this, PopupNotifiche.class);
+        startActivity(io);
     }
 
     public void create(View v){

@@ -43,6 +43,7 @@
         <entry key="app/src/main/res/layout/notification_campanella.xml" value="0.22026431718061673" />
         <entry key="app/src/main/res/layout/notification_inviti.xml" value="0.55" />
         <entry key="app/src/main/res/layout/popup_notifiche.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/switch_item.xml" value="0.13451086956521738" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.234375" />
         <entry key="app/src/main/res/menu/notifiche_popup.xml" value="0.234375" />
       </map>

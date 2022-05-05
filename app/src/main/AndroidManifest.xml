@@ -12,8 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FamiliesShare">
         <activity
+            android:name=".activities.PopupNotifiche"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            android:parentActivityName=".activities.DrawerMenu"/>
+        <activity
             android:name=".activities.GuidaAvviamento"
             android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
             android:parentActivityName=".activities.DrawerMenu"/>
         <activity
             android:name=".activities.Calendar"

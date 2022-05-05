@@ -33,10 +33,12 @@
         android:text="@string/annulla"
         android:textColor="#009688"
         android:textSize="24sp"
+        android:onClick="goBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView50" />
+        app:layout_constraintTop_toBottomOf="@+id/textView50"
+        tools:ignore="OnClick" />
 
     <TextView
         android:id="@+id/textView50"
@@ -44,7 +46,7 @@
         android:layout_height="128dp"
         android:text="@string/Guida"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

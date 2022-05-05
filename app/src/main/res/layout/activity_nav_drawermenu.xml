@@ -44,6 +44,7 @@
             android:backgroundTint="@color/teal_700"
             android:minWidth="48dp"
             android:minHeight="48dp"
+            android:onClick="apriNotifiche"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/toolbar"
