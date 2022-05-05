@@ -23,6 +23,7 @@
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/menu/drawer_menu.xml" value="0.36666666666666664" />
         <entry key="app/src/main/res/drawable/ic_add.xml" value="0.25052083333333336" />
         <entry key="app/src/main/res/drawable/ic_campanella.xml" value="0.176" />
+        <entry key="app/src/main/res/drawable/ic_notifiche_inviti.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_profile.xml" value="0.25052083333333336" />
         <entry key="app/src/main/res/layout/activity_account.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/activity_add_user.xml" value="0.22026431718061673" />
@@ -30,7 +31,7 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.234375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.20923913043478262" />
-        <entry key="app/src/main/res/layout/activity_nav_drawermenu.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_nav_drawermenu.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_new_group_creation.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_new_group_creation2.xml" value="0.234375" />
         <entry key="app/src/main/res/layout/activity_template.xml" value="0.11398176291793313" />
@@ -40,7 +41,10 @@
         <entry key="app/src/main/res/layout/fragment_guiva_avviamento.xml" value="0.18931159420289856" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/notification_campanella.xml" value="0.22026431718061673" />
+        <entry key="app/src/main/res/layout/notification_inviti.xml" value="0.55" />
+        <entry key="app/src/main/res/layout/popup_notifiche.xml" value="0.375" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.234375" />
+        <entry key="app/src/main/res/menu/notifiche_popup.xml" value="0.234375" />
       </map>
     </option>
   </component>

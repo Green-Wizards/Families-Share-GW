@@ -12,7 +12,7 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_campanella" />
+        app:srcCompat="@drawable/ic_notifiche_inviti" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/container_notifiche"
