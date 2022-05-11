@@ -1,6 +1,7 @@
 package com.example.familiesshare.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,6 +20,11 @@ public class GuidaAvviamento extends  AppCompatActivity{
     public void goBack(View v){
         Intent i = new Intent(this, DrawerMenu.class);
         startActivity(i);
+    }
+
+    public void link(View v){
+        startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://families-share.eu/fam-uploads/2020/06/Families_Share_Toolkit-.pdf")));
+
     }
 
 }
