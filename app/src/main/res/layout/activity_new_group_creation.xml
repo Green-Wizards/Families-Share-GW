@@ -36,52 +36,194 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:clickable="false"
-                android:onClick="menu"
-                android:text="@string/cancella"
-                app:layout_constraintStart_toEndOf="@+id/button5"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/invita_persone"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName3"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view1"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:hint="@string/nome"
-                android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName3"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="@string/nome"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/editTextTextMultiLine"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/descrizione"
+                    android:inputType="textMultiLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="go2"
+                    android:text="@string/continua"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:clickable="false"
+                    android:onClick="menu"
+                    android:text="@string/cancella"
+                    app:layout_constraintStart_toEndOf="@+id/button5"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/imposta_la_visibilit_del_gruppo"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button5" />
+                app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+                <Button
+                    android:id="@+id/button28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="go3"
+                    android:text="@string/continua"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/switch1" />
+
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView60" />
+
+                <Button
+                    android:id="@+id/button29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="back1"
+                    android:text="@string/cancella"
+                    app:layout_constraintStart_toEndOf="@+id/button28"
+                    app:layout_constraintTop_toBottomOf="@+id/switch1" />
+
+                <TextView
+                    android:id="@+id/textView60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/altri_utenti_non_possono_trovare_il_gruppo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/fornire_l_area"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+                <Button
+                    android:id="@+id/button30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="go4"
+                    android:text="@string/continua"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+                <Button
+                    android:id="@+id/button31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="back2"
+                    android:text="@string/cancella"
+                    app:layout_constraintStart_toEndOf="@+id/button30"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView8"
@@ -91,44 +233,109 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/fornire_le_informazioni_di_contatto"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                app:layout_constraintTop_toBottomOf="@+id/view3" />
 
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
-                android:layout_marginTop="16dp"
-                android:onClick="go2"
-                android:text="@string/continua"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
-
-            <EditText
-                android:id="@+id/editTextTextMultiLine"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view4"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="@string/descrizione"
-                android:inputType="textMultiLine"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+                app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+                <Spinner
+                    android:id="@+id/spinner6"
+                    android:layout_width="287dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:entries="@array/metodo"
+                    android:minHeight="48dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/button33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="back3"
+                    android:text="@string/cancella"
+                    app:layout_constraintStart_toEndOf="@+id/button32"
+                    app:layout_constraintTop_toBottomOf="@+id/spinner6"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <Button
+                    android:id="@+id/button32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="go5"
+                    android:text="@string/continua"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spinner6" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/textView9"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/invita_persone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view5"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/fornire_l_area"
+                android:layout_marginEnd="16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+                <Button
+                    android:id="@+id/button34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="back4"
+                    android:text="@string/cancella"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView61"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <Button
+                    android:id="@+id/button35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="end"
+                    android:text="@string/termina"
+                    app:layout_constraintStart_toEndOf="@+id/button34"
+                    app:layout_constraintTop_toBottomOf="@+id/textView61" />
+
+                <TextView
+                    android:id="@+id/textView61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/aggiungi_membri"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

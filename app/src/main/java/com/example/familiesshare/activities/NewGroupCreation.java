@@ -14,6 +14,13 @@ import com.google.android.material.navigation.NavigationView;
 
 public class NewGroupCreation extends AppCompatActivity{
 
+    View v1 = findViewById(R.id.view1);
+    View v2 = findViewById(R.id.view2);
+    View v3 = findViewById(R.id.view3);
+    View v4 = findViewById(R.id.view4);
+    View v5 = findViewById(R.id.view5);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,15 +32,52 @@ public class NewGroupCreation extends AppCompatActivity{
         ab.setDisplayHomeAsUpEnabled(true);
     }
 
-    public void go2(View v){
-        Intent i = new Intent(this, NewGroupCreation2.class);
-        startActivity(i);
-    }
-
     public void menu(View v){
         Intent i = new Intent(this, DrawerMenu.class);
         startActivity(i);
     }
 
+    public void go2(View v){
+        v1.setVisibility(View.GONE);
+        v2.setVisibility(View.VISIBLE);
+    }
+
+    public void go3(View v){
+        v2.setVisibility(View.GONE);
+        v3.setVisibility(View.VISIBLE);
+    }
+
+    public void go4(View v){
+        v3.setVisibility(View.GONE);
+        v4.setVisibility(View.VISIBLE);
+    }
+
+    public void go5(View v){
+        v4.setVisibility(View.GONE);
+        v5.setVisibility(View.VISIBLE);
+    }
+
+    public void back1(View v){
+        v2.setVisibility(View.GONE);
+        v1.setVisibility(View.VISIBLE);
+    }
+
+    public void back2(View v){
+        v2.setVisibility(View.GONE);
+        v1.setVisibility(View.VISIBLE);
+    }
+    public void back3(View v){
+        v3.setVisibility(View.GONE);
+        v4.setVisibility(View.VISIBLE);
+    }
+    public void back4(View v){
+        v5.setVisibility(View.GONE);
+        v4.setVisibility(View.VISIBLE);
+    }
+
+    public void end(View v){
+        Intent i = new Intent(this, DrawerMenu.class);
+        startActivity(i);
+    }
 
 }
