@@ -21,11 +21,14 @@ public class Group implements Serializable {
         // Default constructor required for calls to DataSnapshot.getValue(Profile.class)
     }
 
-    public Group(String name, String description, String location, String settings_id, String owner_id) {
+    public Group(String name, String description, String location, String settings_id,
+                 String owner_id, String contact_type, String contact_info) {
         this.name = name;
         this.description = description;
         this.location = location;
         this.settings_id = settings_id;
         this.owner_id = owner_id;
+        this.contact_type = contact_type;
+        this.contact_info = contact_info;
     }
 }
