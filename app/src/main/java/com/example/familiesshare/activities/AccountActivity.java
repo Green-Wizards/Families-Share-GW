@@ -69,7 +69,6 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
                     }
                 }
             });
-
         }
 
     }
