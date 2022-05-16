@@ -12,22 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FamiliesShare">
         <activity
+            android:name=".activities.Project"
+            android:exported="false"
+            android:parentActivityName=".activities.DrawerMenu"/>
+        <activity
             android:name=".activities.PopupNotifiche"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"
-            android:parentActivityName=".activities.DrawerMenu"/>
+            android:parentActivityName=".activities.DrawerMenu"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
             android:name=".activities.GuidaAvviamento"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"
-            android:parentActivityName=".activities.DrawerMenu"/>
+            android:parentActivityName=".activities.DrawerMenu"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
             android:name=".activities.Calendar"
             android:exported="false" />
         <activity
             android:name=".activities.Faq"
             android:exported="false"
-            android:parentActivityName=".activities.DrawerMenu"/>
+            android:parentActivityName=".activities.DrawerMenu" />
         <activity
             android:name=".activities.Template"
             android:exported="false" />

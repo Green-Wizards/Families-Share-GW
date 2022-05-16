@@ -182,7 +182,10 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 Intent guida = new Intent(this, GuidaAvviamento.class);
                 startActivity(guida);
                 break;
-
+            case R.id.nav_info:
+                Intent info = new Intent(this, Project.class);
+                startActivity(info);
+                break;
             case R.id.nav_exit:
                 FirebaseAuth.getInstance().signOut();
                 Intent esci = new Intent(this, MainActivity.class);

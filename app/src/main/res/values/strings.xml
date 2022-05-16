@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Families Share</string>
     <string name="email">Email</string>
     <string name="telefono">Telefono</string>
@@ -37,31 +37,31 @@
     <string name="giorno">Giorno</string>
     <string name="mese">Mese</string>
     <string name="anno">Anno</string>
-    <string name="group1">Group1</string>
+    <string name="group1" tools:ignore="Typos">Group1</string>
     <string name="group2">Group2</string>
     <string name="group3">Group3</string>
     <string name="group4">Group4</string>
     <string name="group5">Group5</string>
     <string-array name="list1">
-        <item>item1</item>
+        <item tools:ignore="Typos">item1</item>
     </string-array>
     <string-array name="list2">
-        <item>item1</item>
+        <item tools:ignore="Typos">item1</item>
         <item>item2</item>
     </string-array>
     <string-array name="list3">
-        <item>item1</item>
+        <item tools:ignore="Typos">item1</item>
         <item>item2</item>
         <item>item3</item>
     </string-array>
     <string-array name="list4">
-        <item>item1</item>
+        <item tools:ignore="Typos">item1</item>
         <item>item2</item>
         <item>item3</item>
         <item>item4</item>
     </string-array>
     <string-array name="list5">
-        <item>item1</item>
+        <item tools:ignore="Typos">item1</item>
         <item>item2</item>
         <item>item3</item>
         <item>item4</item>
@@ -271,7 +271,6 @@
     <string name="guida_all_avviamento">Guida all\'avviamento</string>
     <string name="faqs">FAQs</string>
     <string name="string_faqs">FAQs</string>
-    <string name="il_progetto">Il progetto</string>
     <string name="esci">Esci</string>
     <string name="calendario_del_gruppo">Calendario del gruppo</string>
     <string name="set_the_date">Set the date</string>
@@ -286,19 +285,21 @@
     <string name="Group4">Group 4</string>
     <string name="Group5">Group 5</string>
     <string name="si_prega_di_compilare_le_informazioni_di_contatto">Si prega di compilare le informazioni di contatto</string>
-    <string-array name="group1">
-        <item>item1</item>
-    </string-array>
-    <string-array name="group2">
-        <item>item1</item>
-        <item>item2</item>
-    </string-array>
-    <string-array name="group3">
-        <item>item1</item>
-        <item>item2</item>
-    </string-array>
-    <string-array name="group4">
-        <item>item1</item>
-        <item>item2</item>
-    </string-array>
+    <string name="scopri_di_pi_sul_sito">Scopri di più sul sito</string>
+    <string name="il_progetto">Il progetto</string>
+    <string name="p1">Parole parole parole.</string>
+    <string name="p2">In Europa, nell\'ultimo decennio, trovare un equilibrio tra lavoro e vita famigliare/privata è diventato sempre più una sfida per le famiglie. La crisi economica ha impattato non solo sul mercato del lavoro, ma anche sul welfare. Come conseguenza, i tassi di disoccupazione sono aumentati (soprattutto nei settori che impiegano maggiormente persone di sesso maschile), mentre molte lavoratrici ora sono impiegate part-time. Lavori stabili e a lungo termine non sono più la regola, mentre continuano ad aumentare i contratti precari, con sempre più lavoratori/lavoratrici che seguono percorsi di riqualificazione e affrontano periodi di disoccupazione. Dall\'altro lato, una forza lavoro a tempo indeterminato sempre più ristretta è soggetta a maggiori carichi di lavoro e ad orari di lavoro più lunghi, rendendo più difficile il rapporto tra lavoro e vita quotidiana, nonché insostenibile il modello attuale.</string>
+    <string name="p3">Parole parole parole.</string>
+    <string name="p4">La presente Informativa sulla privacy definisce la policy di Families_Share relativamente alle tue informazioni, comprese le informazioni che identificano o potrebbero identificarti personalmente (conosciute come informazioni di identificazione personale negli Stati Uniti o dati personali nell\'Unione europea, che chiameremo Dati Personali) e altre informazioni raccolta dai visitatori e dagli utenti dei Servizi. Si prega di leggere attentamente questinformativa sulla privacy in modo da comprendere come tratteremo i tuoi dati. Utilizzando uno qualsiasi dei nostri Servizi, confermi di aver letto, compreso e accettato la presente informativa sulla privacy. Se non accetti la presente policy, sei pregato di non utilizzare i nostri Servizi. In caso di domande, ti preghiamo di contattarci via email acontact@families-share.eu</string>
+    <string name="off"><![CDATA[<]]></string>
+    <string name="on"><![CDATA[>]]></string>
+    <string name="la_sfida">La sfida</string>
+    <string name="soluzione">La soluzione proposta da</string>
+    <string name="informativa_privacy">Informativa privacy</string>
+    <string name="version">App Version: 20201006</string>
+    <string name="background">background</string>
+    <string-array name="group1">item 1</string-array>
+    <string-array name="group2">item 2</string-array>
+    <string-array name="group3">item 3</string-array>
+    <string-array name="group4">item 4</string-array>
 </resources>
