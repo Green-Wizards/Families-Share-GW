@@ -41,33 +41,45 @@ public class Project extends AppCompatActivity {
     }
 
     public void open1 (View v){
+        Button btn = (Button) findViewById(R.id.toggleButton1);
         TextView text = (TextView) findViewById(R.id.textView1);
         if (text.getVisibility() == View.VISIBLE) {
             text.setVisibility(View.GONE);
+            btn.setText("<");
         } else{
             text.setVisibility(View.VISIBLE);
+            btn.setText(">");
         }
     }
     public void open2 (View v){
+        Button btn = (Button) findViewById(R.id.toggleButton6);
         TextView text = (TextView) findViewById(R.id.textView12);
         if (text.getVisibility() == View.VISIBLE) {
             text.setVisibility(View.GONE);
+            btn.setText("<");
         } else{
             text.setVisibility(View.VISIBLE);
+            btn.setText(">");
         }
     }public void open3 (View v){
+        Button btn = (Button) findViewById(R.id.toggleButton8);
         TextView text = (TextView) findViewById(R.id.textView15);
         if (text.getVisibility() == View.VISIBLE) {
             text.setVisibility(View.GONE);
+            btn.setText("<");
         } else{
             text.setVisibility(View.VISIBLE);
+            btn.setText(">");
         }
     }public void open4 (View v){
+        Button btn = (Button) findViewById(R.id.toggleButton7);
         TextView text = (TextView) findViewById(R.id.textView17);
         if (text.getVisibility() == View.VISIBLE) {
             text.setVisibility(View.GONE);
+            btn.setText("<");
         } else{
             text.setVisibility(View.VISIBLE);
+            btn.setText(">");
         }
 
     }

@@ -14,6 +14,7 @@
         <activity
             android:name=".activities.Project"
             android:exported="false"
+            android:label="Il progetto"
             android:parentActivityName=".activities.DrawerMenu"/>
         <activity
             android:name=".activities.PopupNotifiche"
