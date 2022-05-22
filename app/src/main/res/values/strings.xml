@@ -302,4 +302,13 @@
     <string-array name="group2">item 2</string-array>
     <string-array name="group3">item 3</string-array>
     <string-array name="group4">item 4</string-array>
+    <string name="numerot">Numero di telefono</string>
+    <string-array name="type">
+        <item>Non specificato</item>
+        <item>Italia</item>
+    </string-array>
+    <string name="city">Città</string>
+    <string name="via">Via/Piazza</string>
+    <string name="numero">Numero civico</string>
+    <string name="descrizione">Fornire una descrizione facoltativa</string>
 </resources>
