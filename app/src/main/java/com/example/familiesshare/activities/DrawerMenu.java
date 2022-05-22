@@ -126,10 +126,12 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 constr.addView(btn);
 
                 bottoni.add(btn);
+                //per adesso i gruppi mostrati, se superiori a 3, sovrascrivono il resto dei pulsanti dell'itnerfaccia
+                counter += 1;
 
             }
 
-            counter += 1;
+
         }
 
         /*OnClickListener btnClicked = new OnClickListener() {
