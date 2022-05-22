@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.familiesshare">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,10 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FamiliesShare">
         <activity
+            android:name=".ProfileModify"
+            android:exported="false" />
+        <activity
             android:name=".activities.Project"
             android:exported="false"
             android:label="Il progetto"
-            android:parentActivityName=".activities.DrawerMenu"/>
+            android:parentActivityName=".activities.DrawerMenu" />
         <activity
             android:name=".activities.PopupNotifiche"
             android:exported="false"
