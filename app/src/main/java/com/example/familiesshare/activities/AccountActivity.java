@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -83,7 +84,8 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void edit_user(View view) {
-        ///TODO rimandare alla pagina per modificare l'utente e creare la pagina
+        Intent i = new Intent(this, ProfileModify.class);
+        startActivity(i);
     }
 
 
