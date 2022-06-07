@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.familiesshare">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -21,22 +20,41 @@
             android:exported="false"
             android:parentActivityName=".activities.DrawerMenu"/>
         <activity
+            android:name=".activities.GroupMembers"
+            android:parentActivityName=".activities.DrawerMenu"
+            android:label="@string/title_activity_members"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Group"
+            android:exported="false"
+            android:label="@string/title_activity_group"
+            android:parentActivityName=".activities.DrawerMenu" />
+        <activity
+            android:name=".activities.ProfileModify"
+            android:exported="false"
+            android:parentActivityName=".activities.AccountActivity" />
+        <activity
+            android:name=".activities.Project"
+            android:exported="false"
+            android:label="Il progetto"
+            android:parentActivityName=".activities.DrawerMenu" />
+        <activity
             android:name=".activities.PopupNotifiche"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"
-            android:parentActivityName=".activities.DrawerMenu"/>
+            android:parentActivityName=".activities.DrawerMenu"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
             android:name=".activities.GuidaAvviamento"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"
-            android:parentActivityName=".activities.DrawerMenu"/>
+            android:parentActivityName=".activities.DrawerMenu"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
             android:name=".activities.Calendar"
             android:exported="false" />
         <activity
             android:name=".activities.Faq"
             android:exported="false"
-            android:parentActivityName=".activities.DrawerMenu"/>
+            android:parentActivityName=".activities.DrawerMenu" />
         <activity
             android:name=".activities.Template"
             android:exported="false" />
@@ -71,6 +89,11 @@
         <activity
             android:name=".activities.MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".activities.NewActivity"
+            android:exported="false"
+            android:label="Nuova Attività"
+            android:parentActivityName=".activities.Group" />
         <activity
             android:name=".activities.DrawerMenu"
             android:exported="true"

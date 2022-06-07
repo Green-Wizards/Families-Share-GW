@@ -12,13 +12,13 @@ import com.example.familiesshare.R;
 import java.util.HashMap;
 import java.util.List;
 
-public class FaqMainAdapter extends BaseExpandableListAdapter {
+public class newGroupMainAdapter extends BaseExpandableListAdapter {
 
     Context context;
     List<String> listGroup;
     HashMap<String, List<String>> listItem;
 
-    public FaqMainAdapter(Context context, List<String> listGroup, HashMap<String, List<String>> listItem){
+    public newGroupMainAdapter(Context context,List<String> listGroup,HashMap<String, List<String>> listItem){
         this.context = context;
         this.listGroup = listGroup;
         this.listItem = listItem;
@@ -63,23 +63,26 @@ public class FaqMainAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int i, boolean b, View view, ViewGroup viewGroup) {
         String group = (String) getGroup(i);
         if(view == null){
-            LayoutInflater layoutInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = layoutInflater.inflate(R.layout.faq_list_group, null);
+            LayoutInflater layoutInflater = (LayoutInflater) this.context
+                    .getSystemService((Context.LAYOUT_INFLATER_SERVICE));
+            view = layoutInflater.inflate(R.layout.creation_list_group,null);
         }
 
-        TextView textView = view.findViewById(R.id.list_parent);
+        TextView textView = view.findViewById((R.id.List_parent));
         textView.setText(group);
         return view;
     }
 
     @Override
     public View getChildView(int i, int i1, boolean b, View view, ViewGroup viewGroup) {
-        String child = (String) getChild(i, i1);
+        String child = (String) getChild(i,i1);
         if(view == null){
-            LayoutInflater layoutInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = layoutInflater.inflate(R.layout.faq_list_item, null);
+            LayoutInflater layoutInflater = (LayoutInflater) this.context
+                    .getSystemService((Context.LAYOUT_INFLATER_SERVICE));
+            view = layoutInflater.inflate(R.layout.creation_list_item,null);
         }
-        TextView textView = view.findViewById(R.id.list_child);
+
+        TextView textView = view.findViewById((R.id.List_child));
         textView.setText(child);
         return view;
     }

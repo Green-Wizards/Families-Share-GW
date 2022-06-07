@@ -3,24 +3,56 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_add.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_calendar.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_campanella.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_exit.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_faqs.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_home_page.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_invite_friends.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_notifiche_inviti.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_profile.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_search_group.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_votaci.xml" value="0.3455" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/drawable/ic_x.xml" value="0.3455" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_account.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_account_modify.xml" value="0.3625" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_add_user.xml" value="0.5" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_calendar.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_faq.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_group.xml" value="0.3625" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_group_members.xml" value="0.3625" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_main2.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_nav_drawermenu.xml" value="0.33" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_new.xml" value="0.3484375" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_new_group_creation.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_new_group_creation2.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_new_group_creation3.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_new_group_creation4.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_new_group_creation5.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_profile_modify.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_project.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_sign_up.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/activity_utenti_carico.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/creation_list_group.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/creation_list_item.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/dropdown_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/faq_list_group.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/faq_list_item.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/fragment_blank.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/fragment_guida_avviamento.xml" value="0.3625" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/layout/nav_header.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3625" />
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/menu/drawer_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/menu/group_menu.xml" value="0.3625" />
         <entry key="app/src/main/res/drawable/ic_add.xml" value="0.25052083333333336" />
         <entry key="app/src/main/res/drawable/ic_campanella.xml" value="0.176" />
         <entry key="app/src/main/res/drawable/ic_notifiche_inviti.xml" value="0.1" />

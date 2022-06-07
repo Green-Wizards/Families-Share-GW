@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Families Share</string>
     <string name="email">Email</string>
     <string name="telefono">Telefono</string>
@@ -220,11 +220,11 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="imposta_la_visibilit_del_gruppo">Imposta la visibilità del gruppo</string>
-    <string name="fornisci_nome_e_definizione">Fornisci nome e definizione</string>
-    <string name="fornire_l_area">Fornire l\'area</string>
-    <string name="fornire_le_informazioni_di_contatto">Fornire le informazioni di contatto</string>
-    <string name="invita_persone">Invita persone</string>
+    <string name="crea2">Imposta la visibilità del gruppo</string>
+    <string name="crea1">Fornisci nome e descrizione</string>
+    <string name="crea3">Fornire l\'area</string>
+    <string name="crea4">Fornire le informazioni di contatto</string>
+    <string name="crea5">Invita persone</string>
     <string name="aggiungi_membri">Aggiungi membri</string>
     <string name="grado_di_parentela">Grado di Parentela</string>
     <string name="genere">Genere</string>
@@ -241,7 +241,6 @@
     <string name="guida_all_avviamento">Guida all\'avviamento</string>
     <string name="faqs">FAQs</string>
     <string name="string_faqs">FAQs</string>
-    <string name="il_progetto">Il progetto</string>
     <string name="esci">Esci</string>
     <string name="calendario_del_gruppo">Calendario del gruppo</string>
     <string name="set_the_date">Set the date</string>
@@ -271,4 +270,66 @@
         <item>item1</item>
         <item>item2</item>
     </string-array>
+    <string name="si_prega_di_compilare_le_informazioni_di_contatto">Si prega di compilare le informazioni di contatto</string>
+    <string name="scopri_di_pi_sul_sito">Scopri di più sul sito</string>
+    <string name="il_progetto">Il progetto</string>
+    <string name="p1">Finanziato nell\'ambito del programma "Information and Communication Technologies" di Horizon 2020, bando "sviluppo di piattaforme di partecipazione collettiva per la sostenibilità e l\'innovazione sociale", il progetto Families_Share sta sviluppando una piattaforma volta a favorire la diffusione di reti sociali e la sensibilizzazione nell\'ambito della cura all\'infanzia e dell\'equilibrio vita-lavoro. La piattaforma sfrutta le reti di vicinato e consente ai cittadini di riunirsi per condividere compiti, tempo e competenze rilevanti per l\'assistenza all\'infanzia e l\'educazione nel dopo scuola / tempo libero, laddove i servizi a ciò dedicati, nell\'attuale periodo di stagnazione e austerità, sono diventati inacessibili per le famiglie.</string>
+    <string name="p2">In Europa, nell\'ultimo decennio, trovare un equilibrio tra lavoro e vita famigliare/privata è diventato sempre più una sfida per le famiglie. La crisi economica ha impattato non solo sul mercato del lavoro, ma anche sul welfare. Come conseguenza, i tassi di disoccupazione sono aumentati (soprattutto nei settori che impiegano maggiormente persone di sesso maschile), mentre molte lavoratrici ora sono impiegate part-time. Lavori stabili e a lungo termine non sono più la regola, mentre continuano ad aumentare i contratti precari, con sempre più lavoratori/lavoratrici che seguono percorsi di riqualificazione e affrontano periodi di disoccupazione. Dall\'altro lato, una forza lavoro a tempo indeterminato sempre più ristretta è soggetta a maggiori carichi di lavoro e ad orari di lavoro più lunghi, rendendo più difficile il rapporto tra lavoro e vita quotidiana, nonché insostenibile il modello attuale.</string>
+    <string name="p3">Il progetto Families_Share offre una soluzione dal basso, sotto forma di una piattaforma online (opern source ed ad accesso aperto e gratuito) che supporti le famiglie nella condivisione del tempo e delle attività legate alla cura dei bambini, alla genitorialità al doposcuola e tempo libero e alle attività domestiche, con una particolare attenzione all\'inclusione delle famiglie a basso reddito. Il progetto aspira anche a coinvolgere gli anziani nelle attività di cura dei bambini, offrendo loro supporto nelle attività giornaliere e rendendoli partecipi agli eventi organizzati dalle famiglie. Per aggiungere tale obiettivo, il progetto parte dal concetto di "banca del tempo" capitalizzando le esperienze sull\'innovazione digitale e cura all\'infanzia dei partner. Il progetto sfrutta anche il potennziale delle reti delle tecnologie ICT, al fine di aumentare l\'innovazione partecipata incoraggiando la diffusione di quartieri auto-organizzati.</string>
+    <string name="p4">La presente Informativa sulla privacy definisce la policy di Families_Share relativamente alle tue informazioni, comprese le informazioni che identificano o potrebbero identificarti personalmente (conosciute come informazioni di identificazione personale negli Stati Uniti o dati personali nell\'Unione europea, che chiameremo Dati Personali) e altre informazioni raccolta dai visitatori e dagli utenti dei Servizi. Si prega di leggere attentamente questinformativa sulla privacy in modo da comprendere come tratteremo i tuoi dati. Utilizzando uno qualsiasi dei nostri Servizi, confermi di aver letto, compreso e accettato la presente informativa sulla privacy. Se non accetti la presente policy, sei pregato di non utilizzare i nostri Servizi. In caso di domande, ti preghiamo di contattarci via email acontact@families-share.eu</string>
+    <string name="off"><![CDATA[<]]></string>
+    <string name="on"><![CDATA[>]]></string>
+    <string name="la_sfida">La sfida</string>
+    <string name="soluzione">La soluzione proposta da</string>
+    <string name="informativa_privacy">Informativa privacy</string>
+    <string name="version">App Version: 20201006</string>
+    <string name="background">background</string>
+    <string name="numerot">Numero di telefono</string>
+    <string-array name="type">
+        <item>Non specificato</item>
+        <item>Italia</item>
+    </string-array>
+    <string name="city">Città</string>
+    <string name="bell">Bell</string>
+    <string name="modifica">Modifica</string>
+    <string name="via">Via/Piazza</string>
+    <string name="numero">Numero civico</string>
+    <string name="descrizione1">Fornire una descrizione facoltativa</string>
+    <string name="regole">Quali regole si applicano a un gruppo?</string>
+    <string name="turno">Cosa succede se non riesco a rispettare il mio turno?</string>
+    <string name="esperienza">Cosa succede se non ho esperienza nel gestire gruppi di bambini?</string>
+    <string name="sicurezza">Quali misure devo adottare per svolgere le attività con i bambini in tutta sicurezza?</string>
+    <string name="creare_gruppo">Come posso creare un nuovo gruppo?</string>
+    <string name="organizzare_attività">Che attività si possono organizzare?</string>
+    <string name="ruoli_gruppo">Quali sono i ruoli dell\'amministratore del gruppo?</string>
+    <string name="emergenze_perso">EMERGENZE: Cosa fare se un/a bambino/a si è perso/a?</string>
+    <string name="emergenze_ferisce">EMERGENZE: Cosa fare se un/a bambino/a si ferisce?</string>
+    <string name="emergenze_chiusura">EMERGENZE: Cosa fare se sei rimasto chiuso fuori dal luogo dell\'attività?</string>
+    <string name="Multi1">Ogni gruppo è libero di decidere come organizzarsi nella gestione dei turni. In generale, all\'interno di un gruppo il tempo messo a disposizione da ciascun genitore dovrebbe essere il più possibile equilibrato, in modo da assicurare un impegno in termini di tempo analogo fra i membri del gruppo. Regole diverse o ulteriori devono essere discusse e concordate offline tra i membri del gruppo.</string>
+    <string name="Multi2">Nel caso in cui non riuscissi a rispettare il tuo turno, la prima cosa da fare è contattare tempestivamente l\'amministratore (o gli amministratori) del gruppo per cercare insieme una soluzione. La soluzione preferibile è individuare un altro genitore del gruppo che possa sostituirti. Nel caso in cui ciò non fosse possibile, è possibile ricorrere a figure professionali esterne e dichiararlo all\'interno del tuo orario di attività, modificando la disponibilità nel turno con "user esterno". Se anchè ciò non fosse possibile, si dovrà procedere con la cancellazione del proprio turno e, quindi, dell\'attività. Quest\'ultima soluzione, tuttavia, dovrebbe essere adottata solo nei casi in cui non vi siano alternative di altro tipo, al fine di non creare disagio alle altre famiglie. Si invitano i gruppi a decidere già al momento della costituzione del gruppo come agire in queste situazioni (decidendo, in particolare se ricorrere ad un servizio di baby-sitting o altre figure professionali esterne al gruppo).</string>
+    <string name="Multi3">Se hai dei dubbi sutte tue capacità nel gestire un gruppo di bambini, l\'esperienza con gli altri genitori che hanno provato il modello Families Share ci insegna che la preoccupazione è lecota ma non reale, in quanto nella pratica è tutto più semplice di quello che sembra! Ascolta le testimonianze dei genitori che hanno partecipato a precedenti esperienze Families Share nel nostro canale YouTube Families - Share EU.</string>
+    <string name="Multi4">Per un\'ottimale gestione del gruppo di bambini e per questioni di sicurezza raccomandiamo di non superare il rapporto genitore-bambini 1:6. Verifica i bisogni speciali (allergie, intolleranze e altri bisogni) dei bambini che partecipano alle attività esportando le informazioni delle attività. In caso di emergenza contatta il pronto soccorso e avvisa l\'amministratore del gruppo e i genitori del bambino. Trovi i relativi contatti nella sezione "membri" dell\'app. Tieni a portata di mano i numeri di emergenza:\nPronto soccorso aid 118\nPolizia 113\nVigili del fuoco 115\nCarabinieri 112\nCommunity management, bologna@families-share.eu</string>
+    <string name="Multi5">Il primo passo per entrare nel mondo Families Share è quello di creare un gruppo di genitori. Puoi coinvolgere la tua rete di genitori e creare un nuovo gruppo con loro, selezionando l\'opzione \'crea gruppo\' e invitando i tuoi amici a farne parte, oppure cercare un gruppo già esistente nella tua zona (attraverso l\'opzione \'cerca gruppo\') e chiedere di entrare a farne parte, come singolo o come gruppo di genitori, contattando l\'amministratore.</string>
+    <string name="Multi6">Attraberso l\'app Families_Share si possono organizzare attività condivise con i bambini di qualsiasi tipo: giornate o intere settimane ludico-educative durante le vacanze scolastiche, attività di accompagnamento e/o ritiro dei bambini da/a scuola, attività extra-scolastiche o di dopo-scuola. Attraverso l\'app i genitori strutturano le attività individuando i vari "turni" necessari. Ciascun genitore, successivamente, aggiunge se stesso ed i propri figli alle attività desiderata.</string>
+    <string name="Multi7">L\'amministratore di un gruppo scolge un ruolo centrale nella piattaforma Families Share. Innanzitutto è la persona che crea il gruppo ed è il referente che può essere contattato da utenti esterni al gruppo per avere informazioni sullo stesso. In secondo luogo, l\'amministratore può invitare altre persone ad unirsi al gruppo e può modificare le attività e gli orari delle stesse; può esportare l\'attività e riceverne i dettagli, ad esportare i documenti e analitiche finali a conclusione dell\'attività. L\'amministratore imposta le caratteristiche del gruppo (visibile/invisibile) ed ha il controllo sull\'attività di pianificazione avanzata. Infine, l\'amministratore può decidere quali altri membri rendere amministratori. Non c\'è un numero massimo di amministratori all\'interno del gruppo, ogni membro può essere impostato come tale. Consigliamo di avere almeno due persone con il ruolo di amministratore all\'interno di un gruppo.</string>
+    <string name="Multi8">La prima cosa da fare in questo caso è avvisare i genitori, se non presenti all\'attività. In secondo luogo, è opportuno guardare nelle immediate vicinanze. I bambini più grandi potrebbero raggiungere le case degli amici, quindi, si consiglia di contattare amici, familiari o conoscenti vicini al/la bambino/a. Nel caso in cui il/la bambina/a non venga ritrovato/a, chiamare la polizia, la quale inserirà immediatamente il nome del/la bambino/a e le sue informazioni nel sistema nazionale di ricerca. Pertanto, è consigliabile essere pronti a fornire più informazioni possibili, come ad esempio:\nil nome completo del/la Bambino/a\nil suo peso\nl\'altezza\nl\'età e la data di nascita\ni vestiti che indossava l\'ultima volta che è stato visto\ncaratteristiche identificative come occhiali o nei/voglie, eventuali problemi di salute\ni nomi e i contatti dei suoi amici o familiari\ni luoghi di ritrovo frequentati\nqualsiasi altro dettaglio potenzialmente rilevante riguardo l\'ora e il luogo in cui si è perso\nI genitori del/la bambino/a e i genitori volontari nell\'attività devono tenere libere le linee telefoniche.</string>
+    <string name="Multi9">Se un bambino/a si ferisce, ci sono diverse possibili azioni da intraprendere. Prima di tutto, bisogna capire quanto seria è la situazione.\n 1. Chiamare l\'ambilanza se il/la bambino/a:\n   - smette di respirare\n   - fatica a respirare (per esempio, si può notare il respiro affannoso, ansimante, o vedere i muscoli della gabbia toracica restringersi quando respira)\n   - è privo/a di conoscenza o sembra essere inconsapevole di cosa stia succedendo\n   - ha una ferita che non smette di sanguinare o un taglio profondo\n   - non si sveglia\n   - ha una crisi per la prima volta, anche se sembra riprendersi. Se questo è il caso, si consiglia, anzitutto, di chiamare l\'ambulanza e in seguito chiamare i genitori del/la bambino/a.\n 2. Portare il/la bambino/a presso il servizio di primo soccorso se:\n   - ha la febbre ed è ancora debole, nonostante la somministrazione di paracetamolo o ibuprofene\n   - ha un forte dolore addominale\n   - ha un infortunio al braccio o alla gamba e non può utilizzare l\'arto\n   - ha ingoiato veleno o pastiglie\n 3. Utilizzare il kit di primo soccorso in caso di ferite lievi come:\n   - tagli\n   - graffi\n   - escoriazioni\n   - scottature</string>
+    <string name="Multi10">Se hai il telefono con te, contatta gli altri genitori volontari (se sono all\'interno) oppure il responsabile dello spazio se il suo numero è a disposizione. Nel caso in cui tu non abbia questi numeri, contatta l\'amministratore del gruppo o il community manager.</string>
+    <string name="title_activity_group">Pagina principale del gruppo</string>
+    <string name="info2">Info</string>
+    <string name="calendario">Calendario</string>
+    <string name="attivita">Attività</string>
+    <string name="membri">Membri</string>
+    <string name="chat">Chat</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="text_group">Attività del gruppo</string>
+    <string name="informazioni">Informazioni</string>
+    <string name="luogo">Luogo (facoltativo)</string>
+    <string name="data">Data</string>
+    <string name="timeslots">Timeslots</string>
+    <string name="imposta">Imposta il periodo di tempo</string>
+    <string name='element_text'> element_text</string>
+    <string name="title_activity_members">Membri del gruppo</string>
 </resources>

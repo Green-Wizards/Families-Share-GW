@@ -2,9 +2,9 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     tools:context=".activities.DrawerMenu"
     tools:openDrawer="start">
@@ -12,8 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
 
         <androidx.appcompat.widget.Toolbar
@@ -45,13 +44,15 @@
             android:layout_height="wrap_content"
             android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
+            android:contentDescription="@string/bell"
             android:minWidth="48dp"
             android:minHeight="48dp"
             android:onClick="apriNotifiche"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/toolbar"
-            app:srcCompat="@drawable/ic_campanella" />
+            app:srcCompat="@drawable/ic_campanella"
+            tools:ignore="ImageContrastCheck" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/fragment_container"
@@ -66,32 +67,24 @@
                 android:id="@+id/button14"
                 android:layout_width="168dp"
                 android:layout_height="72dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:text="@string/unisciti_a_un_gruppo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textView38"
+                app:layout_constraintEnd_toStartOf="@+id/button15"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/welcometext" />
 
             <Button
                 android:id="@+id/button15"
                 android:layout_width="168dp"
                 android:layout_height="72dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:onClick="create"
                 android:text="@string/crea_un_nuovo_gruppo"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView38"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView38"
-                android:layout_width="1dp"
-                android:layout_height="1dp"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/button14"
+                app:layout_constraintTop_toBottomOf="@+id/welcometext" />
 
             <TextView
                 android:id="@+id/welcometext"
@@ -101,6 +94,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button14"
+                app:layout_constraintVertical_bias="0.619">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </ScrollView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -113,8 +122,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/drawer_menu" />
-
+        app:menu="@menu/drawer_menu"
+        tools:visibility="visible" />
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

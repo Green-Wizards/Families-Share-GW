@@ -1,5 +1,6 @@
 package com.example.familiesshare.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,17 +9,36 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
+import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.Toast;
 
 import com.example.familiesshare.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
+
+import classes.Group;
 
 public class NewGroupCreation extends AppCompatActivity{
 
-    View v1 = findViewById(R.id.view1);
-    View v2 = findViewById(R.id.view2);
-    View v3 = findViewById(R.id.view3);
-    View v4 = findViewById(R.id.view4);
-    View v5 = findViewById(R.id.view5);
+    private DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
+    private EditText groupName, groupDescription, groupArea, groupContactInfo;
+    private Switch groupVisibility;
+    private Spinner groupContactType;
+
 
 
     @Override
@@ -30,7 +50,26 @@ public class NewGroupCreation extends AppCompatActivity{
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+
+        findViewById(R.id.view2).setVisibility(View.GONE);
+        findViewById(R.id.view3).setVisibility(View.GONE);
+        findViewById(R.id.view4).setVisibility(View.GONE);
+        findViewById(R.id.view5).setVisibility(View.GONE);
+
+        //acquisizione istanza del db firebase
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+
+        groupName = (EditText) findViewById(R.id.et_group_name);
+        groupDescription = (EditText) findViewById(R.id.et_group_description);
+        groupArea = (EditText) findViewById(R.id.et_group_area);
+        groupContactInfo = (EditText) findViewById(R.id.et_group_contactinfo);
+        groupVisibility = (Switch) findViewById(R.id.switch_group_visibility);
+        groupContactType = (Spinner) findViewById(R.id.spinner_group_contactinfo);
+
+
     }
+
 
     public void menu(View v){
         Intent i = new Intent(this, DrawerMenu.class);
@@ -38,46 +77,70 @@ public class NewGroupCreation extends AppCompatActivity{
     }
 
     public void go2(View v){
-        v1.setVisibility(View.GONE);
-        v2.setVisibility(View.VISIBLE);
+        findViewById(R.id.view1).setVisibility(View.GONE);
+        findViewById(R.id.view2).setVisibility(View.VISIBLE);
     }
 
     public void go3(View v){
-        v2.setVisibility(View.GONE);
-        v3.setVisibility(View.VISIBLE);
+        findViewById(R.id.view2).setVisibility(View.GONE);
+        findViewById(R.id.view3).setVisibility(View.VISIBLE);
     }
 
     public void go4(View v){
-        v3.setVisibility(View.GONE);
-        v4.setVisibility(View.VISIBLE);
+        findViewById(R.id.view3).setVisibility(View.GONE);
+        findViewById(R.id.view4).setVisibility(View.VISIBLE);
     }
 
     public void go5(View v){
-        v4.setVisibility(View.GONE);
-        v5.setVisibility(View.VISIBLE);
+        findViewById(R.id.view4).setVisibility(View.GONE);
+        findViewById(R.id.view5).setVisibility(View.VISIBLE);
     }
 
     public void back1(View v){
-        v2.setVisibility(View.GONE);
-        v1.setVisibility(View.VISIBLE);
+        findViewById(R.id.view2).setVisibility(View.GONE);
+        findViewById(R.id.view1).setVisibility(View.VISIBLE);
     }
 
     public void back2(View v){
-        v2.setVisibility(View.GONE);
-        v1.setVisibility(View.VISIBLE);
+        findViewById(R.id.view3).setVisibility(View.GONE);
+        findViewById(R.id.view2).setVisibility(View.VISIBLE);
     }
     public void back3(View v){
-        v3.setVisibility(View.GONE);
-        v4.setVisibility(View.VISIBLE);
+        findViewById(R.id.view4).setVisibility(View.GONE);
+        findViewById(R.id.view3).setVisibility(View.VISIBLE);
     }
     public void back4(View v){
-        v5.setVisibility(View.GONE);
-        v4.setVisibility(View.VISIBLE);
+        findViewById(R.id.view5).setVisibility(View.GONE);
+        findViewById(R.id.view4).setVisibility(View.VISIBLE);
     }
 
     public void end(View v){
-        Intent i = new Intent(this, DrawerMenu.class);
-        startActivity(i);
+
+        String nomeGruppo = groupName.getText().toString().trim();
+        String descrizioneGruppo = groupDescription.getText().toString().trim();
+        String areaGruppo = groupArea.getText().toString().trim();
+        String infoContattoGruppo = groupContactInfo.getText().toString().trim();
+        Boolean visibilitaGruppo = groupVisibility.isChecked();
+        String tipoContattoGruppo = groupContactType.getSelectedItem().toString();
+
+        Group nuovoGruppo = new Group(nomeGruppo, descrizioneGruppo, areaGruppo,
+                /*settings_id*/ null, mAuth.getCurrentUser().getUid(), tipoContattoGruppo, infoContattoGruppo);
+        String uniqueID = UUID.randomUUID().toString();
+        FirebaseDatabase.getInstance().getReference("Groups")
+                .child(uniqueID)
+                .setValue(nuovoGruppo).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(NewGroupCreation.this, "Creazione gruppo avvenuta con successo!", Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(NewGroupCreation.this, DrawerMenu.class);
+                    startActivity(i);
+                } else {
+                    Toast.makeText(NewGroupCreation.this, "Creazioine del gruppo fallita!", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
     }
 
 }
