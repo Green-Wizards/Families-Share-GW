@@ -23,12 +23,12 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="88dp"
         android:contentDescription="@string/mail"
         android:foregroundTint="@color/black"
         android:foregroundTintMode="screen"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12"
         app:srcCompat="@drawable/black_mail_icon_png_8" />
 
     <ImageView
@@ -36,10 +36,10 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="88dp"
         android:contentDescription="@string/location"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:srcCompat="@drawable/images" />
 
     <ImageView

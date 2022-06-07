@@ -11,8 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FamiliesShare">
         <activity
-            android:name=".ProfileModify"
-            android:exported="false" />
+            android:name=".activities.Group"
+            android:exported="false"
+            android:label="@string/title_activity_group"
+            android:parentActivityName=".activities.DrawerMenu" />
+        <activity
+            android:name=".activities.ProfileModify"
+            android:exported="false"
+            android:parentActivityName=".activities.AccountActivity" />
         <activity
             android:name=".activities.Project"
             android:exported="false"
@@ -69,6 +75,11 @@
         <activity
             android:name=".activities.MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".activities.NewActivity"
+            android:exported="false"
+            android:label="Nuova Attività"
+            android:parentActivityName=".activities.Group" />
         <activity
             android:name=".activities.DrawerMenu"
             android:exported="true"

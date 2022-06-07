@@ -76,11 +76,8 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btn_edit_user:
-                edit_user(view);
-                break;
-        }
+        Intent i = new Intent(this, ProfileModify.class);
+        startActivity(i);
     }
 
     private void edit_user(View view) {

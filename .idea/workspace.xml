@@ -12,7 +12,36 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5da9c359-50bc-4432-8a71-193142412c32" name="Default Changelist" comment="Update" />
+    <list default="true" id="5da9c359-50bc-4432-8a71-193142412c32" name="Default Changelist" comment="Update">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/Group.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/NewActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/ui/NewActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/ui/dashboard/DashboardFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/ui/dashboard/DashboardViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/ui/notifications/NotificationsFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/ui/notifications/NotificationsViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_favorite_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_chat.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_home_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_notifications_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_group.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/group_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/AccountActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/AccountActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/ProfileModify.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/ProfileModify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_account.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_nav_drawermenu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_nav_drawermenu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_modify.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_modify.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,10 +84,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
-        <option value="Class" />
         <option value="layoutResourceFile" />
         <option value="layoutResourceFile_vertical" />
+        <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -91,6 +120,24 @@
       <recent name="com.example.familiesshare.activities" />
       <recent name="com.example.familiesshare" />
     </key>
+    <key name="android.template.-1877814755">
+      <recent name="com.example.familiesshare" />
+    </key>
+    <key name="android.template.2018010145">
+      <recent name="com.example.familiesshare.activities" />
+    </key>
+    <key name="android.template.-225957439">
+      <recent name="com.example.familiesshare.activities" />
+    </key>
+    <key name="android.template.-1942078063">
+      <recent name="com.example.familiesshare" />
+    </key>
+    <key name="android.template.-1284569977">
+      <recent name="com.example.familiesshare.activities" />
+    </key>
+    <key name="android.template.-1365604033">
+      <recent name="com.example.familiesshare.activities" />
+    </key>
     <key name="android.template.-1504722743">
       <recent name="com.example.familiesshare.activities" />
     </key>
@@ -99,13 +146,11 @@
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
     </key>
-    <key name="android.template.-1877814755">
-      <recent name="com.example.familiesshare" />
-    </key>
     <key name="android.template.489797206">
       <recent name="com.example.familiesshare.activities" />
     </key>
-    <key name="android.template.2018010145">
+    <key name="android.template.1743647620">
+      <recent name="com.example.familiesshare.activities.ui" />
       <recent name="com.example.familiesshare.activities" />
     </key>
     <key name="android.template.926394262">
@@ -113,15 +158,6 @@
     </key>
     <key name="android.template.-1411269533">
       <recent name="com.example.familiesshare" />
-    </key>
-    <key name="android.template.-225957439">
-      <recent name="com.example.familiesshare.activities" />
-    </key>
-    <key name="android.template.-1942078063">
-      <recent name="com.example.familiesshare" />
-    </key>
-    <key name="android.template.-1365604033">
-      <recent name="com.example.familiesshare.activities" />
     </key>
     <key name="android.template.1973629561">
       <recent name="com.example.familiesshare.activities" />

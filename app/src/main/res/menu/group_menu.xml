@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ic_info"
+        android:icon="@drawable/ic_info"
+        android:title="@string/info2" />
+
+    <item
+        android:id="@+id/ic_calendar"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/calendario" />
+
+    <item
+        android:id="@+id/ic_baseline_favorite_24"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="@string/attivita" />
+
+    <item
+        android:id="@+id/ic_notifiche_inviti"
+        android:icon="@drawable/ic_notifiche_inviti"
+        android:title="@string/membri" />
+
+    <item
+        android:id="@+id/ic_chat"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/chat" />
+
+
+</menu>

@@ -269,6 +269,8 @@
         <item>Italia</item>
     </string-array>
     <string name="city">Città</string>
+    <string name="bell">Bell</string>
+    <string name="modifica">Modifica</string>
     <string name="via">Via/Piazza</string>
     <string name="numero">Numero civico</string>
     <string name="descrizione1">Fornire una descrizione facoltativa</string>
@@ -292,4 +294,20 @@
     <string name="Multi8">La prima cosa da fare in questo caso è avvisare i genitori, se non presenti all\'attività. In secondo luogo, è opportuno guardare nelle immediate vicinanze. I bambini più grandi potrebbero raggiungere le case degli amici, quindi, si consiglia di contattare amici, familiari o conoscenti vicini al/la bambino/a. Nel caso in cui il/la bambina/a non venga ritrovato/a, chiamare la polizia, la quale inserirà immediatamente il nome del/la bambino/a e le sue informazioni nel sistema nazionale di ricerca. Pertanto, è consigliabile essere pronti a fornire più informazioni possibili, come ad esempio:\nil nome completo del/la Bambino/a\nil suo peso\nl\'altezza\nl\'età e la data di nascita\ni vestiti che indossava l\'ultima volta che è stato visto\ncaratteristiche identificative come occhiali o nei/voglie, eventuali problemi di salute\ni nomi e i contatti dei suoi amici o familiari\ni luoghi di ritrovo frequentati\nqualsiasi altro dettaglio potenzialmente rilevante riguardo l\'ora e il luogo in cui si è perso\nI genitori del/la bambino/a e i genitori volontari nell\'attività devono tenere libere le linee telefoniche.</string>
     <string name="Multi9">Se un bambino/a si ferisce, ci sono diverse possibili azioni da intraprendere. Prima di tutto, bisogna capire quanto seria è la situazione.\n 1. Chiamare l\'ambilanza se il/la bambino/a:\n   - smette di respirare\n   - fatica a respirare (per esempio, si può notare il respiro affannoso, ansimante, o vedere i muscoli della gabbia toracica restringersi quando respira)\n   - è privo/a di conoscenza o sembra essere inconsapevole di cosa stia succedendo\n   - ha una ferita che non smette di sanguinare o un taglio profondo\n   - non si sveglia\n   - ha una crisi per la prima volta, anche se sembra riprendersi. Se questo è il caso, si consiglia, anzitutto, di chiamare l\'ambulanza e in seguito chiamare i genitori del/la bambino/a.\n 2. Portare il/la bambino/a presso il servizio di primo soccorso se:\n   - ha la febbre ed è ancora debole, nonostante la somministrazione di paracetamolo o ibuprofene\n   - ha un forte dolore addominale\n   - ha un infortunio al braccio o alla gamba e non può utilizzare l\'arto\n   - ha ingoiato veleno o pastiglie\n 3. Utilizzare il kit di primo soccorso in caso di ferite lievi come:\n   - tagli\n   - graffi\n   - escoriazioni\n   - scottature</string>
     <string name="Multi10">Se hai il telefono con te, contatta gli altri genitori volontari (se sono all\'interno) oppure il responsabile dello spazio se il suo numero è a disposizione. Nel caso in cui tu non abbia questi numeri, contatta l\'amministratore del gruppo o il community manager.</string>
+    <string name="title_activity_group">Pagina principale del gruppo</string>
+    <string name="info2">Info</string>
+    <string name="calendario">Calendario</string>
+    <string name="attivita">Attività</string>
+    <string name="membri">Membri</string>
+    <string name="chat">Chat</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="text_group">Attività del gruppo</string>
+    <string name="informazioni">Informazioni</string>
+    <string name="luogo">Luogo (facoltativo)</string>
+    <string name="data">Data</string>
+    <string name="timeslots">Timeslots</string>
+    <string name="imposta">Imposta il periodo di tempo</string>
+
 </resources>

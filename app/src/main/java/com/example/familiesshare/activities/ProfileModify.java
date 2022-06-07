@@ -36,5 +36,6 @@ public class ProfileModify extends AppCompatActivity {
 
         ImageView simpleImageView5=(ImageView) findViewById(R.id.imageView14);
         simpleImageView1.setBackgroundColor(Color.WHITE);
+
     }
 }

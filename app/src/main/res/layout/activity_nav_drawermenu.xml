@@ -42,13 +42,15 @@
             android:layout_height="wrap_content"
             android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
+            android:contentDescription="@string/bell"
             android:minWidth="48dp"
             android:minHeight="48dp"
             android:onClick="apriNotifiche"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/toolbar"
-            app:srcCompat="@drawable/ic_campanella" />
+            app:srcCompat="@drawable/ic_campanella"
+            tools:ignore="ImageContrastCheck" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/fragment_container"
