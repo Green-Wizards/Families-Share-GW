@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.familiesshare.R;
-import com.example.familiesshare.activities.Group;
-import com.example.familiesshare.activities.PopupNotifiche;
 
 public class NewActivity extends AppCompatActivity {
 
