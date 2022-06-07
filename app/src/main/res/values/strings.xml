@@ -309,5 +309,5 @@
     <string name="data">Data</string>
     <string name="timeslots">Timeslots</string>
     <string name="imposta">Imposta il periodo di tempo</string>
-
+    <string name='element_text'> element_text</string>
 </resources>
