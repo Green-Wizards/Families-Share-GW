@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -56,15 +57,17 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
         startActivity(intent);
         navigationView.setCheckedItem(R.id.nav_homepage);}*/
 
-        //IMPLEMENTO APERTURA NOTIFICA CRASHAA
 
 
     }
+
+
 
     public void apriNotifiche(View vi){
         Intent io = new Intent(this, PopupNotifiche.class);
         startActivity(io);
     }
+
 
     public void create(View v){
         Intent i = new Intent(this, NewGroupCreation.class);
@@ -84,13 +87,16 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 Intent profilo = new Intent(this, AccountActivity.class);
                 startActivity(profilo);
                 break;
-            //AGGIUNGERE CALENDARIO
             case R.id.group_create:
                 Intent creagruppo = new Intent(this, NewGroupCreation.class);
                 startActivity(creagruppo);
                 break;
             //CREA ATTIVITà IND
             //INVITA AMICI
+            case R.id.nav_invite_friends:
+                Intent invite = new Intent(this,InviteFriends.class);
+                startActivity(invite);
+                break;
             case R.id.nav_faqs:
                 Intent faq = new Intent(this, Faq.class);
                 startActivity(faq);

@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FamiliesShare">
         <activity
+            android:name=".activities.InviteFriends"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            android:parentActivityName=".activities.DrawerMenu"/>
+        <activity
+            android:name=".activities.InvitiSospeso"
+            android:exported="false"
+            android:parentActivityName=".activities.DrawerMenu"/>
+        <activity
             android:name=".activities.PopupNotifiche"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.Dialog"

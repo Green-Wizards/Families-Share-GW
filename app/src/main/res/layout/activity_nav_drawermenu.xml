@@ -29,9 +29,12 @@
 
 
         <include
+            android:id="@+id/notification_inviti"
             layout="@layout/notification_inviti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="apriNotifiche"
+            android:showAsAction="always"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
             app:layout_constraintEnd_toStartOf="@+id/bell"
             app:layout_constraintTop_toTopOf="@+id/toolbar" />

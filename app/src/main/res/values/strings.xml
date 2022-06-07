@@ -255,6 +255,7 @@
     <string name="Group3">Group 3</string>
     <string name="Group4">Group 4</string>
     <string name="Group5">Group 5</string>
+    <string name="send">SEND</string>
     <string-array name="group1">
         <item>item1</item>
     </string-array>
