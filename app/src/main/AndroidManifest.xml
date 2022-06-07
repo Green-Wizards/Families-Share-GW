@@ -11,6 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FamiliesShare">
         <activity
+            android:name=".activities.GroupMembers"
+            android:parentActivityName=".activities.DrawerMenu"
+            android:label="@string/title_activity_members"
+            android:exported="false" />
+        <activity
             android:name=".activities.Group"
             android:exported="false"
             android:label="@string/title_activity_group"
