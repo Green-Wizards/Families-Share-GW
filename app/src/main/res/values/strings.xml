@@ -46,6 +46,18 @@
         <item>Maschio</item>
         <item>Femmina</item>
     </string-array>
+    <string-array name="GradoParentela">
+        <item>Padre</item>
+        <item>Madre</item>
+        <item>Nonno</item>
+        <item>Nonna</item>
+        <item>Zio</item>
+        <item>Zia</item>
+        <item>Fratello</item>
+        <item>Sorella</item>
+        <item>Figlio</item>
+        <item>Figlia</item>
+    </string-array>
     <string-array name="dayes">
         <item>1</item>
         <item>2</item>
@@ -332,4 +344,6 @@
     <string name="imposta">Imposta il periodo di tempo</string>
     <string name='element_text'> element_text</string>
     <string name="title_activity_members">Membri del gruppo</string>
+    <string name="info_aggiuntive">Aggiungi informazioni </string>
+    <string name="termini_uso">Accetto i Termini d\'Uso e l\'informativa sulla Privacy per il trattamento e utilizzo dei miei dati. </string>
 </resources>

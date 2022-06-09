@@ -55,20 +55,30 @@
         <entry key="..\:/GitHub/Families-Share-GW/app/src/main/res/menu/group_menu.xml" value="0.3625" />
         <entry key="app/src/main/res/drawable/ic_add.xml" value="0.25052083333333336" />
         <entry key="app/src/main/res/drawable/ic_campanella.xml" value="0.176" />
+        <entry key="app/src/main/res/drawable/ic_invite_friends.xml" value="0.1985" />
         <entry key="app/src/main/res/drawable/ic_notifiche_inviti.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_ok.xml" value="0.1985" />
         <entry key="app/src/main/res/drawable/ic_profile.xml" value="0.25052083333333336" />
         <entry key="app/src/main/res/layout/activity_account.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/activity_add_user.xml" value="0.22026431718061673" />
+        <entry key="app/src/main/res/layout/activity_aggiungi_utentecarico.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_faq.xml" value="0.11398176291793313" />
+        <entry key="app/src/main/res/layout/activity_group_members.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_inviti_sospeso.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.234375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/activity_nav_drawermenu.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_new.xml" value="0.13451086956521738" />
         <entry key="app/src/main/res/layout/activity_new_group_creation.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_new_group_creation2.xml" value="0.234375" />
+        <entry key="app/src/main/res/layout/activity_profile_modify.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/layout/activity_project.xml" value="0.13451086956521738" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_template.xml" value="0.11398176291793313" />
         <entry key="app/src/main/res/layout/activity_utenti_carico.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/creation_list_group.xml" value="0.13451086956521738" />
+        <entry key="app/src/main/res/layout/creation_list_item.xml" value="0.13451086956521738" />
         <entry key="app/src/main/res/layout/fragment_giuda_avviamento.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_guida_avviamento.xml" value="0.18931159420289856" />
         <entry key="app/src/main/res/layout/fragment_guiva_avviamento.xml" value="0.18931159420289856" />
@@ -78,7 +88,9 @@
         <entry key="app/src/main/res/layout/popup_invite_friends.xml" value="0.335" />
         <entry key="app/src/main/res/layout/popup_notifiche.xml" value="0.1" />
         <entry key="app/src/main/res/layout/switch_item.xml" value="0.13451086956521738" />
+        <entry key="app/src/main/res/layout/text_row_item.xml" value="0.13451086956521738" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.234375" />
+        <entry key="app/src/main/res/menu/group_menu.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/menu/notifiche_popup.xml" value="0.234375" />
       </map>
     </option>

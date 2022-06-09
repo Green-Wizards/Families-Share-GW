@@ -6,149 +6,209 @@
     android:layout_height="match_parent"
     tools:context=".activities.addUser">
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="0dp"
-        android:layout_height="115dp"
-        android:contentDescription="@string/sfondo"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar8"
+        android:layout_width="412dp"
+        android:layout_height="160dp"
+        android:background="@color/teal_700"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="?attr/colorSecondaryVariant" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/et_given_name"
+        android:layout_width="115dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/nome"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView39"
+        app:layout_constraintEnd_toStartOf="@+id/et_family_name"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        tools:ignore="TextContrastCheck" />
-
-    <TextView
-        android:id="@+id/textView39"
-        android:layout_width="1dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar8" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/et_family_name"
+        android:layout_width="115dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
         android:ems="10"
         android:hint="@string/cognome"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView39"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar8" />
 
     <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="wrap_content"
-        android:layout_height="54dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/GIORNO"
+        android:layout_width="81dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="52dp"
+        android:entries="@array/dayes"
+        app:layout_constraintEnd_toStartOf="@+id/MESE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_given_name" />
+
+    <Spinner
+        android:id="@+id/MESE"
+        android:layout_width="94dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="34dp"
+        android:entries="@array/months"
+        app:layout_constraintEnd_toStartOf="@+id/ANNO"
+        app:layout_constraintStart_toEndOf="@+id/GIORNO"
+        app:layout_constraintTop_toBottomOf="@+id/et_given_name" />
+
+    <Spinner
+        android:id="@+id/ANNO"
+        android:layout_width="86dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="40dp"
         android:entries="@array/years"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/MESE"
+        app:layout_constraintTop_toBottomOf="@+id/et_family_name" />
 
     <Spinner
-        android:id="@+id/spinner3"
-        android:layout_width="wrap_content"
-        android:layout_height="54dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:entries="@array/dayes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
-        tools:ignore="DuplicateSpeakableTextCheck" />
-
-    <Spinner
-        android:id="@+id/spinner4"
-        android:layout_width="wrap_content"
-        android:layout_height="54dp"
-        android:layout_marginTop="16dp"
-        android:entries="@array/months"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
-
-    <TextView
-        android:id="@+id/textView44"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/giorno"
-        app:layout_constraintStart_toStartOf="@+id/spinner3"
-        app:layout_constraintTop_toTopOf="@+id/spinner3" />
-
-    <TextView
-        android:id="@+id/textView45"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mese"
-        app:layout_constraintStart_toStartOf="@+id/spinner4"
-        app:layout_constraintTop_toTopOf="@+id/spinner4" />
-
-    <TextView
-        android:id="@+id/textView46"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/anno"
-        app:layout_constraintStart_toStartOf="@+id/spinner2"
-        app:layout_constraintTop_toTopOf="@+id/spinner2" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="@string/grado_di_parentela"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner4"
-        tools:ignore="TextContrastCheck" />
-
-    <Spinner
-        android:id="@+id/spinner5"
+        android:id="@+id/GradoParentela"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:entries="@array/gender"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="8dp"
+        android:entries="@array/GradoParentela"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
+        app:layout_constraintTop_toBottomOf="@+id/GIORNO" />
+
+    <Spinner
+        android:id="@+id/spinner6"
+        android:layout_width="369dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="1dp"
+        android:entries="@array/gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GradoParentela" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName15"
+        android:layout_width="249dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="52dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/info_aggiuntive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner6" />
 
     <TextView
-        android:id="@+id/textView47"
+        android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/genere"
-        app:layout_constraintStart_toStartOf="@+id/spinner5"
-        app:layout_constraintTop_toTopOf="@+id/spinner5" />
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="224dp"
+        android:text="es. intolleranze alimentari"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName15" />
+
+    <Button
+        android:id="@+id/button27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="16dp"
+        android:text="aggiungi"
+        app:iconTint="#009688"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName15"
+        app:layout_constraintTop_toBottomOf="@+id/spinner6" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="287dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/termini_uso" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView51"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="269dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="88dp"
+        android:text="AGGIUNGI UTENTE A CARICO"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar8"
+        app:layout_constraintVertical_bias="0.241" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="47dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/textView38"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/toolbar8"
+        app:layout_constraintTop_toTopOf="@+id/toolbar8"
+        app:srcCompat="@drawable/ic_x"
+        tools:ignore="SpeakableTextPresentCheck"
+        app:tint="@color/white" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="68dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar8"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toEndOf="@+id/textView38"
+        app:layout_constraintTop_toTopOf="@+id/toolbar8"
+        app:srcCompat="@drawable/ic_ok"
+        tools:ignore="SpeakableTextPresentCheck"
+        app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

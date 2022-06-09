@@ -13,8 +13,8 @@
         <activity
             android:name=".activities.InviteFriends"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"
-            android:parentActivityName=".activities.DrawerMenu"/>
+            android:parentActivityName=".activities.DrawerMenu"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
             android:name=".activities.InvitiSospeso"
             android:exported="false"
@@ -60,7 +60,8 @@
             android:exported="false" />
         <activity
             android:name=".activities.addUser"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".activities.UtentiCarico"/>
         <activity
             android:name=".activities.UtentiCarico"
             android:exported="false"

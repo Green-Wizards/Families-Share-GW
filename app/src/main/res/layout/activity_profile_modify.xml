@@ -151,7 +151,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar8" />
 
     <Spinner
-        android:id="@+id/spinner6"
+        android:id="@+id/GradoParentela"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="96dp"
@@ -176,7 +176,7 @@
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView12"
-        app:layout_constraintTop_toBottomOf="@+id/spinner6" />
+        app:layout_constraintTop_toBottomOf="@+id/GradoParentela" />
 
     <EditText
         android:id="@+id/editTextTextPersonName8"

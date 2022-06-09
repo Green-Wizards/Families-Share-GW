@@ -12,28 +12,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5da9c359-50bc-4432-8a71-193142412c32" name="Default Changelist" comment="Implementato link della guida sul bottone OK" />
-    <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/InviteFriends.java" afterDir="false" />
-    <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/InvitiSospeso.java" afterDir="false" />
-    <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_inviti_sospeso.xml" afterDir="false" />
-    <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_invite_friends.xml" afterDir="false" />
-    <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-    <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-    <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/DrawerMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/DrawerMenu.java" afterDir="false" />
-    <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/PopupNotifiche.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/PopupNotifiche.java" afterDir="false" />
-    <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_nav_drawermenu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_nav_drawermenu.xml" afterDir="false" />
-    <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/notification_inviti.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/notification_inviti.xml" afterDir="false" />
-    <list default="true" id="5da9c359-50bc-4432-8a71-193142412c32" name="Default Changelist" comment="Update">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/GroupMembers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_add_white.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_group_members.xml" afterDir="false" />
+    <list default="true" id="5da9c359-50bc-4432-8a71-193142412c32" name="Default Changelist" comment="Implementato link della guida sul bottone OK">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_ok.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_group.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_group.xml" afterDir="false" />
-      &gt;&gt;&gt;&gt;&gt;&gt;&gt; 9c48bc33dde5ee47ece10e6797bc767a7c24a14a
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/UtentiCarico.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/familiesshare/activities/UtentiCarico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_user.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_modify.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_modify.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_utenti_carico.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_utenti_carico.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_invite_friends.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_invite_friends.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +29,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\alvis\.android\avd\Nexus_4_API_28_1.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/valentina/.android/avd/Pixel_3_API_28.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -78,11 +66,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="layoutResourceFile_vertical" />
+        <option value="layoutResourceFile" />
+        <option value="layoutResourceFile_vertical" />
         <option value="resourceFile" />
-        <option value="layoutResourceFile_vertical" />
         <option value="layoutResourceFile" />
-        <option value="layoutResourceFile" />
-        <option value="layoutResourceFile_vertical" />
+        <option value="valueResourceFile" />
         <option value="resourceFile" />
         <option value="Class" />
       </list>
@@ -90,6 +79,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedIndex" value="5" />
@@ -109,8 +106,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/menu" />
-    <property name="memory.settings.postsync.last.time.stamp" value="1651653038561" />
+    <property name="memory.settings.postsync.last.time.stamp" value="1654622255177" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -175,8 +173,6 @@
       <option name="MODE" value="default_activity" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />

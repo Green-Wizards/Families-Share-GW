@@ -73,10 +73,10 @@ public class UtentiCarico extends AppCompatActivity {
         startActivity(i);
     }
 
-    /*
+
     public void aggiungiUtenteCarico(View v){
         Intent i = new Intent(this, addUser.class);
         startActivity(i);
     }
-    */
+
 }
