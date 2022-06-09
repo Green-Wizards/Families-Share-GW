@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -31,6 +33,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
+import androidx.core.widget.NestedScrollView;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import java.util.ArrayList;
@@ -92,17 +95,24 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                     });
 
         }
-
-
-
     }
-
+    /*
+    private Intent groupIntent(){
+        Intent i = new Intent();
+        i.setClass(this, Group.class);
+        return i;
+    }
+    */
 
     private void ShowUserGroups(Map<String,Object> mappaGruppi) {
 
         ArrayList<String> gruppiUtente = new ArrayList<>();
         ConstraintLayout constr;
-        constr = (ConstraintLayout) findViewById(R.id.fragment_container);
+        constr = (ConstraintLayout) findViewById(R.id.groupZone);
+        //NestedScrollView constr;
+        //constr = (NestedScrollView) findViewById(R.id.groupScroll);
+        //LinearLayout constr;
+        //constr = (LinearLayout) findViewById(R.id.scrollLayout);
         ArrayList<Button> bottoni = new ArrayList<>();
         Integer counter = new Integer(0);
 
@@ -114,12 +124,30 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
             //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
             if (gruppoTrovato.get("owner_id").equals(mAuth.getCurrentUser().getUid())){
                 gruppiUtente.add((String) gruppoTrovato.get("name"));
+                /*
+                View view = new View(this);
+                view.setLayoutParams((findViewById(R.id.testLayout)).getLayoutParams());
+                ((TextView) findViewById(R.id.textView39)).setText((String) gruppoTrovato.get("name"));
+                view.setClickable(true);
+                view.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = groupIntent();
+                        i.putExtra("group_name", (String) gruppoTrovato.get("name"));
+                        startActivity(i);
+                        //Object tag = v.getTag();
+                        //Toast.makeText(getApplicationContext(), "clicked button", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                view.setTag(counter);
+                constr.addView(view);*/
 
                 Button btn = new Button(this);
                 btn.setX(100);
                 btn.setY(200*(counter+1));
                 btn.setHeight(80);
                 btn.setWidth(875);
+                //btn.setWidth((int) btn.getTextSize());
                 btn.setText((String) gruppoTrovato.get("name"));
                 btn.setTag(counter);
                 //btnWord[i].setOnClickListener(btnClicked);
@@ -128,20 +156,10 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 bottoni.add(btn);
                 //per adesso i gruppi mostrati, se superiori a 3, sovrascrivono il resto dei pulsanti dell'itnerfaccia
                 counter += 1;
-
             }
-
-
         }
 
-        /*OnClickListener btnClicked = new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Object tag = v.getTag();
-                Toast.makeText(getApplicationContext(), "clicked button", Toast.LENGTH_SHORT).show();
-            }
-        };*/
-
+        ;
 
     }
 
