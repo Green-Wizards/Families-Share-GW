@@ -81,7 +81,7 @@
         tools:srcCompat="@drawable/ic_profile" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/et_newName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -98,7 +98,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/et_newSurname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -125,7 +125,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/et_newPhone"
         android:layout_width="171dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
@@ -147,11 +147,11 @@
         android:layout_marginEnd="8dp"
         android:entries="@array/type"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName3"
+        app:layout_constraintStart_toEndOf="@+id/et_newPhone"
         app:layout_constraintTop_toBottomOf="@+id/toolbar8" />
 
     <Spinner
-        android:id="@+id/GradoParentela"
+        android:id="@+id/spinner_newMetodoPreferito"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="96dp"
@@ -160,10 +160,10 @@
         android:entries="@array/metodo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/et_newPhone" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/et_newCity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -176,10 +176,10 @@
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView12"
-        app:layout_constraintTop_toBottomOf="@+id/GradoParentela" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_newMetodoPreferito" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName8"
+        android:id="@+id/et_newVia"
         android:layout_width="171dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
@@ -190,10 +190,10 @@
         android:minHeight="48dp"
         android:textColorHint="#757575"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/et_newCity" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName9"
+        android:id="@+id/et_newCivic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -205,11 +205,11 @@
         android:minHeight="48dp"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName8"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintStart_toEndOf="@+id/et_newVia"
+        app:layout_constraintTop_toBottomOf="@+id/et_newCity" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName10"
+        android:id="@+id/et_newMail"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
@@ -221,10 +221,10 @@
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView13"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
+        app:layout_constraintTop_toBottomOf="@+id/et_newVia" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName11"
+        android:id="@+id/et_newDescription"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
@@ -237,6 +237,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView14"
         android:textColorHint="#757575"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10" />
+        app:layout_constraintTop_toBottomOf="@+id/et_newMail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

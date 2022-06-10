@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_family_name" />
 
     <Spinner
-        android:id="@+id/GradoParentela"
+        android:id="@+id/spinner_newMetodoPreferito"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -103,7 +103,7 @@
         android:entries="@array/gender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GradoParentela" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_newMetodoPreferito" />
 
     <EditText
         android:id="@+id/editTextTextPersonName15"

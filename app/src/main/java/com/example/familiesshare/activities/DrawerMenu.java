@@ -150,7 +150,11 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 //btn.setWidth((int) btn.getTextSize());
                 btn.setText((String) gruppoTrovato.get("name"));
                 btn.setTag(counter);
-                //btnWord[i].setOnClickListener(btnClicked);
+                btn.setOnClickListener(v -> {
+                    Intent i = new Intent(DrawerMenu.this, Group.class);
+                    i.putExtra("group_name", (String) gruppoTrovato.get("name"));
+                    startActivity(i);
+                });
                 constr.addView(btn);
 
                 bottoni.add(btn);
@@ -158,9 +162,6 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 counter += 1;
             }
         }
-
-        ;
-
     }
 
 
