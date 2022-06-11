@@ -121,8 +121,10 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
 
             //Get user map
             Map gruppoTrovato = (Map) entry.getValue();
+            String idGruppo =  entry.getKey();
             //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
             if (gruppoTrovato.get("owner_id").equals(mAuth.getCurrentUser().getUid())){
+
                 gruppiUtente.add((String) gruppoTrovato.get("name"));
                 /*
                 View view = new View(this);
@@ -153,6 +155,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 btn.setOnClickListener(v -> {
                     Intent i = new Intent(DrawerMenu.this, Group.class);
                     i.putExtra("group_name", (String) gruppoTrovato.get("name"));
+                    i.putExtra("group_id", idGruppo);
                     startActivity(i);
                 });
                 constr.addView(btn);
