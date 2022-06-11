@@ -17,7 +17,8 @@ public class Group extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
-
+    public String nomegruppo;
+    public String idgruppo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +27,9 @@ public class Group extends AppCompatActivity {
 
         //prendo una reference all'intent per recuperare il nome del gruppo che voglio far vedere
         Intent intent = getIntent();
-        String nomegruppo = intent.getStringExtra("group_name"); //sarebbe meglio usare un id univoco del gruppo
-
-        Toast.makeText(Group.this, "Nome gruppo caricato:" + nomegruppo, Toast.LENGTH_LONG).show();
+        nomegruppo = intent.getStringExtra("group_name"); //sarebbe meglio usare un id univoco del gruppo
+        idgruppo = intent.getStringExtra("group_id");
+        //Toast.makeText(Group.this, "ID gruppo caricato: " + idgruppo, Toast.LENGTH_LONG).show();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar11);
         setSupportActionBar(toolbar);
@@ -40,6 +41,8 @@ public class Group extends AppCompatActivity {
 
     public void new_activity (View view) {
         Intent i = new Intent(this, NewActivity.class);
+        i.putExtra("group_name", nomegruppo );
+        i.putExtra("group_id", idgruppo );
         startActivity(i);
     }
 }
