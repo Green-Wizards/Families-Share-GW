@@ -5,19 +5,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.familiesshare.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.MutableData;
-import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -28,8 +28,7 @@ public class ActivityParticipation extends Activity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
     private String activity_id;
-    private String group_id;
-    private String group_name;
+    private String activity_name;
     private String description;
     private String location;
     private String color;
@@ -38,6 +37,8 @@ public class ActivityParticipation extends Activity {
     private String repetition_type;
     private boolean different_timeslot;
     private String status;
+    private String group_id;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,18 +46,63 @@ public class ActivityParticipation extends Activity {
         setContentView(R.layout.activity_participation);
 
         activity_id = savedInstanceState.getString("activity_id");
+        group_id = savedInstanceState.getString("group_id");
         getData(activity_id);
-        getTimeslots(activity_id);
+        setData();
+        getTimeslots(activity_name);
     }
 
-    private void getData(String s){
+    private void getData(String activity_id){
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null){
-            DatabaseReference m = mDatabase.child("ActivityFS").child("activity_id").equalTo(activity_id).getRef();
-            group_id = m.child("group_id").getKey();
-            group_name = m.child("group_name").getKey();
-            description = m.child("description").getKey();
+            DatabaseReference m = mDatabase.child("ActivityFS").child("activity_id")
+                    .equalTo(mDatabase.child("ActivityFS").child("activity_id").equalTo(activity_id).toString()).getRef();
+            //controllo id di firebase corretto?
+            m.child("description").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    description=  (String) task.getResult().getValue();
+                }
+            });
+            m.child("location").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    location=  (String) task.getResult().getValue();
+                }
+            });
+            m.child("color").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    color=  (String) task.getResult().getValue();
+                }
+            });
+            m.child("creator_id").get().addOnCompleteListener(task -> creator_id=  (String) task.getResult().getValue());
+            m.child("repetition").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    repetition=  (boolean) task.getResult().getValue();
+                }
+            });
+            m.child("repetition_type").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    repetition_type=  (String) task.getResult().getValue();
+                }
+            });
+            m.child("different_timeslot").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    different_timeslot= (boolean) task.getResult().getValue();
+                }
+            });
+            m.child("status").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    status=  (String) task.getResult().getValue();
+                }
+            });
+            /*
             location = m.child("location").getKey();
             color = m.child("color").getKey();
             creator_id = m.child("creator_id").getKey();
@@ -64,10 +110,17 @@ public class ActivityParticipation extends Activity {
             repetition_type = m.child("repetition_type").toString();
             different_timeslot = getBoolean(m.child("different_timeslot").toString());
             status = m.child("status").toString();
+            */
         }
     }
 
-    private void getTimeslots(String activity_id){
+    private void setData(){
+        ((TextView) findViewById(R.id.activityName)).setText(activity_name);
+        ((TextView) findViewById(R.id.activityDescription)).setText(description);
+        ((TextView) findViewById(R.id.activityLocation)).setText(location);
+    }
+
+    private void getTimeslots(String activity_name){
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null) {
@@ -76,7 +129,7 @@ public class ActivityParticipation extends Activity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             //Get map in datasnapshot
-                            ShowUserTimeslots((Map<String,Object>) dataSnapshot.getValue(), activity_id);
+                            ShowUserTimeslots((Map<String,Object>) dataSnapshot.getValue(), activity_name);
                         }
 
                         @Override
@@ -88,7 +141,7 @@ public class ActivityParticipation extends Activity {
         }
     }
 
-    private void ShowUserTimeslots(Map<String,Object> mappaSlots, String activity_id) {
+    private void ShowUserTimeslots(Map<String,Object> mappaSlots, String activity_name) {
 
         ArrayList<String> timeslots = new ArrayList<>();
         ConstraintLayout constr;
@@ -102,7 +155,7 @@ public class ActivityParticipation extends Activity {
             //Get user map
             Map timeslot = (Map) entry.getValue();
             //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
-            if (timeslot.get("activity_id").equals(activity_id)){
+            if (timeslot.get("activity_name").equals(activity_name)){
                 timeslots.add((String) timeslot.get("timeslot_id"));
 
                 Button btn = new Button(this);
@@ -115,6 +168,7 @@ public class ActivityParticipation extends Activity {
                 btn.setOnClickListener(v -> {
                     Intent i = new Intent(ActivityParticipation.this, ActivityTimeslot.class);
                     i.putExtra("timeslot_id", (String) timeslot.get("timeslot_id"));
+                    i.putExtra("activity_id", activity_id);
                     startActivity(i);
                 });
                 constr.addView(btn);
@@ -134,7 +188,19 @@ public class ActivityParticipation extends Activity {
     }
 
     public void goBack(View v){
-        Intent i = new Intent(this, DrawerMenu.class);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        if(mAuth.getCurrentUser() != null) {
+            mDatabase.child("Group").child("group_id").child("group_name").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    name = (String) task.getResult().getValue();
+                }
+            });
+        }
+        Intent i = new Intent(this, Group.class);
+        i.putExtra("group_name", name);
+        i.putExtra("group_id", group_id);
         startActivity(i);
     }
 }

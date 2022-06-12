@@ -65,16 +65,6 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        //provo a vedere se riesco a mettere home page come sfondo default del menu NON FUNZIA
-        //NON SI VEDE LA BARRA SOPRA
-        /*
-        if (savedInstanceState==null){
-        Intent intent = new Intent(this, Menu.class);
-        startActivity(intent);
-        navigationView.setCheckedItem(R.id.nav_homepage);}*/
-
-
-
         //TEST lista gruppi
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
@@ -96,54 +86,22 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
 
         }
     }
-    /*
-    private Intent groupIntent(){
-        Intent i = new Intent();
-        i.setClass(this, Group.class);
-        return i;
-    }
-    */
 
     private void ShowUserGroups(Map<String,Object> mappaGruppi) {
-
         ArrayList<String> gruppiUtente = new ArrayList<>();
         ConstraintLayout constr;
         constr = (ConstraintLayout) findViewById(R.id.groupZone);
-        //NestedScrollView constr;
-        //constr = (NestedScrollView) findViewById(R.id.groupScroll);
-        //LinearLayout constr;
-        //constr = (LinearLayout) findViewById(R.id.scrollLayout);
         ArrayList<Button> bottoni = new ArrayList<>();
         Integer counter = new Integer(0);
 
         //itera tutti i gruppi
         for (Map.Entry<String, Object> entry : mappaGruppi.entrySet()){
-
             //Get user map
             Map gruppoTrovato = (Map) entry.getValue();
             String idGruppo =  entry.getKey();
             //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
             if (gruppoTrovato.get("owner_id").equals(mAuth.getCurrentUser().getUid())){
-
                 gruppiUtente.add((String) gruppoTrovato.get("name"));
-                /*
-                View view = new View(this);
-                view.setLayoutParams((findViewById(R.id.testLayout)).getLayoutParams());
-                ((TextView) findViewById(R.id.textView39)).setText((String) gruppoTrovato.get("name"));
-                view.setClickable(true);
-                view.setOnClickListener(new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v) {
-                        Intent i = groupIntent();
-                        i.putExtra("group_name", (String) gruppoTrovato.get("name"));
-                        startActivity(i);
-                        //Object tag = v.getTag();
-                        //Toast.makeText(getApplicationContext(), "clicked button", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                view.setTag(counter);
-                constr.addView(view);*/
-
                 Button btn = new Button(this);
                 btn.setX(100);
                 btn.setY(200*(counter+1));
