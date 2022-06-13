@@ -102,15 +102,6 @@ public class ActivityParticipation extends Activity {
                     status=  (String) task.getResult().getValue();
                 }
             });
-            /*
-            location = m.child("location").getKey();
-            color = m.child("color").getKey();
-            creator_id = m.child("creator_id").getKey();
-            repetition = getBoolean(m.child("repetition").getKey());
-            repetition_type = m.child("repetition_type").toString();
-            different_timeslot = getBoolean(m.child("different_timeslot").toString());
-            status = m.child("status").toString();
-            */
         }
     }
 
@@ -178,13 +169,6 @@ public class ActivityParticipation extends Activity {
                 counter += 1;
             }
         }
-    }
-
-    private boolean getBoolean(String s){
-        if(s.equals("true"))
-            return true;
-        else
-            return false;
     }
 
     public void goBack(View v){

@@ -20,73 +20,73 @@
 
     <EditText
         android:id="@+id/et_given_name"
-        android:layout_width="115dp"
+        android:layout_width="150dp"
         android:layout_height="69dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/nome"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/et_family_name"
-        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar8" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar8"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/et_family_name"
-        android:layout_width="115dp"
+        android:layout_width="150dp"
         android:layout_height="69dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
         android:hint="@string/cognome"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar8" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar8"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <Spinner
         android:id="@+id/GIORNO"
-        android:layout_width="81dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="52dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:dropDownWidth="wrap_content"
         android:entries="@array/dayes"
-        app:layout_constraintEnd_toStartOf="@+id/MESE"
+        android:spinnerMode="dropdown"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_given_name" />
+        app:layout_constraintTop_toBottomOf="@+id/et_given_name"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Spinner
         android:id="@+id/MESE"
-        android:layout_width="94dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:dropDownWidth="wrap_content"
         android:entries="@array/months"
+        android:spinnerMode="dropdown"
         app:layout_constraintEnd_toStartOf="@+id/ANNO"
         app:layout_constraintStart_toEndOf="@+id/GIORNO"
         app:layout_constraintTop_toBottomOf="@+id/et_given_name" />
 
     <Spinner
         android:id="@+id/ANNO"
-        android:layout_width="86dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         android:entries="@array/years"
+        android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/MESE"
-        app:layout_constraintTop_toBottomOf="@+id/et_family_name" />
+        app:layout_constraintTop_toBottomOf="@+id/et_given_name" />
 
     <Spinner
         android:id="@+id/spinner_newMetodoPreferito"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
         android:entries="@array/GradoParentela"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -97,9 +97,7 @@
         android:id="@+id/spinner6"
         android:layout_width="369dp"
         android:layout_height="48dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginTop="24dp"
         android:entries="@array/gender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,26 +107,22 @@
         android:id="@+id/editTextTextPersonName15"
         android:layout_width="249dp"
         android:layout_height="51dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/info_aggiuntive"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner6" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner6"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="224dp"
         android:text="es. intolleranze alimentari"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName15" />
 
@@ -137,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:text="aggiungi"
         app:iconTint="#009688"
@@ -150,13 +144,11 @@
         android:id="@+id/textView51"
         android:layout_width="287dp"
         android:layout_height="95dp"
-        android:layout_marginStart="24dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         tools:text="@string/termini_uso" />
 
     <CheckBox
@@ -164,7 +156,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView51"
         app:layout_constraintHorizontal_bias="0.0"

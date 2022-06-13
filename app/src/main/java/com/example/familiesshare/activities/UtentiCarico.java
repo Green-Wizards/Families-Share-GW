@@ -52,13 +52,14 @@ public class UtentiCarico extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         if(mAuth.getCurrentUser() != null) {
-            Task<DataSnapshot> nome = mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("given_name").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            Task<DataSnapshot> nome = mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("given_name")
+                    .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     if (!task.isSuccessful()) {
                         Toast.makeText(UtentiCarico.this, "NON SO CHI SEI", Toast.LENGTH_LONG).show();
                     } else {
-                        String nome = task.getResult().getValue().toString();
+                        String nome = (String) task.getResult().getValue();
                         tv_nomeAccount.setText(nome);
                     }
                 }

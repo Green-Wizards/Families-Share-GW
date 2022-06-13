@@ -105,7 +105,7 @@
         <item>11</item>
         <item>12</item>
     </string-array>
-    <integer-array name="years">
+    <string-array name="years">
         <item>1901</item>
         <item>1902</item>
         <item>1903</item>
@@ -228,8 +228,7 @@
         <item>2020</item>
         <item>2021</item>
         <item>2022</item>
-    </integer-array>
-
+    </string-array>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="crea2">Imposta la visibilità del gruppo</string>
@@ -261,27 +260,7 @@
     <string name="ok">OK</string>
     <string name="AttivitàDelGruppo">Attività del gruppo</string>
     <string name="LeMieNotifiche">Le mie notifiche</string>
-    <string name="Group1">Group 1</string>
-    <string name="Group2">Group 2</string>
-    <string name="Group3">Group 3</string>
-    <string name="Group4">Group 4</string>
-    <string name="Group5">Group 5</string>
     <string name="send">SEND</string>
-    <string-array name="group1">
-        <item>item1</item>
-    </string-array>
-    <string-array name="group2">
-        <item>item1</item>
-        <item>item2</item>
-    </string-array>
-    <string-array name="group3">
-        <item>item1</item>
-        <item>item2</item>
-    </string-array>
-    <string-array name="group4">
-        <item>item1</item>
-        <item>item2</item>
-    </string-array>
     <string name="si_prega_di_compilare_le_informazioni_di_contatto">Si prega di compilare le informazioni di contatto</string>
     <string name="scopri_di_pi_sul_sito">Scopri di più sul sito</string>
     <string name="il_progetto">Il progetto</string>
@@ -345,5 +324,5 @@
     <string name='element_text'> element_text</string>
     <string name="title_activity_members">Membri del gruppo</string>
     <string name="info_aggiuntive">Aggiungi informazioni </string>
-    <string name="termini_uso">Accetto i Termini d\'Uso e l\'informativa sulla Privacy per il trattamento e utilizzo dei miei dati. </string>
+    <string name="termini_uso">Accetto i Termini d\'Uso e l\'informativa sulla Privacy per il trattamento e utilizzo dei miei dati.</string>
 </resources>
