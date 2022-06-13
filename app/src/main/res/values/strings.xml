@@ -42,11 +42,13 @@
         <item>Numero di Telefono</item>
     </string-array>
     <string-array name="gender">
+        <item>Selezionare genere</item>
         <item>Non Specificato</item>
         <item>Maschio</item>
         <item>Femmina</item>
     </string-array>
     <string-array name="GradoParentela">
+        <item>Selezionare Parentela</item>
         <item>Padre</item>
         <item>Madre</item>
         <item>Nonno</item>
@@ -59,6 +61,7 @@
         <item>Figlia</item>
     </string-array>
     <string-array name="dayes">
+        <item>Giorno</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -92,6 +95,7 @@
         <item>31</item>
     </string-array>
     <string-array name="months">
+        <item>Mese</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -106,6 +110,7 @@
         <item>12</item>
     </string-array>
     <string-array name="years">
+        <item>Anno</item>
         <item>1901</item>
         <item>1902</item>
         <item>1903</item>
@@ -324,5 +329,5 @@
     <string name='element_text'> element_text</string>
     <string name="title_activity_members">Membri del gruppo</string>
     <string name="info_aggiuntive">Aggiungi informazioni </string>
-    <string name="termini_uso">Accetto i Termini d\'Uso e l\'informativa sulla Privacy per il trattamento e utilizzo dei miei dati.</string>
+    <string name="termini_uso">Accetto i Termini d\'Uso\ne l\'informativa sulla Privacy\nper il trattamento e utilizzo\ndei miei dati.</string>
 </resources>
