@@ -145,10 +145,13 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 startActivity(creagruppo);
                 break;
             //CREA ATTIVITà IND
-            //INVITA AMICI
             case R.id.nav_invite_friends:
                 Intent invite = new Intent(this,InviteFriends.class);
                 startActivity(invite);
+                break;
+            case R.id.attivita_esterna:
+                Intent attEst = new Intent(this, AttivitàEsterna.class);
+                startActivity(attEst);
                 break;
             case R.id.nav_faqs:
                 Intent faq = new Intent(this, Faq.class);
@@ -168,10 +171,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 startActivity(esci);
                 break;
         }
-        //prova
         drawer.closeDrawer(GravityCompat.START);
-
-
         return true;
     }
 

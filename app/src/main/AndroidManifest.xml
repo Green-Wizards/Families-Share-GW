@@ -16,10 +16,6 @@
             android:parentActivityName=".activities.DrawerMenu"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
-            android:name=".activities.InvitiSospeso"
-            android:exported="false"
-            android:parentActivityName=".activities.DrawerMenu"/>
-        <activity
             android:name=".activities.GroupMembers"
             android:parentActivityName=".activities.DrawerMenu"
             android:label="@string/title_activity_members"
@@ -50,15 +46,9 @@
             android:parentActivityName=".activities.DrawerMenu"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
-            android:name=".activities.Calendar"
-            android:exported="false" />
-        <activity
             android:name=".activities.Faq"
             android:exported="false"
             android:parentActivityName=".activities.DrawerMenu" />
-        <activity
-            android:name=".activities.Template"
-            android:exported="false" />
         <activity
             android:name=".activities.addUser"
             android:exported="false"
@@ -108,6 +98,8 @@
         </activity>
         <activity android:name="com.example.familiesshare.activities.ActivityParticipation"
             />
+        <activity android:name="com.example.familiesshare.activities.GruppoAttivita" />
+        <activity android:name="com.example.familiesshare.activities.CercaGruppi" />
     </application>
 
 </manifest>

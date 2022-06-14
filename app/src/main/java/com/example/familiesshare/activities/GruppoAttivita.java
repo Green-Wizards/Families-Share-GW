@@ -10,7 +10,7 @@ import com.example.familiesshare.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 
-public class ActivityGroup extends AppCompatActivity {
+public class GruppoAttivita extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
     public String nomegruppo;
@@ -39,7 +39,7 @@ public class ActivityGroup extends AppCompatActivity {
     }
 
     public void goInMezzo(View v){
-        Intent i = new Intent(this, ActivityGroup.class);
+        Intent i = new Intent(this.getBaseContext(), GruppoAttivita.class);
         i.putExtra("group_name", nomegruppo);
         i.putExtra("group_id", idgruppo);
         startActivity(i);
@@ -49,13 +49,6 @@ public class ActivityGroup extends AppCompatActivity {
         Intent i = new Intent(this, GroupMembers.class);
         i.putExtra("group_name", nomegruppo);
         i.putExtra("group_id", idgruppo);
-        startActivity(i);
-    }
-
-    public void new_activity (View view) {
-        Intent i = new Intent(this, NewActivity.class);
-        i.putExtra("group_name", nomegruppo );
-        i.putExtra("group_id", idgruppo );
         startActivity(i);
     }
 }

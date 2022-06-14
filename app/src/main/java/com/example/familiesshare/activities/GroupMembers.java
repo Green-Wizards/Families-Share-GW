@@ -39,7 +39,7 @@ public class GroupMembers extends AppCompatActivity {
     }
 
     public void goInMezzo(View v){
-        Intent i = new Intent(this, ActivityGroup.class);
+        Intent i = new Intent(this, GruppoAttivita.class);
         i.putExtra("group_name", nomegruppo);
         i.putExtra("group_id", idgruppo);
         startActivity(i);

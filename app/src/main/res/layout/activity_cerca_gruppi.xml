@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.InvitiSospeso"
-    >
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    tools:context=".activities.CercaGruppi">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar6"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@color/teal_700"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,6 +30,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar6"
         app:srcCompat="?attr/homeAsUpIndicator"
-         />
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
