@@ -14,10 +14,6 @@
             android:icon="@drawable/ic_profile"
             android:title="@string/il_mio_profilo" />
         <item
-            android:id="@+id/nav_calendar"
-            android:icon="@drawable/ic_calendar"
-            android:title="@string/il_mio_calendario" />
-        <item
             android:id="@+id/group_create"
             android:icon="@drawable/ic_search_group"
             android:title="@string/crea_un_gruppo" />
@@ -25,6 +21,10 @@
             android:id="@+id/nav_activity_create"
             android:icon="@drawable/ic_search_group"
             android:title="@string/crea_un_attivit_indipedente" />
+        <item
+            android:id="@+id/attivita_esterna"
+            android:icon="@drawable/ic_attivita_esterna"
+            android:title="@string/attivita_esterna" />
 
     </group>
 
@@ -52,10 +52,6 @@
     </group>
 
 
-    <item
-        android:id="@+id/nav_votaci"
-        android:icon="@drawable/ic_votaci"
-        android:title="@string/votaci" />
     <group android:checkableBehavior="single">
         <item android:id="@+id/nav_exit"
             android:icon="@drawable/ic_exit"
