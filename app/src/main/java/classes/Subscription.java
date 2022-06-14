@@ -1,12 +1,13 @@
 package classes;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Subscription {
+public class Subscription implements Serializable {
 
     /** ATTRIBUTI **/
-    public ArrayList<String> dependents;
-    public ArrayList<String> volunteers;
-    public String activity_id;
+    public String dependents; //utenti a carico
+    public String volunteers; //utenti di FS
+    public String timeslot_id;
 }
