@@ -4,7 +4,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-tools:context=".activities.ActivityGroup">
+tools:context=".activities.GruppoAttivita">
 
 <androidx.appcompat.widget.Toolbar
     android:id="@+id/toolbar6"

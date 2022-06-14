@@ -98,6 +98,8 @@
         </activity>
         <activity android:name="com.example.familiesshare.activities.ActivityParticipation"
             />
+        <activity android:name="com.example.familiesshare.activities.GruppoAttivita" />
+        <activity android:name="com.example.familiesshare.activities.CercaGruppi" />
     </application>
 
 </manifest>
