@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,39 +25,55 @@ public class  ActivityTimeslot extends Activity {
     private String timeslot_id;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
-    private ArrayList<Dependent> dependents;
-    private ArrayList<String> volunteers;
+    private String dependents;
+    private String volunteers;
     private String activity_id;
     private String group_id;
+    private String nome;
+    private String addDep;
+    private String str = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeslot);
 
-        timeslot_id = savedInstanceState.getString("timeslot_id");
-        activity_id = savedInstanceState.getString("activity_id");
-        group_id = savedInstanceState.getString("group_id");
-        getData(timeslot_id);
-        setData();
-    }
-
-    private void getData(String activity_timeslot){
+        findViewById(R.id.addedDependents).setVisibility(View.GONE);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null){
-            DatabaseReference m = mDatabase.child("Subscription").child(activity_id);
+            DatabaseReference m = mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("given_name").getRef();
+
+            m.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    nome = (String) task.getResult().getValue();
+                }
+            });
+        }
+        timeslot_id = savedInstanceState.getString("timeslot_id");
+        activity_id = savedInstanceState.getString("activity_id");
+        group_id = savedInstanceState.getString("group_id");
+        getData();
+        setData();
+    }
+
+    private void getData(){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        if(mAuth.getCurrentUser() != null){
+            DatabaseReference m = mDatabase.child("Subscription").child(activity_id).child("timeslot_id").equalTo(timeslot_id).getRef();
 
             m.child("dependents").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    dependents = (ArrayList<Dependent>) task.getResult().getValue();
+                    dependents = (String) task.getResult().getValue();
                 }
             });
             m.child("volunteers").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    volunteers = (ArrayList<String>) task.getResult().getValue();
+                    volunteers = (String) task.getResult().getValue();
                 }
             });
         }
@@ -64,24 +81,8 @@ public class  ActivityTimeslot extends Activity {
 
     private void setData(){
         ((TextView) findViewById(R.id.timeslot)).setText(timeslot_id);
-        ((TextView) findViewById(R.id.volunteersList)).setText(getVolunteers());
-        ((TextView) findViewById(R.id.dependentsList)).setText(getDependents());
-    }
-
-    private String getVolunteers(){
-        String n = "";
-        for(String s : volunteers){
-            n = n + s + "\n";
-        }
-        return n;
-    }
-
-    private String getDependents(){
-        String n = "";
-        for(Dependent s : dependents){
-            n = n + s.given_name + "\n";
-        }
-        return n;
+        ((TextView) findViewById(R.id.volunteersList)).setText(volunteers);
+        ((TextView) findViewById(R.id.dependentsList)).setText(dependents);
     }
 
     public void goBack(View v){
@@ -94,14 +95,20 @@ public class  ActivityTimeslot extends Activity {
     public void partecipare(View v){
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
-        if(mAuth.getCurrentUser() != null){
-            mDatabase.child("User").equalTo(mAuth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    volunteers.add((String) task.getResult().getValue());
-                }
-            });
+        if(mAuth.getCurrentUser() != null) {
+            volunteers = volunteers + nome + "\n";
+            mDatabase.child("Subscriptions").child(activity_id).child("volunteers").setValue(volunteers);
             goBack(v);
         }
+    }
+
+    public void aggiungi(View v){
+        addDep = ((EditText) findViewById(R.id.editDependent)).getText().toString().trim();
+        str = str + addDep +"\n";
+        String tmp = "Utenti a carico aggiunti:\n" + str;
+        ((TextView) findViewById(R.id.InfoList)).setText(tmp);
+        findViewById(R.id.addedDependents).setVisibility(View.VISIBLE);
+        dependents = dependents + addDep + "\n";
+        mDatabase.child("Subscriptions").child(activity_id).child("dependents").setValue(dependents);
     }
 }

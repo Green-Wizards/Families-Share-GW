@@ -51,4 +51,13 @@ public class GruppoAttivita extends AppCompatActivity {
         i.putExtra("group_id", idgruppo);
         startActivity(i);
     }
+
+    public void new_activity (View view) {
+        Intent i = new Intent(this, NewActivity.class);
+        i.putExtra("group_name", nomegruppo );
+        i.putExtra("group_id", idgruppo );
+        startActivity(i);
+    }
+
+    // collegare ad activityParticipation activity_id corretto (quello di firebase)
 }

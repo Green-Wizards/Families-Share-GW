@@ -8,8 +8,10 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.familiesshare.R;
@@ -20,11 +22,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
 
 import classes.Activities;
+import classes.Subscription;
+import classes.Timeslot;
 
 public class NewActivity extends AppCompatActivity {
 
@@ -32,7 +37,12 @@ public class NewActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     public String nomegruppo, idgruppo;
     private EditText activityName, activityDescription, activityPlace;
-    private CalendarView activityCalendar;
+    private String date;
+    private String orarioInizio = "";
+    private String orarioFine = "";
+    private String str = "";
+    private ArrayList<String> timeslotsArrayInizio;
+    private ArrayList<String> timeslotsArrayFine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +56,7 @@ public class NewActivity extends AppCompatActivity {
         if(ab!=null) { //aggiunto if per testare la creazione di nuove attività -yuri
             ab.setDisplayHomeAsUpEnabled(true);
         }
+
         findViewById(R.id.linearLayout2).setVisibility(View.GONE);
         findViewById(R.id.linearLayout3).setVisibility(View.GONE);
 
@@ -61,8 +72,9 @@ public class NewActivity extends AppCompatActivity {
         activityName = (EditText) findViewById(R.id.et_activity_name);
         activityDescription = (EditText) findViewById(R.id.et_activity_description);
         activityPlace = (EditText) findViewById(R.id.et_activity_place);
-        activityCalendar = (CalendarView) findViewById(R.id.calendar_activity);
 
+        timeslotsArrayInizio = new ArrayList<>();
+        timeslotsArrayFine = new ArrayList<>();
     }
 
     public void back(View view){
@@ -73,6 +85,9 @@ public class NewActivity extends AppCompatActivity {
     public void back2(View v){
         findViewById(R.id.linearLayout2).setVisibility(View.GONE);
         findViewById(R.id.linearLayout).setVisibility(View.VISIBLE);
+        str = "";
+        timeslotsArrayInizio.clear();
+        timeslotsArrayFine.clear();
     }
     public void back3(View v){
         findViewById(R.id.linearLayout3).setVisibility(View.GONE);
@@ -94,52 +109,60 @@ public class NewActivity extends AppCompatActivity {
         String nomeAttivita = activityName.getText().toString().trim();
         String descrizAttivita = activityDescription.getText().toString().trim();
         String zonaAttivita = activityPlace.getText().toString().trim();
-/*
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        date = getDate();
+        if(!date.equals("")){
+            for(String s : timeslotsArrayInizio)
+                orarioInizio = orarioInizio + s + "\n";
+            for(String s : timeslotsArrayFine)
+                orarioFine = orarioFine + s + "\n";
 
-        final Date[] data = new Date[1];
+            Activities nuovaAttivita = new Activities(idgruppo , nomeAttivita, descrizAttivita, zonaAttivita,
+                         mAuth.getCurrentUser().getUid(), date);
 
-        activityCalendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            String uniqueID = UUID.randomUUID().toString();
+            FirebaseDatabase.getInstance().getReference("Activities").child(uniqueID).setValue(nuovaAttivita);
 
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month,
-                                            int dayOfMonth) {
-                //String giornoAttivita = String.valueOf(dayOfMonth);
-                //String meseAttivita = String.valueOf(month);
-                //String annoAttivita = String.valueOf(year);
-
-                Calendar calendario = Calendar.getInstance();
-                calendario.set(year, month, dayOfMonth);
-                Date d = calendario.getTime();
-                data[0] = d;
-
-                Toast.makeText(NewActivity.this, sdf.format(data[0]), Toast.LENGTH_LONG).show();
-
+            int indice =timeslotsArrayInizio.size();
+            for(int index=0; index<indice; index++){
+                Timeslot timeslot = new Timeslot(date, timeslotsArrayInizio.get(index), timeslotsArrayFine.get(index), uniqueID);
+                String timeslot_id = UUID.randomUUID().toString();
+                FirebaseDatabase.getInstance().getReference("Timeslots").child(timeslot_id).setValue(timeslot);
+                Subscription sub = new Subscription("", "", timeslot_id);
+                FirebaseDatabase.getInstance().getReference("Subscriptions").child(uniqueID).setValue(sub);
             }
-        });
-*/
 
+            Intent i = new Intent(NewActivity.this, Group.class);
+            i.putExtra("group_name", nomegruppo );
+            i.putExtra("group_id", idgruppo );
+            startActivity(i);}
+    }
 
-        Activities nuovaAttivita = new Activities(idgruppo , nomeAttivita, descrizAttivita, zonaAttivita,
-                     mAuth.getCurrentUser().getUid(), "");//sdf.format(data[0]));
+    private String getDate(){
+        date = ((EditText) findViewById(R.id.editDate)).getText().toString().trim();
+        findViewById(R.id.editDate).setBackgroundColor(0xFFFFFF);
+        if(date.equals(""))
+            findViewById(R.id.editDate).setBackgroundColor(0xFFAF1A1A);
+        return date;
+    }
 
-        String uniqueID = UUID.randomUUID().toString();
-        FirebaseDatabase.getInstance().getReference("Activities")
-                .child(uniqueID)
-                .setValue(nuovaAttivita).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            //Toast.makeText(NewActivity.this, "Creazione Attività avvenuta con successo!", Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(NewActivity.this, Group.class);
-                            i.putExtra("group_name", nomegruppo );
-                            i.putExtra("group_id", idgruppo );
-                            startActivity(i);
-                        } else {
-                            //Toast.makeText(NewActivity.this, "Creazioine del gruppo fallita!", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
+    public void aggiungi(View v){
+        String s1, s2, s4;
+        s1 = ((EditText) findViewById(R.id.editStart)).getText().toString().trim();
+        s2 = ((EditText) findViewById(R.id.editEnd)).getText().toString().trim();
+        findViewById(R.id.editStart).setBackgroundColor(0xFFFFFF);
+        findViewById(R.id.editEnd).setBackgroundColor(0xFFFFFF);
+        if(s1.equals("") || s2.equals(""))
+            if(s1.equals(""))
+                findViewById(R.id.editStart).setBackgroundColor(0xFFAF1A1A);
+            if(s2.equals(""))
+                findViewById(R.id.editEnd).setBackgroundColor(0xFFAF1A1A);
+        else{
+            str = str + s1 + " - " + s2 + "\n";
+            timeslotsArrayInizio.add(s1);
+            timeslotsArrayFine.add(s2);
+            s4 = "Timeslot finora aggiunte: \n" + str;
+            ((TextView) findViewById(R.id.showTimeslots)).setText(s4);
+        }
     }
 
 }

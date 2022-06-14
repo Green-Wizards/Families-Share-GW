@@ -22,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Objects;
 
 public class ActivityParticipation extends Activity {
 
@@ -50,7 +51,7 @@ public class ActivityParticipation extends Activity {
         group_id = savedInstanceState.getString("group_id");
         getData();
         setData();
-        getTimeslots(activity_name);
+        getTimeslots();
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 
@@ -126,6 +127,12 @@ public class ActivityParticipation extends Activity {
                 status=  (String) task.getResult().getValue();
             }
         });
+        m.child("activity_name").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                activity_name=  (String) task.getResult().getValue();
+            }
+        });
     }
 
     private void setData(){
@@ -134,7 +141,7 @@ public class ActivityParticipation extends Activity {
         ((TextView) findViewById(R.id.activityLocation)).setText(location);
     }
 
-    private void getTimeslots(String activity_name){
+    private void getTimeslots(){
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null) {
@@ -143,7 +150,7 @@ public class ActivityParticipation extends Activity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             //Get map in datasnapshot
-                            ShowUserTimeslots((Map<String,Object>) dataSnapshot.getValue(), activity_name);
+                            ShowUserTimeslots((Map<String,Object>) dataSnapshot.getValue());
                         }
 
                         @Override
@@ -154,11 +161,11 @@ public class ActivityParticipation extends Activity {
         }
     }
 
-    private void ShowUserTimeslots(Map<String,Object> mappaSlots, String activity_name) {
+    private void ShowUserTimeslots(Map<String,Object> mappaSlots) {
 
         ArrayList<String> timeslots = new ArrayList<>();
         ConstraintLayout constr;
-        constr = (ConstraintLayout) findViewById(R.id.buttonZone);
+        constr = (ConstraintLayout) findViewById(R.id.timeslotZone);
         ArrayList<Button> bottoni = new ArrayList<>();
         Integer counter = new Integer(0);
 
@@ -168,26 +175,25 @@ public class ActivityParticipation extends Activity {
             //Get user map
             Map timeslot = (Map) entry.getValue();
             //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
-            if (timeslot.get("activity_name").equals(activity_name)){
-                timeslots.add((String) timeslot.get("timeslot_id"));
+            if (Objects.equals((String) timeslot.get("activity_id"), activity_id)){
+                String tmp = (String) (timeslot.get("data") + " " + timeslot.get("oraInizio") +" - "+ timeslot.get("oraFine"));
+                timeslots.add((String) timeslot.get(tmp));
 
                 Button btn = new Button(this);
                 btn.setX(100);
                 btn.setY(200*(counter+1));
                 btn.setHeight(80);
                 btn.setWidth(875);
-                btn.setText((String) timeslot.get("timeslot_id"));
+                btn.setText((String) timeslot.get(tmp));
                 btn.setTag(counter);
                 btn.setOnClickListener(v -> {
                     Intent i = new Intent(ActivityParticipation.this, ActivityTimeslot.class);
-                    i.putExtra("timeslot_id", (String) timeslot.get("timeslot_id"));
+                    i.putExtra("timeslot_id", entry.getKey());
                     i.putExtra("activity_id", activity_id);
                     startActivity(i);
                 });
                 constr.addView(btn);
-
                 bottoni.add(btn);
-                //per adesso i gruppi mostrati, se superiori a 3, sovrascrivono il resto dei pulsanti dell'itnerfaccia
                 counter += 1;
             }
         }
