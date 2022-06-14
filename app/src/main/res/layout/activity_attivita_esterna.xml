@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.GroupMembers">
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    tools:context=".activities.AttivitàEsterna">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar6"
@@ -31,39 +32,4 @@
         app:srcCompat="?attr/homeAsUpIndicator"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_700"
-        android:onClick="goInMezzo"
-        android:text="@string/attivita"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button23"
-        app:layout_constraintStart_toEndOf="@+id/button26"
-        tools:ignore="TextContrastCheck" />
-
-    <Button
-        android:id="@+id/button23"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_700"
-        android:onClick="goMembers"
-        android:text="@string/membri"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button9"
-        tools:ignore="TextContrastCheck" />
-
-    <Button
-        android:id="@+id/button26"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_700"
-        android:onClick="goInfo"
-        android:text="@string/info"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button9"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

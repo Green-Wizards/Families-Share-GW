@@ -1,8 +1,6 @@
 package com.example.familiesshare.activities;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,8 +38,8 @@ public class GroupMembers extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void goActivity(View v){
-        Intent i = new Intent(this, GroupActivity.class);
+    public void goInMezzo(View v){
+        Intent i = new Intent(this, ActivityGroup.class);
         i.putExtra("group_name", nomegruppo);
         i.putExtra("group_id", idgruppo);
         startActivity(i);
