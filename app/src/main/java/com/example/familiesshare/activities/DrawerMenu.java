@@ -83,7 +83,6 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                             //handle databaseError
                         }
                     });
-
         }
     }
 

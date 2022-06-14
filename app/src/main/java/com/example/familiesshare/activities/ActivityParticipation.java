@@ -56,13 +56,12 @@ public class ActivityParticipation extends Activity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null){
-            DatabaseReference m = mDatabase.child("ActivityFS").child("activity_id")
-                    .equalTo(mDatabase.child("ActivityFS").child("activity_id").equalTo(activity_id).toString()).getRef();
+            DatabaseReference m = mDatabase.child("Activities").child("group_id").equalTo(group_id).getRef();
             //controllo id di firebase corretto?
             m.child("description").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    description=  (String) task.getResult().getValue();
+                    description = (String) task.getResult().getValue();
                 }
             });
             m.child("location").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {

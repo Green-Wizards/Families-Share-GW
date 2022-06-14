@@ -24,7 +24,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
 
-import classes.ActivityFS;
+import classes.Activities;
 
 public class NewActivity extends AppCompatActivity {
 
@@ -120,7 +120,7 @@ public class NewActivity extends AppCompatActivity {
 
 
 
-        ActivityFS nuovaAttivita = new ActivityFS(idgruppo , nomeAttivita, descrizAttivita, zonaAttivita,
+        Activities nuovaAttivita = new Activities(idgruppo , nomeAttivita, descrizAttivita, zonaAttivita,
                      mAuth.getCurrentUser().getUid(), sdf.format(data[0]));
 
         String uniqueID = UUID.randomUUID().toString();

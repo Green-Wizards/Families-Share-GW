@@ -44,7 +44,8 @@ public class addUser extends AppCompatActivity {
             findViewById(R.id.genere).setBackgroundColor(0xFFFFFF);
             getData();
             if(giorno.equals("Giorno") || mese.equals("Mese") || anno.equals("Anno")
-                || parentela.equals("Selezionare Parentela") || genere.equals("Selezionare genere")) {
+                || parentela.equals("Selezionare Parentela") || genere.equals("Selezionare genere")
+                || nome.equals("") || cognome.equals("")) {
                 if(giorno.equals("Giorno"))
                     findViewById(R.id.GIORNO).setBackgroundColor(0xFFAF1A1A);
                 if(mese.equals("Mese"))
