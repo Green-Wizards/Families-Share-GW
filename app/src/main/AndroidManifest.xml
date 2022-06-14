@@ -100,6 +100,7 @@
             />
         <activity android:name="com.example.familiesshare.activities.GruppoAttivita" />
         <activity android:name="com.example.familiesshare.activities.CercaGruppi" />
+        <activity android:name="com.example.familiesshare.activities.AttivitaEsterna" />
     </application>
 
 </manifest>

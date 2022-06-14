@@ -150,7 +150,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 startActivity(invite);
                 break;
             case R.id.attivita_esterna:
-                Intent attEst = new Intent(this, AttivitàEsterna.class);
+                Intent attEst = new Intent(this, AttivitaEsterna.class);
                 startActivity(attEst);
                 break;
             case R.id.nav_faqs:
