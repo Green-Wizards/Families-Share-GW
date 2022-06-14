@@ -25,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Account extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView txtUserName;
+    private TextView txtUserName, txtTelefono, txtIndirizzo, txtContatto, txtDescrizione;
     private DatabaseReference mDatabase;
     private FirebaseUser user;
     private FirebaseAuth mAuth;
@@ -53,26 +53,86 @@ public class Account extends AppCompatActivity implements View.OnClickListener {
 
         //aggiorna il nome dell'utente
         txtUserName = findViewById(R.id.tv_accountName);
+        txtTelefono = findViewById(R.id.tv_telefono);
+        txtIndirizzo = findViewById(R.id.tv_indirizzo);
+        txtContatto = findViewById(R.id.tv_contatto);
+        txtDescrizione = findViewById(R.id.tv_descrizione);
+
         //acquisizione istanza del db firebase
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
         if(mAuth.getCurrentUser() != null) {
-            Task<DataSnapshot> nome = mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("given_name").get()
-                    .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    if (!task.isSuccessful()) {
-                        Toast.makeText(Account.this, "NON SO CHI SEI", Toast.LENGTH_LONG).show();
-                    } else {
-                        String nome = task.getResult().getValue().toString();
-                        txtUserName.setText(nome);
-                    }
-                }
-            });
+            retrieveNome();
+            retrieveTelefono();
+            retrieveMail();
+            retrieveDescrizione();
         }
 
     }
+
+
+    public void retrieveNome(){
+        mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("given_name").get()
+                .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(Account.this, "NON SO CHI SEI", Toast.LENGTH_LONG).show();
+                        } else {
+                            String nome = task.getResult().getValue().toString();
+                            txtUserName.setText(nome);
+                        }
+                    }
+                }
+        );
+    }
+    public void retrieveTelefono(){
+        mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("phone").get()
+                .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                           @Override
+                                           public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                               if (!task.isSuccessful()) {
+                                                   Toast.makeText(Account.this, "NON SO CHI SEI", Toast.LENGTH_LONG).show();
+                                               } else {
+                                                   String tel = task.getResult().getValue().toString();
+                                                   txtTelefono.setText(tel);
+                                               }
+                                           }
+                                       }
+                );
+    }
+    public void retrieveMail(){
+        mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("email").get()
+                .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                           @Override
+                                           public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                               if (!task.isSuccessful()) {
+                                                   Toast.makeText(Account.this, "NON SO CHI SEI", Toast.LENGTH_LONG).show();
+                                               } else {
+                                                   String mail = task.getResult().getValue().toString();
+                                                   txtContatto.setText(mail);
+                                               }
+                                           }
+                                       }
+                );
+    }
+    public void retrieveDescrizione(){
+        mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("description").get()
+                .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                           @Override
+                                           public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                               if (!task.isSuccessful()) {
+                                                   Toast.makeText(Account.this, "NON SO CHI SEI", Toast.LENGTH_LONG).show();
+                                               } else {
+                                                   String descr = task.getResult().getValue().toString();
+                                                   txtDescrizione.setText(descr);
+                                               }
+                                           }
+                }
+        );
+    }
+
 
     @Override
     public void onClick(View view) {
@@ -84,7 +144,6 @@ public class Account extends AppCompatActivity implements View.OnClickListener {
         Intent i = new Intent(this, ProfileModify.class);
         startActivity(i);
     }
-
 
     public void utentiCarico(View v){
         Intent i = new Intent(this, UtentiCarico.class);

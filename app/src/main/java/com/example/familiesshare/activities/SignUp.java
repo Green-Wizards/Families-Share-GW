@@ -126,7 +126,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
                         if (task.isSuccessful()) {
 
-                            Profile profilo = new Profile(nome, cognome, indirizzo, pw, ntelefono, true);
+                            Profile profilo = new Profile(nome, cognome, indirizzo,
+                                    pw, ntelefono, true, "", "",
+                                    "", "", "");
 
                             FirebaseDatabase.getInstance().getReference("Profiles")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

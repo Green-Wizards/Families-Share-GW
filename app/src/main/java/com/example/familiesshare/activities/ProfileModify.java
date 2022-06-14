@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -83,10 +84,17 @@ public class ProfileModify extends AppCompatActivity {
 
         String nuovoMetodoPreferito = newMetodoPreferito.getSelectedItem().toString();
 
-        ///TODO: da aggiungere i rimanenti valori
         mDatabase.child("Profiles").child(mAuth.getUid()).child("given_name").setValue(nuovoNome);
         mDatabase.child("Profiles").child(mAuth.getUid()).child("family_name").setValue(nuovoCognome);
+        mDatabase.child("Profiles").child(mAuth.getUid()).child("phone").setValue(nuovoTelefono);
+        mDatabase.child("Profiles").child(mAuth.getUid()).child("area").setValue(nuovaArea);
+        mDatabase.child("Profiles").child(mAuth.getUid()).child("address").setValue(nuovaVia+" "+nuovoCivico);
+        mDatabase.child("Profiles").child(mAuth.getUid()).child("email").setValue(nuovaMail);
+        mDatabase.child("Profiles").child(mAuth.getUid()).child("description").setValue(nuovaDescrizione);
+        mDatabase.child("Profiles").child(mAuth.getUid()).child("contact_option").setValue(nuovoMetodoPreferito);
 
+        Intent i = new Intent(this, Account.class);
+        startActivity(i);
 
     }
 

@@ -93,7 +93,7 @@
         tools:srcCompat="@color/white" />
 
     <TextView
-        android:id="@+id/textView40"
+        android:id="@+id/tv_telefono"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -126,7 +126,7 @@
         app:srcCompat="@drawable/images" />
 
     <TextView
-        android:id="@+id/textView41"
+        android:id="@+id/tv_indirizzo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -149,7 +149,7 @@
         app:srcCompat="@drawable/black_mail_icon_png_8" />
 
     <TextView
-        android:id="@+id/textView42"
+        android:id="@+id/tv_contatto"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -171,7 +171,7 @@
         tools:ignore="ImageContrastCheck" />
 
     <TextView
-        android:id="@+id/textView43"
+        android:id="@+id/tv_descrizione"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
