@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -88,6 +89,11 @@ public class ProfileModify extends AppCompatActivity {
         mDatabase.child("Profiles").child(mAuth.getUid()).child("family_name").setValue(nuovoCognome);
 
 
+    }
+
+    public void confirm (View v){
+        Intent i = new Intent(this, Account.class);
+        startActivity(i);
     }
 
 

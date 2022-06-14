@@ -32,6 +32,7 @@
         <activity
             android:name=".activities.ProfileModify"
             android:exported="false"
+            android:label=" "
             android:parentActivityName=".activities.Account" />
         <activity
             android:name=".activities.Project"

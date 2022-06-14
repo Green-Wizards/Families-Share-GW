@@ -41,7 +41,7 @@ public class Group extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void goActivity(View v){
+    public void goActiviti(View v){
         Intent i = new Intent(this, GroupActivity.class);
         i.putExtra("group_name", nomegruppo);
         i.putExtra("group_id", idgruppo);
