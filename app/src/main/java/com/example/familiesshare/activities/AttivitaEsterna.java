@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.familiesshare.R;
 
-public class AttivitàEsterna extends AppCompatActivity {
+public class AttivitaEsterna extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
