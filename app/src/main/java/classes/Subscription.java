@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Subscription {
 
     /** ATTRIBUTI **/
-    public ArrayList<Dependent> dependents;
-    public ArrayList<String> volunteers;        // Potrebbe diventare arrayList di members??
-    public String slot;
+    public ArrayList<String> dependents;
+    public ArrayList<String> volunteers;
+    public String activity_id;
 }

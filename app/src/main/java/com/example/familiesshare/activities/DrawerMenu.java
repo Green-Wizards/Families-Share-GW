@@ -6,19 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.example.familiesshare.R;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -33,7 +25,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
-import androidx.core.widget.NestedScrollView;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import java.util.ArrayList;
@@ -70,7 +61,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
         mAuth = FirebaseAuth.getInstance();
 
         if(mAuth.getCurrentUser() != null) {
-            mDatabase.child("Groups").addListenerForSingleValueEvent(
+            mDatabase.child("Groups").addListenerForSingleValueEvent( //gruppi a cui si partecipa
                     new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -87,7 +78,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
     }
 
     private void ShowUserGroups(Map<String,Object> mappaGruppi) {
-        ArrayList<String> gruppiUtente = new ArrayList<>();
+        //ArrayList<String> gruppiUtente = new ArrayList<>();
         ConstraintLayout constr;
         constr = (ConstraintLayout) findViewById(R.id.groupZone);
         ArrayList<Button> bottoni = new ArrayList<>();
@@ -99,8 +90,8 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
             Map gruppoTrovato = (Map) entry.getValue();
             String idGruppo =  entry.getKey();
             //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
-            if (gruppoTrovato.get("owner_id").equals(mAuth.getCurrentUser().getUid())){
-                gruppiUtente.add((String) gruppoTrovato.get("name"));
+            if (gruppoTrovato.get("owner_id").equals(mAuth.getCurrentUser().getUid())){ //gruppi a cui si partecipa, quindi user_id
+                //gruppiUtente.add((String) gruppoTrovato.get("name"));
                 Button btn = new Button(this);
                 btn.setX(100);
                 btn.setY(200*(counter+1));
@@ -146,7 +137,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 startActivity(intent);
                 break;
             case R.id.nav_profile:
-                Intent profilo = new Intent(this, AccountActivity.class);
+                Intent profilo = new Intent(this, Account.class);
                 startActivity(profilo);
                 break;
             case R.id.group_create:

@@ -35,8 +35,6 @@ public class Group extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-
-
     }
 
     public void new_activity (View view) {

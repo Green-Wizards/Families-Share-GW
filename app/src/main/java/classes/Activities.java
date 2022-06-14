@@ -5,8 +5,6 @@ import java.io.Serializable;
 public class Activities implements Serializable {
 
     /** ATTRIBUTI **/
-    //activity_id reinserito affinchè funzioni il codice di Massimiliano, ma toericamente non fa parte dell'oggetto -yuri
-    //public String activity_id;
     public String group_id;
     public String activity_name;
     public String description;
@@ -21,19 +19,6 @@ public class Activities implements Serializable {
 
     public Activities(){
         // Default constructor required for calls to DataSnapshot.getValue(Profile.class)
-    }
-
-    public Activities(String group_id, String description, String location, String color, String creator_id,
-                      boolean repetition, String repetition_type, boolean different_timeslot, String status) {
-        this.group_id = group_id;
-        this.description = description;
-        this.location = location;
-        this.color = color;
-        this.creator_id = creator_id;
-        this.repetition = repetition;
-        this.repetition_type = repetition_type;
-        this.different_timeslot = different_timeslot;
-        this.status = status;
     }
 
     public Activities(String group_id, String activity_name,

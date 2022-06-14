@@ -1,6 +1,8 @@
 package classes;
 
-public class Timeslot {
+import java.io.Serializable;
+
+public class Timeslot implements Serializable {
 
     /** ATTRIBUTI **/
     public String timeslot_id;

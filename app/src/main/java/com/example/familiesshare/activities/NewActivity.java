@@ -94,7 +94,7 @@ public class NewActivity extends AppCompatActivity {
         String nomeAttivita = activityName.getText().toString().trim();
         String descrizAttivita = activityDescription.getText().toString().trim();
         String zonaAttivita = activityPlace.getText().toString().trim();
-
+/*
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
         final Date[] data = new Date[1];
@@ -117,11 +117,11 @@ public class NewActivity extends AppCompatActivity {
 
             }
         });
-
+*/
 
 
         Activities nuovaAttivita = new Activities(idgruppo , nomeAttivita, descrizAttivita, zonaAttivita,
-                     mAuth.getCurrentUser().getUid(), sdf.format(data[0]));
+                     mAuth.getCurrentUser().getUid(), "");//sdf.format(data[0]));
 
         String uniqueID = UUID.randomUUID().toString();
         FirebaseDatabase.getInstance().getReference("Activities")

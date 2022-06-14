@@ -32,7 +32,7 @@
         <activity
             android:name=".activities.ProfileModify"
             android:exported="false"
-            android:parentActivityName=".activities.AccountActivity" />
+            android:parentActivityName=".activities.Account" />
         <activity
             android:name=".activities.Project"
             android:exported="false"
@@ -68,7 +68,7 @@
             android:label=" "
             android:parentActivityName=".activities.DrawerMenu" />
         <activity
-            android:name=".activities.AccountActivity"
+            android:name=".activities.Account"
             android:exported="false"
             android:label=" "
             android:parentActivityName=".activities.DrawerMenu" />

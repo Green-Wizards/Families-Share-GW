@@ -39,6 +39,7 @@ public class ActivityParticipation extends Activity {
     private String status;
     private String group_id;
     private String name;
+    private DatabaseReference m;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,61 +48,84 @@ public class ActivityParticipation extends Activity {
 
         activity_id = savedInstanceState.getString("activity_id");
         group_id = savedInstanceState.getString("group_id");
-        getData(activity_id);
+        getData();
         setData();
         getTimeslots(activity_name);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 
-    private void getData(String activity_id){
+    private void getData(){
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null){
-            DatabaseReference m = mDatabase.child("Activities").child("group_id").equalTo(group_id).getRef();
-            //controllo id di firebase corretto?
-            m.child("description").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    description = (String) task.getResult().getValue();
-                }
-            });
-            m.child("location").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    location=  (String) task.getResult().getValue();
-                }
-            });
-            m.child("color").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    color=  (String) task.getResult().getValue();
-                }
-            });
-            m.child("creator_id").get().addOnCompleteListener(task -> creator_id=  (String) task.getResult().getValue());
-            m.child("repetition").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    repetition=  (boolean) task.getResult().getValue();
-                }
-            });
-            m.child("repetition_type").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    repetition_type=  (String) task.getResult().getValue();
-                }
-            });
-            m.child("different_timeslot").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    different_timeslot= (boolean) task.getResult().getValue();
-                }
-            });
-            m.child("status").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    status=  (String) task.getResult().getValue();
-                }
-            });
+            mDatabase.child("Activities").addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            //Get map in datasnapshot
+                            GetActivities((Map<String,Object>) dataSnapshot.getValue());
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            //handle databaseError
+                        }
+                    });
         }
+    }
+
+    private void GetActivities(Map<String,Object> activities) {
+        //itera tutti i gruppi
+        for (Map.Entry<String, Object> entry : activities.entrySet()){
+            //Get user map
+            String activity =  entry.getKey();
+            if(activity.equals(activity_id))
+                m = mDatabase.child("Activities").child(activity);
+        }
+
+        m.child("description").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                description = (String) task.getResult().getValue();
+            }
+        });
+        m.child("location").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                location=  (String) task.getResult().getValue();
+            }
+        });
+        m.child("color").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                color=  (String) task.getResult().getValue();
+            }
+        });
+        m.child("creator_id").get().addOnCompleteListener(task -> creator_id=  (String) task.getResult().getValue());
+        m.child("repetition").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                repetition=  (boolean) task.getResult().getValue();
+            }
+        });
+        m.child("repetition_type").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                repetition_type=  (String) task.getResult().getValue();
+            }
+        });
+        m.child("different_timeslot").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                different_timeslot= (boolean) task.getResult().getValue();
+            }
+        });
+        m.child("status").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                status=  (String) task.getResult().getValue();
+            }
+        });
     }
 
     private void setData(){
@@ -127,7 +151,6 @@ public class ActivityParticipation extends Activity {
                             //handle databaseError
                         }
                     });
-
         }
     }
 

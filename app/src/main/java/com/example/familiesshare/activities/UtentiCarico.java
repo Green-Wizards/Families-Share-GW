@@ -70,7 +70,7 @@ public class UtentiCarico extends AppCompatActivity {
     }
 
     public void account(View v){
-        Intent i = new Intent(this, AccountActivity.class);
+        Intent i = new Intent(this, Account.class);
         startActivity(i);
     }
 

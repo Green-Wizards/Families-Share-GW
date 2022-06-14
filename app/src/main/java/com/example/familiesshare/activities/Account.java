@@ -5,7 +5,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -24,7 +23,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class AccountActivity extends AppCompatActivity implements View.OnClickListener {
+public class Account extends AppCompatActivity implements View.OnClickListener {
 
     private TextView txtUserName;
     private DatabaseReference mDatabase;
@@ -64,7 +63,7 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     if (!task.isSuccessful()) {
-                        Toast.makeText(AccountActivity.this, "NON SO CHI SEI", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Account.this, "NON SO CHI SEI", Toast.LENGTH_LONG).show();
                     } else {
                         String nome = task.getResult().getValue().toString();
                         txtUserName.setText(nome);
