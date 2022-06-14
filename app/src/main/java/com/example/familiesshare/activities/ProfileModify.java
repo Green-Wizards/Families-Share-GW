@@ -98,5 +98,10 @@ public class ProfileModify extends AppCompatActivity {
 
     }
 
+    public void confirm (View v){
+        Intent i = new Intent(this, Account.class);
+        startActivity(i);
+    }
+
 
 }

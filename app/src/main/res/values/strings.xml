@@ -14,7 +14,7 @@
     <string name="altri_utenti_non_possono_trovare_il_gruppo">Altri utenti NON possono trovare il gruppo</string>
     <string name="accountname">AccountName</string>
     <string name="info">INFO</string>
-    <string name="bambini">UTENTI A CARICO</string>
+    <string name="bambini">GRUPPO FAMILIARE</string>
     <string name="indirizzo">Indirizzo</string>
     <string name="button">Button</string>
     <string name="AggFigl">Non hai ancora aggiunto utenti a carico. Fare clic sull\'icona in basso a destra per agiungere un nuovo utente a carico</string>
