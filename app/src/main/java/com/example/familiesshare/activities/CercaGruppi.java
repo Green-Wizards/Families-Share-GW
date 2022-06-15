@@ -68,14 +68,11 @@ public class CercaGruppi extends AppCompatActivity {
         ArrayList<Button> bottoni = new ArrayList<>();
         Integer counter = new Integer(0);
             for (Map.Entry<String, Object> entry : mappaGroup.entrySet()){
-                //Get user map
                 Map groupTrovato = (Map) entry.getValue();
                 String idGroup =  entry.getKey();
 
-
                 if ((Boolean) groupTrovato.get("visibility") 
                     && (((String) groupTrovato.get("name")).toLowerCase().contains(input.toLowerCase()))){
-
                     Button btn = new Button(this);
                     String str = (String) groupTrovato.get("name");
                     btn.setText(str);
