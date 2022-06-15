@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -164,8 +165,8 @@ public class ActivityParticipation extends Activity {
     private void ShowUserTimeslots(Map<String,Object> mappaSlots) {
 
         ArrayList<String> timeslots = new ArrayList<>();
-        ConstraintLayout constr;
-        constr = (ConstraintLayout) findViewById(R.id.timeslotZone);
+        LinearLayout constr;
+        constr = (LinearLayout) findViewById(R.id.buttonZone);
         ArrayList<Button> bottoni = new ArrayList<>();
         Integer counter = new Integer(0);
 
@@ -180,11 +181,6 @@ public class ActivityParticipation extends Activity {
                 timeslots.add((String) timeslot.get(tmp));
 
                 Button btn = new Button(this);
-                btn.setX(100);
-                btn.setY(200*(counter+1));
-                btn.setHeight(80);
-                btn.setWidth(875);
-                btn.setText((String) timeslot.get(tmp));
                 btn.setTag(counter);
                 btn.setOnClickListener(v -> {
                     Intent i = new Intent(ActivityParticipation.this, ActivityTimeslot.class);

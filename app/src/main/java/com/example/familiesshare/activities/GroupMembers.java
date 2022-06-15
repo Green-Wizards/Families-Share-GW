@@ -5,16 +5,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.example.familiesshare.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 public class GroupMembers extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
-    public String nomegruppo;
-    public String idgruppo;
+    private String nomegruppo;
+    private String idgruppo;
+    private Map<String, Object> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +34,11 @@ public class GroupMembers extends AppCompatActivity {
         Intent intent = getIntent();
         nomegruppo = intent.getStringExtra("group_name");
         idgruppo = intent.getStringExtra("group_id");
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+
+        getUsers();
+        showMembers();
     }
 
     public void goBack(View v){
@@ -50,5 +65,70 @@ public class GroupMembers extends AppCompatActivity {
         i.putExtra("group_name", nomegruppo);
         i.putExtra("group_id", idgruppo);
         startActivity(i);
+    }
+
+    private void getUsers(){
+        if(mAuth.getCurrentUser() != null) {
+            mDatabase.child("Profiles").addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            users = ((Map<String,Object>) dataSnapshot.getValue());
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {}
+                    });
+        }
+    }
+
+    private void showMembers(){
+        if(mAuth.getCurrentUser() != null) {
+            mDatabase.child("Members").addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            ShowDependentsButton((Map<String,Object>) dataSnapshot.getValue());
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {}
+                    });
+        }
+    }
+
+    private void ShowDependentsButton(Map<String,Object> mappaDep) {
+        LinearLayout constr;
+        constr = (LinearLayout) findViewById(R.id.memberZone);
+        ArrayList<Button> bottoni = new ArrayList<>();
+        Integer counter = new Integer(0);
+            //itera tutti i gruppi
+            for (Map.Entry<String, Object> entry : mappaDep.entrySet()){
+                //Get user map
+                Map member = (Map) entry.getValue();
+                String idMember = entry.getKey();
+                //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
+                if (member.get("group_id").equals(idgruppo)){
+                    for(Map.Entry<String, Object> entry2 : users.entrySet()){
+                        Map memberTrovato = (Map) entry2.getValue();
+                        String idUser = entry2.getKey();
+                        if(idUser.equals(idMember)){
+                            Button btn = new Button(this);
+                            String str = (String) memberTrovato.get("given_name") + " " + (String) memberTrovato.get("family_name");
+                            btn.setText(str);
+                            btn.setTag(counter);
+                            btn.setOnClickListener(v -> {
+                                Intent i = new Intent(this, InfoUtenti.class);
+                                i.putExtra("idUser", idUser);
+                                i.putExtra("groupid", idgruppo);
+                                startActivity(i);
+                            });
+                            constr.addView(btn);
+                            bottoni.add(btn);
+                            counter += 1;
+                        }
+                    }
+                }
+            }
     }
 }

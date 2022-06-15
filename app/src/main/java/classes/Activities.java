@@ -9,13 +9,14 @@ public class Activities implements Serializable {
     public String activity_name;
     public String description;
     public String location;
-    public String color;
     public String creator_id;
     public String date;
-    public boolean repetition;
-    public String repetition_type;
     public boolean different_timeslot;
     public String status;
+    public int minUser;
+    public int maxUser;
+    public int minDependent;
+    public int maxDependent;
 
     public Activities(){
         // Default constructor required for calls to DataSnapshot.getValue(Profile.class)
