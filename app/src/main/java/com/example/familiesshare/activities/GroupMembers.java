@@ -108,14 +108,15 @@ public class GroupMembers extends AppCompatActivity {
                 Map member = (Map) entry.getValue();
                 String idMember = entry.getKey();
                 //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
-                if (member.get("group_id").equals(idgruppo)){
-                    for(Map.Entry<String, Object> entry2 : users.entrySet()){
-                        Map memberTrovato = (Map) entry2.getValue();
-                        String idUser = entry2.getKey();
-                        if(idUser.equals(idMember)){
+                if (idMember.equals(idgruppo)){
+                    String idUser = (String) member.get("user_id");
+                    for(Map.Entry<String, Object> user : users.entrySet()){
+                        String str = user.getKey();
+                        Map userMap = (Map) user.getValue();
+                        if(str.equals(member.get("user_id"))){
                             Button btn = new Button(this);
-                            String str = (String) memberTrovato.get("given_name") + " " + (String) memberTrovato.get("family_name");
-                            btn.setText(str);
+                            String str2 = (String) userMap.get("given_name") + " " + (String) userMap.get("family_name");
+                            btn.setText(str2);
                             btn.setTag(counter);
                             btn.setOnClickListener(v -> {
                                 Intent i = new Intent(this, InfoUtenti.class);
@@ -126,9 +127,9 @@ public class GroupMembers extends AppCompatActivity {
                             constr.addView(btn);
                             bottoni.add(btn);
                             counter += 1;
+                            }
                         }
                     }
                 }
-            }
     }
 }
