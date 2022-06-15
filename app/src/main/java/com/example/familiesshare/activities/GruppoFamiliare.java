@@ -45,6 +45,12 @@ public class GruppoFamiliare extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void newNF(View v){
+        Intent i = new Intent(this, PopupNF.class);
+        i.putExtra("userid", userid);
+        startActivity(i);
+    }
+
     private void showFamiliari(){
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();

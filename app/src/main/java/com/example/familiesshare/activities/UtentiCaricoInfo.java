@@ -57,7 +57,7 @@ public class UtentiCaricoInfo extends AppCompatActivity {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(UtentiCaricoInfo.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   tvNome.setText(task.getResult().getValue().toString());
+                                                   tvNome.setText((String)task.getResult().getValue());
                                                }
                                            }
                 }
@@ -69,7 +69,7 @@ public class UtentiCaricoInfo extends AppCompatActivity {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(UtentiCaricoInfo.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   tvCognome.setText(task.getResult().getValue().toString());
+                                                   tvCognome.setText((String)task.getResult().getValue());
                                                }
                                            }
                 }
@@ -81,7 +81,7 @@ public class UtentiCaricoInfo extends AppCompatActivity {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(UtentiCaricoInfo.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   tvDataNascita.setText(task.getResult().getValue().toString());
+                                                   tvDataNascita.setText((String)task.getResult().getValue());
                                                }
                                            }
                                        }
@@ -93,19 +93,19 @@ public class UtentiCaricoInfo extends AppCompatActivity {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(UtentiCaricoInfo.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   tvGenere.setText(task.getResult().getValue().toString());
+                                                   tvGenere.setText((String)task.getResult().getValue());
                                                }
                                            }
                                        }
                 );
-        mDatabase.child("Dependents").child(idDependent).child("gradoParentela").get()
+        mDatabase.child("Dependents").child(idDependent).child("kinship").get()
                 .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                            @Override
                                            public void onComplete(@NonNull Task<DataSnapshot> task) {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(UtentiCaricoInfo.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   tvParentela.setText(task.getResult().getValue().toString());
+                                                   tvParentela.setText((String) task.getResult().getValue());
                                                }
                                            }
                                        }
@@ -117,7 +117,7 @@ public class UtentiCaricoInfo extends AppCompatActivity {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(UtentiCaricoInfo.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   tvInfo.setText(task.getResult().getValue().toString());
+                                                   tvInfo.setText((String)task.getResult().getValue());
                                                }
                                            }
                                        }
