@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -23,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.UUID;
 
 import classes.Groups;
+import classes.Members;
 
 public class NewGroupCreation extends AppCompatActivity{
 
@@ -105,6 +107,28 @@ public class NewGroupCreation extends AppCompatActivity{
         Boolean visibilitaGruppo = groupVisibility.isChecked();
         String tipoContattoGruppo = groupContactType.getSelectedItem().toString();
 
+        if(nomeGruppo.isEmpty()){
+            groupName.setError("Nome del gruppo richiesto!");
+            groupName.requestFocus();
+            return;
+        }
+        if(descrizioneGruppo.isEmpty()){
+            groupDescription.setError("Descrizione del gruppo richiesta!");
+            groupDescription.requestFocus();
+            return;
+        }
+        if(areaGruppo.isEmpty()){
+            groupArea.setError("Area del gruppo richiesta!");
+            groupArea.requestFocus();
+            return;
+        }
+        if(infoContattoGruppo.isEmpty()){
+            groupContactInfo.setError("Informazioni del contatto richieste!");
+            groupContactInfo.requestFocus();
+            return;
+        }
+
+
         Groups nuovoGruppo = new Groups(nomeGruppo, descrizioneGruppo, areaGruppo, mAuth.getCurrentUser().getUid(), tipoContattoGruppo, infoContattoGruppo, visibilitaGruppo);
         String uniqueID = UUID.randomUUID().toString();
         FirebaseDatabase.getInstance().getReference("Groups")
@@ -114,12 +138,29 @@ public class NewGroupCreation extends AppCompatActivity{
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(NewGroupCreation.this, "Creazione gruppo avvenuta con successo!", Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(NewGroupCreation.this, DrawerMenu.class);
-                    startActivity(i);
+
                 } else {
-                    Toast.makeText(NewGroupCreation.this, "Creazioine del gruppo fallita!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(NewGroupCreation.this, "Creazione del gruppo fallita!", Toast.LENGTH_LONG).show();
                 }
             }
         });
+        Members membro = new Members(mAuth.getCurrentUser().getUid(), uniqueID, true, false);
+        FirebaseDatabase.getInstance().getReference("Members")
+                .child(uniqueID)
+                .setValue(membro).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(NewGroupCreation.this, "Aggiunta membro avvenuta con successo!", Toast.LENGTH_LONG).show();
+
+                        } else {
+                            Toast.makeText(NewGroupCreation.this, "Creazioine del membro fallita!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+
+        Intent i = new Intent(NewGroupCreation.this, DrawerMenu.class);
+        startActivity(i);
     }
 }

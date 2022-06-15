@@ -5,9 +5,9 @@ import java.io.Serializable;
 public class Timeslots implements Serializable {
 
     /** ATTRIBUTI **/
-    public String data;
-    public String oraInizio;
-    public String oraFine;
+    public String date;
+    public String startTime;
+    public String endTime;
     public String activity_id;
 
     public Timeslots(){
@@ -15,9 +15,9 @@ public class Timeslots implements Serializable {
     }
 
     public Timeslots(String data, String oraInizio, String oraFine, String activity_id) {
-        this.data = data;
-        this.oraInizio = oraInizio;
-        this.oraFine = oraFine;
+        this.date = data;
+        this.startTime = oraInizio;
+        this.endTime = oraFine;
         this.activity_id = activity_id;
     }
 }

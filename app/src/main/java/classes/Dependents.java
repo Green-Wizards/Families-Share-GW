@@ -1,9 +1,6 @@
 package classes;
 
-import com.google.firebase.database.IgnoreExtraProperties;
-
 import java.io.Serializable;
-import java.util.Date;
 
 public class Dependents implements Serializable {
 
@@ -13,7 +10,7 @@ public class Dependents implements Serializable {
     public String gender;
     public String birthdate;;
     public String infoList;
-    public String gradoParentela;
+    public String kinship;
     public String tutor_id;
 
     public Dependents(){}
@@ -23,7 +20,7 @@ public class Dependents implements Serializable {
         this.family_name = family_name;
         this.gender = gender;
         this.birthdate = birthdate;
-        this.gradoParentela = parentela;
+        this.kinship = parentela;
         this.infoList = infoList;
         this.tutor_id = tutor_id;
     }
