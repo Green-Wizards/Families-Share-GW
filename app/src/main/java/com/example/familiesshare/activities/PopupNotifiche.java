@@ -74,7 +74,7 @@ public class PopupNotifiche extends AppCompatActivity {
                 && notificatrovata.get("read").toString().equals("false")){ //gruppi a cui si partecipa, quindi user_id
                 Button btn = new Button(this);
 
-                Toast.makeText(PopupNotifiche.this, "TEST HERE", Toast.LENGTH_LONG).show();
+                //Toast.makeText(PopupNotifiche.this, "TEST HERE", Toast.LENGTH_LONG).show();
 
                 if(notificatrovata.get("subject").equals("FN")) {
                     btn.setText("Sei stato inserito in un nucleo familiare!");
