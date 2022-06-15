@@ -119,12 +119,12 @@ public class UtentiCarico extends AppCompatActivity {
                             + " - " + (String) dependentTrovato.get("gradoParentela");
                     btn.setText(str);
                     btn.setTag(counter);
-                /*btn.setOnClickListener(v -> {
-                    Intent i = new Intent(this, Group.class);
-                    i.putExtra("group_name", (String) dependentTrovato.get("name"));
-                    i.putExtra("group_id", idDependent);
+                btn.setOnClickListener(v -> {
+                    Intent i = new Intent(this, UtentiCaricoInfo.class);
+                    i.putExtra("idDependent", idDependent);
+                    i.putExtra("tutor_id", (String) dependentTrovato.get("tutor_id"));
                     startActivity(i);
-                });*/
+                });
                     constr.addView(btn);
                     bottoni.add(btn);
                     counter += 1;
