@@ -132,4 +132,9 @@ public class GroupMembers extends AppCompatActivity {
                     }
                 }
     }
+
+    public void onClickNewMember(View v){
+        Intent i = new Intent(this, InviteMember.class);
+        startActivity(i);
+    }
 }
