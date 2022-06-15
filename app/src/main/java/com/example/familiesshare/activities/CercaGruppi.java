@@ -26,7 +26,7 @@ public class CercaGruppi extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText search;
     private String sender;
-    private String input = "";
+    private String input;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,21 @@ public class CercaGruppi extends AppCompatActivity {
             for (Map.Entry<String, Object> entry : mappaGroup.entrySet()){
                 Map groupTrovato = (Map) entry.getValue();
                 String idGroup =  entry.getKey();
-
+                if(input.equals("")){
+                    Button btn = new Button(this);
+                    String str = (String) groupTrovato.get("name");
+                    btn.setText(str);
+                    btn.setTag(counter);
+                    btn.setOnClickListener(v -> {
+                        Intent i = new Intent(this, GroupEnter.class);
+                        i.putExtra("groupid", idGroup);
+                        startActivity(i);
+                    });
+                    constr.addView(btn);
+                    bottoni.add(btn);
+                    counter += 1;
+                }
+                else{
                 if ((Boolean) groupTrovato.get("visibility") 
                     && (((String) groupTrovato.get("name")).toLowerCase().contains(input.toLowerCase()))){
                     Button btn = new Button(this);
@@ -85,6 +99,7 @@ public class CercaGruppi extends AppCompatActivity {
                     constr.addView(btn);
                     bottoni.add(btn);
                     counter += 1;
+                }
                 }
             }
         }

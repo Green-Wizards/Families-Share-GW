@@ -90,7 +90,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
             Map gruppoTrovato = (Map) entry.getValue();
             String idGruppo =  entry.getKey();
             //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
-            if (gruppoTrovato.get("owner_id").equals(mAuth.getCurrentUser().getUid())){ //gruppi a cui si partecipa, quindi user_id
+            if (gruppoTrovato.get("owner_id").equals(mAuth.getCurrentUser().getUid())){ //modificare
                 Button btn = new Button(this);
                 btn.setText((String) gruppoTrovato.get("name"));
                 btn.setTag(counter);

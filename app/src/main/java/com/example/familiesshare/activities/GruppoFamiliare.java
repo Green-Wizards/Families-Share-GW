@@ -24,7 +24,7 @@ public class GruppoFamiliare extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
     private String userid;
-    private String[] nucleo;
+    private String[] nucleo; // capire
     private int limit;
 
     @Override

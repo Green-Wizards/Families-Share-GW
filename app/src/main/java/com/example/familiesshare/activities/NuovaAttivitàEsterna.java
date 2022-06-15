@@ -24,7 +24,6 @@ import classes.Timeslots;
 public class NuovaAttivitàEsterna extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
-    public String nomegruppo, idgruppo;
     private EditText activityName, activityDescription, activityPlace, minVol, maxVol, minUC, maxUC;
     int minVolValue, maxVolValue, minUCValue, maxUCValue;
     private Spinner spin_tipo_att;
@@ -47,11 +46,6 @@ public class NuovaAttivitàEsterna extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
-        //prendo una reference all'intent per recuperare il nome del gruppo che voglio far vedere
-        Intent intent = getIntent();
-        nomegruppo = intent.getStringExtra("group_name"); //sarebbe meglio usare un id univoco del gruppo -yuri
-        idgruppo = intent.getStringExtra("group_id");
-
         activityName = (EditText) findViewById(R.id.et_activity_name);
         activityDescription = (EditText) findViewById(R.id.et_activity_description);
         activityPlace = (EditText) findViewById(R.id.et_activity_place);
@@ -68,10 +62,9 @@ public class NuovaAttivitàEsterna extends AppCompatActivity {
     public void goBack(View v){
         Intent i = new Intent(this, DrawerMenu.class);
         startActivity(i);
-    }public void back(View view){
-        Intent i = new Intent(this, Group.class);
-        i.putExtra("group_name", nomegruppo);
-        i.putExtra("group_id", idgruppo);
+    }
+    public void back(View view){
+        Intent i = new Intent(this, DrawerMenu.class);
         startActivity(i);
     }
 
@@ -184,9 +177,7 @@ public class NuovaAttivitàEsterna extends AppCompatActivity {
             FirebaseDatabase.getInstance().getReference("Subscriptions").child(uniqueID).setValue(sub);
         }
 
-        Intent i = new Intent(NuovaAttivitàEsterna.this, Group.class);
-        i.putExtra("group_name", nomegruppo );
-        i.putExtra("group_id", idgruppo );
+        Intent i = new Intent(NuovaAttivitàEsterna.this, DrawerMenu.class);
         startActivity(i);
 
     }

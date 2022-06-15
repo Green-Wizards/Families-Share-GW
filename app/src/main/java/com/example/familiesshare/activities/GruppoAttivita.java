@@ -119,5 +119,4 @@ public class GruppoAttivita extends AppCompatActivity {
             }
         }
     }
-    // collegare ad activityParticipation activity_id corretto (quello di firebase)
 }
