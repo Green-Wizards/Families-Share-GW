@@ -48,8 +48,9 @@ public class ActivityParticipation extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_participation);
 
-        activity_id = savedInstanceState.getString("activity_id");
-        group_id = savedInstanceState.getString("group_id");
+        Intent intent = getIntent();
+        activity_id = intent.getStringExtra("activity_id");
+        group_id = intent.getStringExtra("group_id");
         getData();
         setData();
         getTimeslots();
