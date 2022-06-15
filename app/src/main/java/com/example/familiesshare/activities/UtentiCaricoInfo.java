@@ -98,7 +98,7 @@ public class UtentiCaricoInfo extends AppCompatActivity {
                                            }
                                        }
                 );
-        mDatabase.child("Dependents").child(idDependent).child("gradoParentela").get()
+        mDatabase.child("Dependents").child(idDependent).child("kinship").get()
                 .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                            @Override
                                            public void onComplete(@NonNull Task<DataSnapshot> task) {
