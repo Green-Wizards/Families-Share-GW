@@ -108,7 +108,7 @@ public class GroupMembers extends AppCompatActivity {
                 Map member = (Map) entry.getValue();
                 String idMember = entry.getKey();
                 //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
-                if (idMember.equals(idgruppo)){
+                if (member.get("group_id").equals(idgruppo)){
                     String idUser = (String) member.get("user_id");
                     for(Map.Entry<String, Object> user : users.entrySet()){
                         String str = user.getKey();
