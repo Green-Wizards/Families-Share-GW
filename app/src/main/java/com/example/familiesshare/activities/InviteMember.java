@@ -79,7 +79,7 @@ public class InviteMember extends AppCompatActivity {
             if(userTrovato.get("email").equals(emailStr)){
                 found = true;
                 String uniqueID = UUID.randomUUID().toString();
-                Notifications n = new Notifications(mAuth.getCurrentUser().getUid(), idReceiver, "Member", false);
+                Notifications n = new Notifications(mAuth.getCurrentUser().getUid(), idReceiver, idgruppo, false);
                 FirebaseDatabase.getInstance().getReference("Notifications")
                         .child(uniqueID).setValue(n).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override

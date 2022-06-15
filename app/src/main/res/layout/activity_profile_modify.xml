@@ -258,16 +258,4 @@
         android:textColorHint="#757575"
         app:layout_constraintTop_toBottomOf="@+id/et_newMail" />
 
-    <Button
-        android:id="@+id/button28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/teal_700"
-        android:onClick="confirm"
-        android:text="@string/conferma"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_newDescription" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
