@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @IgnoreExtraProperties
-public class Dependent implements Serializable {
+public class Dependents implements Serializable {
 
     /** ATTRIBUTI **/
     public String dependent_id;
@@ -22,9 +22,9 @@ public class Dependent implements Serializable {
     public String gradoParentela;
     public String tutor_id;
 
-    public Dependent(){}
+    public Dependents(){}
 
-    public Dependent(String given_name, String family_name, String gender, String birthdate, String parentela, String infoList, String tutor_id) {
+    public Dependents(String given_name, String family_name, String gender, String birthdate, String parentela, String infoList, String tutor_id) {
         this.given_name = given_name;
         this.family_name = family_name;
         this.gender = gender;

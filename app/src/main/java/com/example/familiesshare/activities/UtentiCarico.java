@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,8 +21,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 public class UtentiCarico extends AppCompatActivity {
 
@@ -66,7 +73,64 @@ public class UtentiCarico extends AppCompatActivity {
             });
 
         }
+        showDependents();
+    }
 
+    private void showDependents(){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        if(mAuth.getCurrentUser() != null) {
+            mDatabase.child("Dependents").addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            ShowDependentsButton((Map<String,Object>) dataSnapshot.getValue());
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {}
+                    });
+        }
+    }
+
+    private void ShowDependentsButton(Map<String,Object> mappaDep) {
+        ConstraintLayout constr;
+        constr = (ConstraintLayout) findViewById(R.id.dependentZone);
+        ArrayList<Button> bottoni = new ArrayList<>();
+        Integer counter = new Integer(0);
+        if(mappaDep.isEmpty()){
+            findViewById(R.id.textView37).setVisibility(View.VISIBLE);
+        }
+        else{
+            findViewById(R.id.textView37).setVisibility(View.GONE);
+            //itera tutti i gruppi
+            for (Map.Entry<String, Object> entry : mappaDep.entrySet()){
+                //Get user map
+                Map dependentTrovato = (Map) entry.getValue();
+                String idDependent =  entry.getKey();
+                //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
+                if (dependentTrovato.get("tutor_id").equals(mAuth.getCurrentUser().getUid())){
+                    Button btn = new Button(this);
+                    btn.setX(100);
+                    btn.setY(200*(counter+1));
+                    btn.setHeight(100);
+                    btn.setWidth(875);
+                    String str = (String) dependentTrovato.get("given_name") + " " + (String) dependentTrovato.get("family_name")
+                            + " - " + (String) dependentTrovato.get("gradoParentela");
+                    btn.setText(str);
+                    btn.setTag(counter);
+                /*btn.setOnClickListener(v -> {
+                    Intent i = new Intent(this, Group.class);
+                    i.putExtra("group_name", (String) dependentTrovato.get("name"));
+                    i.putExtra("group_id", idDependent);
+                    startActivity(i);
+                });*/
+                    constr.addView(btn);
+                    bottoni.add(btn);
+                    counter += 1;
+                }
+            }
+        }
     }
 
     public void account(View v){

@@ -17,10 +17,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-
-import classes.Dependent;
-
 public class  ActivityTimeslot extends Activity {
     private String timeslot_id;
     private DatabaseReference mDatabase;

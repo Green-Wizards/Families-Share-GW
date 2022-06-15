@@ -21,8 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.UUID;
 
-import classes.Dependent;
-import classes.Group;
+import classes.Dependents;
 
 public class addUser extends AppCompatActivity {
     private String nome;
@@ -86,7 +85,7 @@ public class addUser extends AppCompatActivity {
     }
 
     private void end(View v){
-        Dependent d = new Dependent(nome, cognome, genere, birthday, parentela, infolist, mAuth.getCurrentUser().getUid());
+        Dependents d = new Dependents(nome, cognome, genere, birthday, parentela, infolist, mAuth.getCurrentUser().getUid());
         String uniqueID = UUID.randomUUID().toString();
         FirebaseDatabase.getInstance().getReference("Dependents")
                 .child(uniqueID)
