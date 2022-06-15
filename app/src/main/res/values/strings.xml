@@ -197,6 +197,20 @@
         <item>1941</item>
         <item>1940</item>
     </string-array>
+    <string-array name="spinner2">
+        <item>Selezione area tematica</item>
+        <item>Servizio</item>
+        <item>Attività sportiva</item>
+        <item>Attività ludica</item>
+        <item>Visita medica</item>
+        <item>Attività culturale</item>
+        <item>Attività all'aperto</item>
+        <item>Gita fuoriporta</item>
+        <item>Attività al chiuso</item>
+        <item>Videochiamata</item>
+        <item>Studio in compagnia</item>
+    </string-array>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="crea2">Imposta la visibilità del gruppo</string>

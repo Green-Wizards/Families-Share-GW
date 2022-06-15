@@ -79,6 +79,11 @@ public class NewActivity extends AppCompatActivity {
         timeslotsArrayFine.clear();
     }
 
+    public void back1(View v){
+        findViewById(R.id.linearLayout2).setVisibility(View.GONE);
+        findViewById(R.id.linearLayout4).setVisibility(View.VISIBLE);
+    }
+
     public void go2(View v){
         findViewById(R.id.linearLayout).setVisibility(View.GONE);
         findViewById(R.id.linearLayout4).setVisibility(View.VISIBLE);
