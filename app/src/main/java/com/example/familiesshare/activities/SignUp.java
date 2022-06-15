@@ -22,6 +22,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.UUID;
+
+import classes.FamilyNucleus;
 import classes.Profiles;
 
 public class SignUp extends AppCompatActivity implements View.OnClickListener{
@@ -128,6 +131,19 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                             Profiles profilo = new Profiles(nome, cognome, indirizzo,
                                     pw, ntelefono, "",
                                     "", "", "");
+                            String s = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                            FamilyNucleus fn = new FamilyNucleus( s+ "\n",s);
+
+                            FirebaseDatabase.getInstance().getReference("FamilyNucleus")
+                                    .child(UUID.randomUUID().toString())
+                                    .setValue(fn).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                            } else {
+                                            }
+                                        }
+                                    });
 
                             FirebaseDatabase.getInstance().getReference("Profiles")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
