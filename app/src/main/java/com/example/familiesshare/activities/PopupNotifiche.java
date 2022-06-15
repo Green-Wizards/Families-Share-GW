@@ -86,7 +86,7 @@ public class PopupNotifiche extends AppCompatActivity {
                     linLayout.addView(btn);
                 }
                 else{
-                    Toast.makeText(PopupNotifiche.this, "visualizzo notifiche: " + notificatrovata.get("subject").toString(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(PopupNotifiche.this, "visualizzo notifiche: " + notificatrovata.get("subject").toString(), Toast.LENGTH_LONG).show();
                     String s = "Sei invitato ad entrare in un gruppo!";
                     btn.setText(s);
                     btn.setTag(counter);

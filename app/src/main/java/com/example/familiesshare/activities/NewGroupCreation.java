@@ -145,8 +145,9 @@ public class NewGroupCreation extends AppCompatActivity{
             }
         });
         Members membro = new Members(mAuth.getCurrentUser().getUid(), uniqueID, true, false);
+        String uniqueIDmembro = UUID.randomUUID().toString();
         FirebaseDatabase.getInstance().getReference("Members")
-                .child(uniqueID)
+                .child(uniqueIDmembro)
                 .setValue(membro).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
