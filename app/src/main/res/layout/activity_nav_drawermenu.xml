@@ -58,6 +58,7 @@
                 android:layout_height="72dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
+                android:onClick="onSearch"
                 android:text="@string/unisciti_a_un_gruppo"
                 app:layout_constraintEnd_toStartOf="@+id/button15"
                 app:layout_constraintStart_toStartOf="parent"

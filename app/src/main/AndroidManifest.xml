@@ -103,6 +103,7 @@
         <activity android:name="com.example.familiesshare.activities.AttivitaEsterna" />
         <activity android:name="com.example.familiesshare.activities.UtentiCaricoInfo" />
         <activity android:name="com.example.familiesshare.activities.InfoUtenti" />
+        <activity android:name="com.example.familiesshare.activities.GroupEnter" />
     </application>
 
 </manifest>
