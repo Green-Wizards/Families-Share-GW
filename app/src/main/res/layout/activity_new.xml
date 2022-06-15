@@ -278,7 +278,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Parametri">
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/et_minimoVolontari"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -287,7 +287,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/et_maxVolontari"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -296,7 +296,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName6"
+            android:id="@+id/et_minUtentiCarico"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -305,7 +305,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName7"
+            android:id="@+id/et_maxUtentiCarico"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -314,7 +314,7 @@
             android:inputType="textPersonName" />
 
         <Spinner
-            android:id="@+id/spinner2"
+            android:id="@+id/spinner_tipoAttivita"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"

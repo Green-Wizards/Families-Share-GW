@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.familiesshare.R;
@@ -25,7 +26,9 @@ public class NewActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
     public String nomegruppo, idgruppo;
-    private EditText activityName, activityDescription, activityPlace;
+    private EditText activityName, activityDescription, activityPlace, minVol, maxVol, minUC, maxUC;
+    int minVolValue, maxVolValue, minUCValue, maxUCValue;
+    private Spinner spin_tipo_att;
     private String date;
     private String orarioInizio = "";
     private String orarioFine = "";
@@ -61,6 +64,11 @@ public class NewActivity extends AppCompatActivity {
         activityName = (EditText) findViewById(R.id.et_activity_name);
         activityDescription = (EditText) findViewById(R.id.et_activity_description);
         activityPlace = (EditText) findViewById(R.id.et_activity_place);
+        minVol = (EditText) findViewById(R.id.et_minimoVolontari);
+        maxVol = (EditText) findViewById(R.id.et_maxVolontari);
+        minUC = (EditText) findViewById(R.id.et_minUtentiCarico);
+        maxUC = (EditText) findViewById(R.id.et_maxUtentiCarico);
+        spin_tipo_att = (Spinner) findViewById(R.id.spinner_tipoAttivita);
 
         timeslotsArrayInizio = new ArrayList<>();
         timeslotsArrayFine = new ArrayList<>();
@@ -107,41 +115,91 @@ public class NewActivity extends AppCompatActivity {
     public void done(View view){
 
         String nomeAttivita = activityName.getText().toString().trim();
+        if(nomeAttivita.isEmpty()){
+            activityName.setError("Nome dell'attività richiesta!");
+            activityName.requestFocus();
+            return;
+        }
         String descrizAttivita = activityDescription.getText().toString().trim();
+        if(descrizAttivita.isEmpty()){
+            activityDescription.setError("Descrizione dell'attività richiesta!");
+            activityDescription.requestFocus();
+            return;
+        }
         String zonaAttivita = activityPlace.getText().toString().trim();
+
+
+
+        String minimoVol = minVol.getText().toString().trim();
+        if (minimoVol.equals("")){
+            minVolValue = 0;
+        }else{
+            minVolValue = Integer.parseInt((minVol.getText().toString().trim()).replaceAll("\\D+",""));
+        }
+
+        String massimoVol = maxVol.getText().toString().trim();
+        if (massimoVol.equals("")){
+            maxVolValue=-1; //-1 indica nessun limite
+        }else{
+            maxVolValue = Integer.parseInt((maxVol.getText().toString().trim()).replaceAll("\\D+",""));
+        }
+
+        String minimoUC = minUC.getText().toString().trim();
+        if (minimoUC.equals("")){
+            minUCValue = 0;
+        }else{
+            minUCValue = Integer.parseInt((minUC.getText().toString().trim()).replaceAll("\\D+",""));
+        }
+
+        String massimoUC = maxUC.getText().toString().trim();
+        if (massimoUC.equals("")){
+            maxUCValue=-1; //-1 indica nessun limite
+        }else{
+            maxUCValue = Integer.parseInt((maxUC.getText().toString().trim()).replaceAll("\\D+",""));
+        }
+
+
         date = getDate();
-        if(!date.equals("")){
-            for(String s : timeslotsArrayInizio)
-                orarioInizio = orarioInizio + s + "\n";
-            for(String s : timeslotsArrayFine)
-                orarioFine = orarioFine + s + "\n";
+        if(date.isEmpty()){
+            EditText d = (EditText) findViewById(R.id.editDate);
+            d.setError("Data dell'attività richiesta!");
+            d.requestFocus();
+            return;
+        }
 
-            Activities nuovaAttivita = new Activities(idgruppo , nomeAttivita, descrizAttivita, zonaAttivita,
-                         mAuth.getCurrentUser().getUid(), date);
+        for(String s : timeslotsArrayInizio)
+            orarioInizio = orarioInizio + s + "\n";
+        for(String s : timeslotsArrayFine)
+            orarioFine = orarioFine + s + "\n";
 
-            String uniqueID = UUID.randomUUID().toString();
-            FirebaseDatabase.getInstance().getReference("Activities").child(uniqueID).setValue(nuovaAttivita);
+        Activities nuovaAttivita = new Activities(idgruppo , nomeAttivita, descrizAttivita, zonaAttivita,
+                     mAuth.getCurrentUser().getUid(), date, false, "Ongoing", minUCValue, maxUCValue,
+                     minVolValue, maxVolValue);
 
-            int indice =timeslotsArrayInizio.size();
-            for(int index=0; index<indice; index++){
-                Timeslots timeslot = new Timeslots(date, timeslotsArrayInizio.get(index), timeslotsArrayFine.get(index), uniqueID);
-                String timeslot_id = UUID.randomUUID().toString();
-                FirebaseDatabase.getInstance().getReference("Timeslots").child(timeslot_id).setValue(timeslot);
-                Subscriptions sub = new Subscriptions("", "", timeslot_id);
-                FirebaseDatabase.getInstance().getReference("Subscriptions").child(uniqueID).setValue(sub);
-            }
+        String uniqueID = UUID.randomUUID().toString();
+        FirebaseDatabase.getInstance().getReference("Activities").child(uniqueID).setValue(nuovaAttivita);
 
-            Intent i = new Intent(NewActivity.this, Group.class);
-            i.putExtra("group_name", nomegruppo );
-            i.putExtra("group_id", idgruppo );
-            startActivity(i);}
+        int indice = timeslotsArrayInizio.size();
+        for(int index=0; index<indice; index++){
+            Timeslots timeslot = new Timeslots(date, timeslotsArrayInizio.get(index), timeslotsArrayFine.get(index), uniqueID);
+            String timeslot_id = UUID.randomUUID().toString();
+            FirebaseDatabase.getInstance().getReference("Timeslots").child(timeslot_id).setValue(timeslot);
+            Subscriptions sub = new Subscriptions("", "", timeslot_id);
+            FirebaseDatabase.getInstance().getReference("Subscriptions").child(uniqueID).setValue(sub);
+        }
+
+        Intent i = new Intent(NewActivity.this, Group.class);
+        i.putExtra("group_name", nomegruppo );
+        i.putExtra("group_id", idgruppo );
+        startActivity(i);
+
     }
 
     private String getDate(){
         date = ((EditText) findViewById(R.id.editDate)).getText().toString().trim();
         findViewById(R.id.editDate).setBackgroundColor(0xFFFFFF);
-        if(date.equals(""))
-            findViewById(R.id.editDate).setBackgroundColor(0xFFAF1A1A);
+        /*if(date.equals(""))
+            findViewById(R.id.editDate).setBackgroundColor(0xFFAF1A1A);*/
         return date;
     }
 
