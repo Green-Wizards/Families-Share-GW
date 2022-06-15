@@ -74,15 +74,15 @@ public class Account extends AppCompatActivity implements View.OnClickListener {
 
 
     public void retrieveNome(){
-        mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("given_name").get()
-                .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DataSnapshot> task) {
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(Account.this, "NON SO CHI SEI", Toast.LENGTH_LONG).show();
-                        } else {
-                            String nome = task.getResult().getValue().toString();
-                            txtUserName.setText(nome);
+                mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("given_name").get()
+                        .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                if (!task.isSuccessful()) {
+                                    Toast.makeText(Account.this, "NON SO CHI SEI", Toast.LENGTH_LONG).show();
+                                } else {
+                                    String nome = task.getResult().getValue().toString();
+                                    txtUserName.setText(nome);
                         }
                     }
                 }

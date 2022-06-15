@@ -48,8 +48,7 @@
             <TextView
                 android:id="@+id/textView42"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/nomeGruppoAggiungi"
@@ -92,7 +91,8 @@
                 android:id="@+id/button22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:onClick="onClickEnter"
+                android:text="ENTRA NEL GRUPPO" />
         </LinearLayout>
     </ScrollView>
 
