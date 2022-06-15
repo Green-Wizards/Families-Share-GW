@@ -51,6 +51,7 @@ public class NewActivity extends AppCompatActivity {
 
         findViewById(R.id.linearLayout2).setVisibility(View.GONE);
         findViewById(R.id.linearLayout3).setVisibility(View.GONE);
+        findViewById(R.id.linearLayout4).setVisibility(View.GONE);
 
         //acquisizione istanza del db firebase
         mDatabase = FirebaseDatabase.getInstance().getReference();
