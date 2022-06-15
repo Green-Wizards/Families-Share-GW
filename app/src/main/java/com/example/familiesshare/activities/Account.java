@@ -67,6 +67,7 @@ public class Account extends AppCompatActivity implements View.OnClickListener {
             retrieveTelefono();
             retrieveMail();
             retrieveDescrizione();
+            retrieveAddress();
         }
 
     }
@@ -117,6 +118,42 @@ public class Account extends AppCompatActivity implements View.OnClickListener {
                                        }
                 );
     }
+
+    public void retrieveAddress(){
+        mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("address").get()
+                .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                           @Override
+                                           public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                               if (!task.isSuccessful()) {
+                                                   Toast.makeText(Account.this, "Errore", Toast.LENGTH_LONG).show();
+                                               } else {
+                                                   String address = task.getResult().getValue().toString();
+
+                                                   mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("area").get()
+                                                           .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                                                                      @Override
+                                                                                      public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                                                                          if (!task.isSuccessful()) {
+                                                                                              Toast.makeText(Account.this, "Errore", Toast.LENGTH_LONG).show();
+                                                                                          } else {
+                                                                                              String area = task.getResult().getValue().toString();
+
+                                                                                              txtIndirizzo.setText(new String(area + " - " + address));
+                                                                                          }
+                                                                                      }
+                                                                                  }
+                                                           );
+
+
+
+
+                                                   txtDescrizione.setText(address);
+                                               }
+                                           }
+                                       }
+                );
+    }
+
     public void retrieveDescrizione(){
         mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("description").get()
                 .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {

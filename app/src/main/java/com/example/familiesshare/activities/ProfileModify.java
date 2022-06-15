@@ -69,10 +69,10 @@ public class ProfileModify extends AppCompatActivity {
 
 
     }
-    ///TODO: manca il bottone di conferma delle modifiche
+
     public void update(View v){
 
-        ///TODO: da testare!! nessun test ancora fatto
+
         String nuovoNome = newName.getText().toString().trim();
         String nuovoCognome = newSurname.getText().toString().trim();
         String nuovoTelefono = newPhone.getText().toString().trim();
@@ -84,14 +84,22 @@ public class ProfileModify extends AppCompatActivity {
 
         String nuovoMetodoPreferito = newMetodoPreferito.getSelectedItem().toString();
 
-        mDatabase.child("Profiles").child(mAuth.getUid()).child("given_name").setValue(nuovoNome);
-        mDatabase.child("Profiles").child(mAuth.getUid()).child("family_name").setValue(nuovoCognome);
-        mDatabase.child("Profiles").child(mAuth.getUid()).child("phone").setValue(nuovoTelefono);
-        mDatabase.child("Profiles").child(mAuth.getUid()).child("area").setValue(nuovaArea);
-        mDatabase.child("Profiles").child(mAuth.getUid()).child("address").setValue(nuovaVia+" "+nuovoCivico);
-        mDatabase.child("Profiles").child(mAuth.getUid()).child("email").setValue(nuovaMail);
-        mDatabase.child("Profiles").child(mAuth.getUid()).child("description").setValue(nuovaDescrizione);
-        mDatabase.child("Profiles").child(mAuth.getUid()).child("contact_option").setValue(nuovoMetodoPreferito);
+        if(!nuovoNome.equals(""))
+            mDatabase.child("Profiles").child(mAuth.getUid()).child("given_name").setValue(nuovoNome);
+        if(!nuovoCognome.equals(""))
+            mDatabase.child("Profiles").child(mAuth.getUid()).child("family_name").setValue(nuovoCognome);
+        if(!nuovoTelefono.equals(""))
+            mDatabase.child("Profiles").child(mAuth.getUid()).child("phone").setValue(nuovoTelefono);
+        if(!nuovaArea.equals(""))
+            mDatabase.child("Profiles").child(mAuth.getUid()).child("area").setValue(nuovaArea);
+        if(!nuovaVia.equals("") || !nuovoCivico.equals(""))
+            mDatabase.child("Profiles").child(mAuth.getUid()).child("address").setValue(nuovaVia+" "+nuovoCivico);
+        if(!nuovaMail.equals(""))
+            mDatabase.child("Profiles").child(mAuth.getUid()).child("email").setValue(nuovaMail);
+        if(!nuovaDescrizione.equals(""))
+            mDatabase.child("Profiles").child(mAuth.getUid()).child("description").setValue(nuovaDescrizione);
+        if(!nuovoMetodoPreferito.equals(""))
+            mDatabase.child("Profiles").child(mAuth.getUid()).child("contact_option").setValue(nuovoMetodoPreferito);
 
         Intent i = new Intent(this, Account.class);
         startActivity(i);
