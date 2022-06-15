@@ -33,7 +33,8 @@ public class CercaGruppi extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
-        sender = savedInstanceState.getString("sender");
+        Intent intent = getIntent();
+        sender = intent.getStringExtra("sender");
         showGroups();
     }
 
