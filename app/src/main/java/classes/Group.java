@@ -16,13 +16,14 @@ public class Group implements Serializable {
     public String owner_id;
     public String contact_info;
     public String contact_type;
+    public boolean visibility;
 
     public Group() {
         // Default constructor required for calls to DataSnapshot.getValue(Profile.class)
     }
 
     public Group(String name, String description, String location, String settings_id,
-                 String owner_id, String contact_type, String contact_info) {
+                 String owner_id, String contact_type, String contact_info, boolean visibility) {
         this.name = name;
         this.description = description;
         this.location = location;
@@ -30,5 +31,6 @@ public class Group implements Serializable {
         this.owner_id = owner_id;
         this.contact_type = contact_type;
         this.contact_info = contact_info;
+        this.visibility = visibility;
     }
 }

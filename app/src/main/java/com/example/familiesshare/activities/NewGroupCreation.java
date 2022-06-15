@@ -54,7 +54,6 @@ public class NewGroupCreation extends AppCompatActivity{
         findViewById(R.id.view2).setVisibility(View.GONE);
         findViewById(R.id.view3).setVisibility(View.GONE);
         findViewById(R.id.view4).setVisibility(View.GONE);
-        findViewById(R.id.view5).setVisibility(View.GONE);
 
         //acquisizione istanza del db firebase
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -69,7 +68,6 @@ public class NewGroupCreation extends AppCompatActivity{
 
 
     }
-
 
     public void menu(View v){
         Intent i = new Intent(this, DrawerMenu.class);
@@ -91,11 +89,6 @@ public class NewGroupCreation extends AppCompatActivity{
         findViewById(R.id.view4).setVisibility(View.VISIBLE);
     }
 
-    public void go5(View v){
-        findViewById(R.id.view4).setVisibility(View.GONE);
-        findViewById(R.id.view5).setVisibility(View.VISIBLE);
-    }
-
     public void back1(View v){
         findViewById(R.id.view2).setVisibility(View.GONE);
         findViewById(R.id.view1).setVisibility(View.VISIBLE);
@@ -105,13 +98,9 @@ public class NewGroupCreation extends AppCompatActivity{
         findViewById(R.id.view3).setVisibility(View.GONE);
         findViewById(R.id.view2).setVisibility(View.VISIBLE);
     }
-    public void back3(View v){
+    public void back4(View v){
         findViewById(R.id.view4).setVisibility(View.GONE);
         findViewById(R.id.view3).setVisibility(View.VISIBLE);
-    }
-    public void back4(View v){
-        findViewById(R.id.view5).setVisibility(View.GONE);
-        findViewById(R.id.view4).setVisibility(View.VISIBLE);
     }
 
     public void end(View v){
@@ -124,7 +113,7 @@ public class NewGroupCreation extends AppCompatActivity{
         String tipoContattoGruppo = groupContactType.getSelectedItem().toString();
 
         Group nuovoGruppo = new Group(nomeGruppo, descrizioneGruppo, areaGruppo,
-                /*settings_id*/ null, mAuth.getCurrentUser().getUid(), tipoContattoGruppo, infoContattoGruppo);
+                 null, mAuth.getCurrentUser().getUid(), tipoContattoGruppo, infoContattoGruppo, visibilitaGruppo);
         String uniqueID = UUID.randomUUID().toString();
         FirebaseDatabase.getInstance().getReference("Groups")
                 .child(uniqueID)
