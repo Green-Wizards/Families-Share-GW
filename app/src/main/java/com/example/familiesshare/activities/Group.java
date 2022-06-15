@@ -63,7 +63,7 @@ public class Group extends AppCompatActivity {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(Group.this, "Operazione fallita", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   String descr = task.getResult().getValue().toString();
+                                                   String descr = (String) task.getResult().getValue();
                                                    txtdescgruppo.setText(descr);
                                                }
                                            }
@@ -79,7 +79,7 @@ public class Group extends AppCompatActivity {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(Group.this, "Operazione fallita", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   String loc = task.getResult().getValue().toString();
+                                                   String loc = (String) task.getResult().getValue();
                                                    txtlocationgruppo.setText(loc);
                                                }
                                            }
@@ -96,7 +96,7 @@ public class Group extends AppCompatActivity {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(Group.this, "Operazione fallita", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   String ci = task.getResult().getValue().toString();
+                                                   String ci = (String) task.getResult().getValue();
                                                    txtinfocontatto.setText(ci);
                                                }
                                            }
