@@ -10,8 +10,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -94,8 +96,8 @@ public class UtentiCarico extends AppCompatActivity {
     }
 
     private void ShowDependentsButton(Map<String,Object> mappaDep) {
-        ConstraintLayout constr;
-        constr = (ConstraintLayout) findViewById(R.id.dependentZone);
+        LinearLayout constr;
+        constr = (LinearLayout) findViewById(R.id.depZone);
         ArrayList<Button> bottoni = new ArrayList<>();
         Integer counter = new Integer(0);
         if(mappaDep.isEmpty()){
@@ -111,10 +113,11 @@ public class UtentiCarico extends AppCompatActivity {
                 //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
                 if (dependentTrovato.get("tutor_id").equals(mAuth.getCurrentUser().getUid())){
                     Button btn = new Button(this);
-                    btn.setX(100);
-                    btn.setY(200*(counter+1));
-                    btn.setHeight(100);
-                    btn.setWidth(875);
+                    //btn.setX(100);
+                    //btn.setY(200*(counter+1));
+                    //btn.setHeight(100);
+                    //btn.setWidth(875);
+                    //btn.setLayoutParams((new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
                     String str = (String) dependentTrovato.get("given_name") + " " + (String) dependentTrovato.get("family_name")
                             + " - " + (String) dependentTrovato.get("gradoParentela");
                     btn.setText(str);
