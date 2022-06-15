@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,7 +32,7 @@ public class InviteFriends  extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         if(mAuth.getCurrentUser() != null) {
             String myEmail= mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("email").toString();
-            String emailStr = ((EditText) findViewById(R.id.editTextTextEmailAddress)).getText().toString().trim();
+            String emailStr = ((EditText) findViewById(R.id.editTextMail)).getText().toString().trim();
 
             Intent email= new Intent(Intent.ACTION_VIEW);
             email.setType("message/rfc822")

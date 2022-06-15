@@ -76,6 +76,8 @@ public class NewActivity extends AppCompatActivity {
 
     public void back(View view){
         Intent i = new Intent(this, Group.class);
+        i.putExtra("group_name", nomegruppo);
+        i.putExtra("group_id", idgruppo);
         startActivity(i);
     }
 

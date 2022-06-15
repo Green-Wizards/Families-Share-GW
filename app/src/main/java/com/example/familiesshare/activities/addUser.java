@@ -103,6 +103,10 @@ public class addUser extends AppCompatActivity {
                 });
     }
 
+    private void getFamilyNucleus(){
+
+    }
+
     private void getData(){
         nome = ((EditText) findViewById(R.id.et_given_name)).getText().toString().trim();
         cognome = ((EditText) findViewById(R.id.et_family_name)).getText().toString().trim();

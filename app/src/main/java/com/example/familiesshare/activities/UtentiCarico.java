@@ -136,6 +136,12 @@ public class UtentiCarico extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void gruppoFamiliare(View v){
+        Intent i = new Intent(this, GruppoFamiliare.class);
+        String user = mAuth.getCurrentUser().getUid();
+        i.putExtra("userid", user);
+        startActivity(i);
+    }
 
     public void aggiungiUtenteCarico(View v){
         Intent i = new Intent(this, addUser.class);

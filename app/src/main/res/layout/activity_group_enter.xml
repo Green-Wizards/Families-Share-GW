@@ -48,13 +48,14 @@
             <TextView
                 android:id="@+id/textView42"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="TextView" />
 
             <TextView
                 android:id="@+id/nomeGruppoAggiungi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#000000" />
