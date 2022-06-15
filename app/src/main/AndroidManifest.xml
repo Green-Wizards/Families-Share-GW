@@ -107,6 +107,8 @@
         <activity android:name="com.example.familiesshare.activities.InviteMember" />
         <activity android:name="com.example.familiesshare.activities.GruppoFamiliare" />
         <activity android:name="com.example.familiesshare.activities.PopupNF" />
+        <activity android:name="com.example.familiesshare.activities.ListaAttivitàEsterne" />
+        <activity android:name="com.example.familiesshare.activities.NuovaAttivitàEsterna" />
     </application>
 
 </manifest>

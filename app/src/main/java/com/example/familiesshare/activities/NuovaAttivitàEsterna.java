@@ -8,12 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.familiesshare.R;
 
-public class AttivitaEsterna extends AppCompatActivity {
+public class NuovaAttivitàEsterna extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_attivita_esterna);
+        setContentView(R.layout.activity_new_esterna);
     }
 
     public void goBack(View v){
