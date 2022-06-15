@@ -126,7 +126,10 @@ public class Account extends AppCompatActivity implements View.OnClickListener {
                                                    Toast.makeText(Account.this, "NON SO CHI SEI", Toast.LENGTH_LONG).show();
                                                } else {
                                                    String descr = task.getResult().getValue().toString();
-                                                   txtDescrizione.setText(descr);
+                                                   if(descr.equals(""))
+                                                       txtDescrizione.setText("Descrizione non disponibile.");
+                                                   else
+                                                       txtDescrizione.setText(descr);
                                                }
                                            }
                 }

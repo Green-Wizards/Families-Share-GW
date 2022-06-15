@@ -27,9 +27,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
 
-import classes.Activities;
-import classes.Subscription;
-import classes.Timeslot;
+import classes.*;
 
 public class NewActivity extends AppCompatActivity {
 

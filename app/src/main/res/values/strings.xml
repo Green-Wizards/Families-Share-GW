@@ -38,7 +38,8 @@
     <string name="mese">Mese</string>
     <string name="anno">Anno</string>
     <string-array name="metodo">
-        <item>EMAIL</item>
+        <item>Preferenza contatto</item>
+        <item>Email</item>
         <item>Numero di Telefono</item>
     </string-array>
     <string-array name="gender">
