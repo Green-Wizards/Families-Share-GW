@@ -114,7 +114,7 @@ public class UtentiCarico extends AppCompatActivity {
                 if (dependentTrovato.get("tutor_id").equals(mAuth.getCurrentUser().getUid())){
                     Button btn = new Button(this);
                     String str = (String) dependentTrovato.get("given_name") + " " + (String) dependentTrovato.get("family_name")
-                            + " - " + (String) dependentTrovato.get("gradoParentela");
+                            + " - " + (String) dependentTrovato.get("kinship");
                     btn.setText(str);
                     btn.setTag(counter);
                 btn.setOnClickListener(v -> {
