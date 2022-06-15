@@ -78,19 +78,25 @@ public class NewActivity extends AppCompatActivity {
         timeslotsArrayInizio.clear();
         timeslotsArrayFine.clear();
     }
-    public void back3(View v){
-        findViewById(R.id.linearLayout3).setVisibility(View.GONE);
-        findViewById(R.id.linearLayout2).setVisibility(View.VISIBLE);
-    }
 
     public void go2(View v){
         findViewById(R.id.linearLayout).setVisibility(View.GONE);
-        findViewById(R.id.linearLayout2).setVisibility(View.VISIBLE);
+        findViewById(R.id.linearLayout4).setVisibility(View.VISIBLE);
     }
 
     public void go3(View v){
         findViewById(R.id.linearLayout2).setVisibility(View.GONE);
         findViewById(R.id.linearLayout3).setVisibility(View.VISIBLE);
+    }
+
+    public void go4(View v){
+        findViewById(R.id.linearLayout4).setVisibility(View.GONE);
+        findViewById(R.id.linearLayout2).setVisibility(View.VISIBLE);
+    }
+
+    public void back4(View v){
+        findViewById(R.id.linearLayout4).setVisibility(View.GONE);
+        findViewById(R.id.linearLayout).setVisibility(View.VISIBLE);
     }
 
     public void done(View view){
