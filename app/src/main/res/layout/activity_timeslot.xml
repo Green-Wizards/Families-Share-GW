@@ -122,7 +122,7 @@ tools:context=".activities.ActivityTimeslot">
                 <EditText
                     android:id="@+id/editDependent"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="24dp"
                     android:ems="10"
@@ -137,11 +137,12 @@ tools:context=".activities.ActivityTimeslot">
                     android:id="@+id/button30"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
                     android:onClick="aggiungi"
                     android:text="Aggiungi"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/editDependent"
-                    tools:layout_editor_absoluteY="349dp" />
+                    app:layout_constraintTop_toBottomOf="@+id/join" />
 
                 <TextView
                     android:id="@+id/addedDependents"

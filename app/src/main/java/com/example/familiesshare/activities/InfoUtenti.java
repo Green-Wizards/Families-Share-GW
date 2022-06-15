@@ -17,9 +17,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 public class InfoUtenti extends AppCompatActivity {
 
-    private TextView tvNome, tvCognome, tvDataNascita, tvGenere, tvParentela, tvInfo;
+    private TextView tvNome, tvCognome, tvDescrizione, tvArea, tvAddress, tvEmail, tvTelefono;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
     private String idUser;
@@ -30,9 +32,13 @@ public class InfoUtenti extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_utenti);
 
-        tvNome = findViewById(R.id.NomeUCI);
-        tvCognome = findViewById(R.id.CognomeUCI);
-        tvInfo = findViewById(R.id.InfoUCI);
+        tvNome = findViewById(R.id.nome);
+        tvCognome = findViewById(R.id.cognome);
+        tvArea = findViewById(R.id.area);
+        tvAddress = findViewById(R.id.address);
+        tvEmail = findViewById(R.id.email);
+        tvTelefono = findViewById(R.id.telefono);
+        tvDescrizione = findViewById(R.id.descrizione);
 
         //acquisizione istanza del db firebase
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -43,13 +49,13 @@ public class InfoUtenti extends AppCompatActivity {
         idgroup = intent.getStringExtra("groupid");
 
         if(mAuth.getCurrentUser() != null) {
-            getDependantData();
+            getUserData();
         }
 
     }
 
-    private void getDependantData() {
-        mDatabase.child("Dependents").child(idUser).child("given_name").get()
+    private void getUserData() {
+        mDatabase.child("Profiles").child(idUser).child("given_name").get()
                 .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                            @Override
                                            public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -61,7 +67,7 @@ public class InfoUtenti extends AppCompatActivity {
                                            }
                                        }
                 );
-        mDatabase.child("Dependents").child(idUser).child("family_name").get()
+        mDatabase.child("Profiles").child(idUser).child("family_name").get()
                 .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                            @Override
                                            public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -73,50 +79,62 @@ public class InfoUtenti extends AppCompatActivity {
                                            }
                                        }
                 );
-        mDatabase.child("Dependents").child(idUser).child("birthdate").get()
+        mDatabase.child("Profiles").child(idUser).child("area").get()
                 .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                            @Override
                                            public void onComplete(@NonNull Task<DataSnapshot> task) {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(InfoUtenti.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   tvDataNascita.setText(task.getResult().getValue().toString());
+                                                   tvArea.setText(task.getResult().getValue().toString());
                                                }
                                            }
                                        }
                 );
-        mDatabase.child("Dependents").child(idUser).child("gender").get()
+        mDatabase.child("Profiles").child(idUser).child("address").get()
                 .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                            @Override
                                            public void onComplete(@NonNull Task<DataSnapshot> task) {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(InfoUtenti.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   tvGenere.setText(task.getResult().getValue().toString());
+                                                   tvAddress.setText(task.getResult().getValue().toString());
                                                }
                                            }
                                        }
                 );
-        mDatabase.child("Dependents").child(idUser).child("gradoParentela").get()
+        mDatabase.child("Profiles").child(idUser).child("email").get()
                 .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                            @Override
                                            public void onComplete(@NonNull Task<DataSnapshot> task) {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(InfoUtenti.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   tvParentela.setText(task.getResult().getValue().toString());
+                                                   tvEmail.setText(task.getResult().getValue().toString());
                                                }
                                            }
                                        }
                 );
-        mDatabase.child("Dependents").child(idUser).child("infoList").get()
+        mDatabase.child("Profiles").child(idUser).child("phone").get()
                 .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                            @Override
                                            public void onComplete(@NonNull Task<DataSnapshot> task) {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(InfoUtenti.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   tvInfo.setText(task.getResult().getValue().toString());
+                                                   tvTelefono.setText(task.getResult().getValue().toString());
+                                               }
+                                           }
+                                       }
+                );
+        mDatabase.child("Profiles").child(idUser).child("description").get()
+                .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                           @Override
+                                           public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                               if (!task.isSuccessful()) {
+                                                   Toast.makeText(InfoUtenti.this, "Errore", Toast.LENGTH_LONG).show();
+                                               } else {
+                                                   tvDescrizione.setText(task.getResult().getValue().toString());
                                                }
                                            }
                                        }
