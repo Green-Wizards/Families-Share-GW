@@ -34,7 +34,7 @@ public class addUser extends AppCompatActivity {
     private EditText info;
     private ArrayList<String> infos;
     private boolean spunta = false;
-    private String infolist;
+    private String infolist = "";
     private String birthday;
     private FirebaseAuth mAuth;
 
