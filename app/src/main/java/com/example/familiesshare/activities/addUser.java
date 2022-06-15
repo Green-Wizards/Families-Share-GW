@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,9 +18,14 @@ import com.example.familiesshare.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.UUID;
 
 import classes.Dependents;
@@ -36,6 +43,7 @@ public class addUser extends AppCompatActivity {
     private boolean spunta = false;
     private String infolist = "";
     private String birthday;
+    private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
 
     @Override
@@ -45,6 +53,7 @@ public class addUser extends AppCompatActivity {
         findViewById(R.id.InfoList).setVisibility(View.GONE);
         ((TextView) findViewById(R.id.InfoList)).setText("");
         infos = new ArrayList<>();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -87,9 +96,9 @@ public class addUser extends AppCompatActivity {
     private void end(View v){
         Dependents d = new Dependents(nome, cognome, genere, birthday, parentela, infolist, mAuth.getCurrentUser().getUid());
         String uniqueID = UUID.randomUUID().toString();
+        updateFamilyNucleus(uniqueID);
         FirebaseDatabase.getInstance().getReference("Dependents")
-                .child(uniqueID)
-                .setValue(d).addOnCompleteListener(new OnCompleteListener<Void>() {
+                .child(uniqueID).setValue(d).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
@@ -103,9 +112,35 @@ public class addUser extends AppCompatActivity {
                 });
     }
 
-    private void getFamilyNucleus(){
+    private void updateFamilyNucleus(String id){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        if(mAuth.getCurrentUser() != null) {
+            mDatabase.child("FamilyNucleus").addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            updateFN((Map<String,Object>) dataSnapshot.getValue(), id);
+                        }
 
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {}
+                    });
+        }
     }
+
+    private void updateFN(Map<String,Object> mappaFN, String id) {
+            for (Map.Entry<String, Object> entry : mappaFN.entrySet()){
+                Map FNTrovato = (Map) entry.getValue();
+                String idFN =  entry.getKey();
+                //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
+                if (FNTrovato.get("users_id").equals(mAuth.getCurrentUser().getUid())){
+                    String str = (String) FNTrovato.get("user_list");
+                    str = str + id + "\n";
+                    mDatabase.child("FamilyNucleus").child(idFN).child("user_list").setValue(str);
+                }
+            }
+        }
 
     private void getData(){
         nome = ((EditText) findViewById(R.id.et_given_name)).getText().toString().trim();
