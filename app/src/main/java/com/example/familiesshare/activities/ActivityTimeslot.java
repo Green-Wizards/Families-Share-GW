@@ -58,7 +58,7 @@ public class  ActivityTimeslot extends Activity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null){
-            DatabaseReference m = mDatabase.child("Subscription").child(activity_id).child("timeslot_id").equalTo(timeslot_id).getRef();
+            DatabaseReference m = mDatabase.child("Subscriptions").child(activity_id).child("timeslot_id").equalTo(timeslot_id).getRef();
 
             m.child("dependents").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override

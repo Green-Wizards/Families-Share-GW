@@ -1,4 +1,4 @@
-package classes;
+package classes.Old;
 
 import java.io.Serializable;
 
@@ -12,7 +12,7 @@ public class GroupSettings implements Serializable {
     public boolean publicity;
 
     public GroupSettings() {
-        // Default constructor required for calls to DataSnapshot.getValue(Profile.class)
+        // Default constructor required for calls to DataSnapshot.getValue(Profiles.class)
     }
 
     public GroupSettings(String group_id, boolean open, boolean visible, boolean publicity) {

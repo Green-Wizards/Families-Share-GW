@@ -1,6 +1,5 @@
 package com.example.familiesshare.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,23 +7,15 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.familiesshare.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.UUID;
 
 import classes.*;
@@ -122,10 +113,10 @@ public class NewActivity extends AppCompatActivity {
 
             int indice =timeslotsArrayInizio.size();
             for(int index=0; index<indice; index++){
-                Timeslot timeslot = new Timeslot(date, timeslotsArrayInizio.get(index), timeslotsArrayFine.get(index), uniqueID);
+                Timeslots timeslot = new Timeslots(date, timeslotsArrayInizio.get(index), timeslotsArrayFine.get(index), uniqueID);
                 String timeslot_id = UUID.randomUUID().toString();
                 FirebaseDatabase.getInstance().getReference("Timeslots").child(timeslot_id).setValue(timeslot);
-                Subscription sub = new Subscription("", "", timeslot_id);
+                Subscriptions sub = new Subscriptions("", "", timeslot_id);
                 FirebaseDatabase.getInstance().getReference("Subscriptions").child(uniqueID).setValue(sub);
             }
 
@@ -158,7 +149,7 @@ public class NewActivity extends AppCompatActivity {
             str = str + s1 + " - " + s2 + "\n";
             timeslotsArrayInizio.add(s1);
             timeslotsArrayFine.add(s2);
-            s4 = "Timeslot finora aggiunte: \n" + str;
+            s4 = "Timeslots finora aggiunte: \n" + str;
             ((TextView) findViewById(R.id.showTimeslots)).setText(s4);
         }
     }

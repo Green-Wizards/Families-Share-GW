@@ -2,7 +2,7 @@ package classes;
 
 import java.io.Serializable;
 
-public class Timeslot implements Serializable {
+public class Timeslots implements Serializable {
 
     /** ATTRIBUTI **/
     public String data;
@@ -10,11 +10,11 @@ public class Timeslot implements Serializable {
     public String oraFine;
     public String activity_id;
 
-    public Timeslot(){
-        // Default constructor required for calls to DataSnapshot.getValue(Profile.class)
+    public Timeslots(){
+        // Default constructor required for calls to DataSnapshot.getValue(Profiles.class)
     }
 
-    public Timeslot(String data, String oraInizio, String oraFine, String activity_id) {
+    public Timeslots(String data, String oraInizio, String oraFine, String activity_id) {
         this.data = data;
         this.oraInizio = oraInizio;
         this.oraFine = oraFine;

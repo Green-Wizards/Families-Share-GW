@@ -1,10 +1,8 @@
 package classes;
 
-import java.util.ArrayList;
-
 public class FamilyNucleus {
 
     /** ATTRIBUTI **/
-    public String nucleus_id;
-    public ArrayList<String> users_id;
+    public String user_list;
+    public String users_id;
 }

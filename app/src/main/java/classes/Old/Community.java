@@ -1,4 +1,4 @@
-package classes;
+package classes.Old;
 
 public class Community {
 

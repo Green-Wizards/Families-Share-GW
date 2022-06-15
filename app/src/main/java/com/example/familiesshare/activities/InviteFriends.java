@@ -32,7 +32,7 @@ public class InviteFriends  extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         if(mAuth.getCurrentUser() != null) {
-            String myEmail= mDatabase.child("Profile").child(mAuth.getCurrentUser().getUid()).child("email").toString();
+            String myEmail= mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("email").toString();
             String emailStr = ((EditText) findViewById(R.id.editTextTextEmailAddress)).getText().toString().trim();
 
             Intent email= new Intent(Intent.ACTION_VIEW);

@@ -146,7 +146,7 @@ public class ActivityParticipation extends Activity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null) {
-            mDatabase.child("Timeslot").addListenerForSingleValueEvent(
+            mDatabase.child("Timeslots").addListenerForSingleValueEvent(
                     new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -199,7 +199,7 @@ public class ActivityParticipation extends Activity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null) {
-            mDatabase.child("Group").child("group_id").child("group_name").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            mDatabase.child("Groups").child("group_id").child("group_name").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     name = (String) task.getResult().getValue();

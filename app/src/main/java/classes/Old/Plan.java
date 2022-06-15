@@ -1,8 +1,9 @@
-package classes;
+package classes.Old;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
+
+import classes.Subscriptions;
 
 public class Plan {
 
@@ -22,6 +23,6 @@ public class Plan {
     public int max_volunteers;
     public int max_dependents;
     public String category;
-    public ArrayList<Subscription> solution;
+    public ArrayList<Subscriptions> solution;
     public ArrayList<Participant> participants;
 }

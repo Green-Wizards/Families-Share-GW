@@ -5,19 +5,13 @@ import com.google.firebase.database.IgnoreExtraProperties;
 import java.io.Serializable;
 import java.util.Date;
 
-@IgnoreExtraProperties
 public class Dependents implements Serializable {
 
     /** ATTRIBUTI **/
-    public String dependent_id;
-    public String dependent_type;
     public String given_name;
     public String family_name;
     public String gender;
-    public String birthdate;
-    public String image_id;
-    public String background;
-    public boolean suspended;
+    public String birthdate;;
     public String infoList;
     public String gradoParentela;
     public String tutor_id;

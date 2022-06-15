@@ -19,7 +19,7 @@ public class Activities implements Serializable {
     public int maxDependent;
 
     public Activities(){
-        // Default constructor required for calls to DataSnapshot.getValue(Profile.class)
+        // Default constructor required for calls to DataSnapshot.getValue(Profiles.class)
     }
 
     public Activities(String group_id, String activity_name,
