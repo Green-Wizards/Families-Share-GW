@@ -76,7 +76,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                         }
                     });
         }
-        getMembers();
+        //getMembers();
     }
 
     private void ShowUserGroups(Map<String,Object> mappaGruppi) {
@@ -107,7 +107,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
             }
         }
     }
-
+    /*
     private void getMembers(){
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
@@ -124,6 +124,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                     });
         }
     }
+
     private void ShowPartyGroupButton(Map<String,Object> mappaGro) {
         LinearLayout constr;
         constr = (LinearLayout) findViewById(R.id.groupZone);
@@ -150,7 +151,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
             }
         }
 
-
+*/
     public void apriNotifiche(View vi){
         Intent io = new Intent(this, PopupNotifiche.class);
         startActivity(io);
