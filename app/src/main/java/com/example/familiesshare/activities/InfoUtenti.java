@@ -143,7 +143,7 @@ public class InfoUtenti extends AppCompatActivity {
 
     public void goBack(View v){
         Intent i = new Intent(this, GroupMembers.class);
-        i.putExtra("idgroup", idgroup);
+        i.putExtra("group_id", idgroup);
         startActivity(i);
     }
 }

@@ -1,6 +1,8 @@
 package classes;
 
-public class Notifications {
+import java.io.Serializable;
+
+public class Notifications implements Serializable {
 
     /** ATTRIBUTI **/
     public String sender_id;

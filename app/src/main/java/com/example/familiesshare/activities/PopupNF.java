@@ -29,6 +29,8 @@ public class PopupNF extends AppCompatActivity {
     private String email;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
+    private String user_list;
+    private String idFNG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,37 @@ public class PopupNF extends AppCompatActivity {
 
     }
 
+    private void getFN(){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        if(mAuth.getCurrentUser() != null) {
+            mDatabase.child("FamilyNucleus").addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            ShowFNButton((Map<String,Object>) dataSnapshot.getValue());
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {}
+                    });
+        }
+    }
+
+    private void ShowFNButton(Map<String,Object> mappaFN) {
+        for (Map.Entry<String, Object> entry : mappaFN.entrySet()){
+
+            Map FNTrovato = (Map) entry.getValue();
+            String idFN =  entry.getKey();
+            if (FNTrovato.get("users_id").equals(mAuth.getCurrentUser().getUid())){
+                user_list = (String) FNTrovato.get("user_list");
+                idFNG = idFN;
+            }
+        }
+    }
+
+
+
     private void ListUsers(Map<String,Object> mappaUsers) {
         boolean found = false;
         for (Map.Entry<String, Object> entry : mappaUsers.entrySet()){
@@ -49,7 +82,10 @@ public class PopupNF extends AppCompatActivity {
             String idReceiver =  entry.getKey();
             if(userTrovato.get("email").equals(email)){
                 found = true;
+                getFN();
+                user_list = user_list + idReceiver + "\n";
                 String uniqueID = UUID.randomUUID().toString();
+                mDatabase.child("FamilyNucleus").child(idFNG).child("user_list").setValue(user_list);
                 Notifications n = new Notifications(mAuth.getCurrentUser().getUid(), idReceiver, "FN", false);
                 FirebaseDatabase.getInstance().getReference("Notifications")
                         .child(uniqueID).setValue(n).addOnCompleteListener(new OnCompleteListener<Void>() {

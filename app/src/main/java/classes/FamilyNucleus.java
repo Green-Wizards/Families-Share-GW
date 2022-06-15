@@ -1,6 +1,8 @@
 package classes;
 
-public class FamilyNucleus {
+import java.io.Serializable;
+
+public class FamilyNucleus implements Serializable {
 
     /** ATTRIBUTI **/
     public String user_list;
