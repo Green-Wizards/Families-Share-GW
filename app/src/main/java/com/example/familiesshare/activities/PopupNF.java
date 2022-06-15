@@ -33,7 +33,7 @@ public class PopupNF extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.popup_invite_friends);
+        setContentView(R.layout.popup_invite_nf);
         Intent intent = getIntent();
         userid = intent.getStringExtra("userid");
 

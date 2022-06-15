@@ -64,7 +64,7 @@ public class GroupEnter extends AppCompatActivity {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(GroupEnter.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   nomeGruppo.setText(task.getResult().getValue().toString());
+                                                   nomeGruppo.setText((String) task.getResult().getValue());
                                                }
                                            }
                                        }
@@ -76,7 +76,7 @@ public class GroupEnter extends AppCompatActivity {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(GroupEnter.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   locationGruppo.setText(task.getResult().getValue().toString());
+                                                   locationGruppo.setText((String) task.getResult().getValue());
                                                }
                                            }
                                        }
@@ -88,7 +88,7 @@ public class GroupEnter extends AppCompatActivity {
                                                if (!task.isSuccessful()) {
                                                    Toast.makeText(GroupEnter.this, "Errore", Toast.LENGTH_LONG).show();
                                                } else {
-                                                   descrizioneGruppo.setText(task.getResult().getValue().toString());
+                                                   descrizioneGruppo.setText((String) task.getResult().getValue());
                                                }
                                            }
                                        }
