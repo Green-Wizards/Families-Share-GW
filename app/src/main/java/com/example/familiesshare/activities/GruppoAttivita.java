@@ -107,7 +107,7 @@ public class GruppoAttivita extends AppCompatActivity {
                     btn.setText(str);
                     btn.setTag(counter);
                     btn.setOnClickListener(v -> {
-                        Intent i = new Intent(this, UtentiCaricoInfo.class);
+                        Intent i = new Intent(this, ActivityParticipation.class);
                         i.putExtra("activity_id", idAct);
                         i.putExtra("group_id", idgruppo);
                         startActivity(i);
