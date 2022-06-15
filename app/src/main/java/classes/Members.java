@@ -1,6 +1,8 @@
 package classes;
 
-public class Members {
+import java.io.Serializable;
+
+public class Members implements Serializable {
 
     /** ATTRIBUTI **/
     public String user_id;
