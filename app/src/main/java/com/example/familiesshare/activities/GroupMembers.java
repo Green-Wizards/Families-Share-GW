@@ -135,6 +135,8 @@ public class GroupMembers extends AppCompatActivity {
 
     public void onClickNewMember(View v){
         Intent i = new Intent(this, InviteMember.class);
+        i.putExtra("group_name", nomegruppo);
+        i.putExtra("group_id", idgruppo);
         startActivity(i);
     }
 }

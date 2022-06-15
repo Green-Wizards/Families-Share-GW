@@ -1,12 +1,9 @@
 package com.example.familiesshare.activities;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,7 +19,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.UUID;
 
@@ -31,16 +27,29 @@ import classes.Notifications;
 public class InviteMember extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
-    String emailStr;
+    private String emailStr;
+    private String nomegruppo;
+    private String idgruppo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.popup_invite_friends);
-        emailStr = ((EditText) findViewById(R.id.editTextTextEmailAddress)).getText().toString().trim();
+        setContentView(R.layout.popup_invite_member);
+
+        Intent intent = getIntent();
+        nomegruppo = intent.getStringExtra("group_name");
+        idgruppo = intent.getStringExtra("group_id");
     }
+
+    private void getText(){
+        emailStr = ((EditText) findViewById(R.id.editTextTextPersonName)).getText().toString().trim();
+
+    }
+
     public void goBack(View v){
-        Intent i = new Intent(this, DrawerMenu.class);
+        Intent i= new Intent(InviteMember.this, GroupMembers.class);
+        i.putExtra("group_name", nomegruppo);
+        i.putExtra("group_id", idgruppo);
         startActivity(i);
     }
 
@@ -62,10 +71,13 @@ public class InviteMember extends AppCompatActivity {
     }
 
     private void ListUsers(Map<String,Object> mappaUsers) {
+        boolean found = false;
         for (Map.Entry<String, Object> entry : mappaUsers.entrySet()){
             Map userTrovato = (Map) entry.getValue();
             String idReceiver =  entry.getKey();
-            if (userTrovato.get("email").equals(emailStr)){
+            getText();
+            if(userTrovato.get("email").equals(emailStr)){
+                found = true;
                 String uniqueID = UUID.randomUUID().toString();
                 Notifications n = new Notifications(mAuth.getCurrentUser().getUid(), idReceiver, "Member", false);
                 FirebaseDatabase.getInstance().getReference("Notifications")
@@ -82,7 +94,8 @@ public class InviteMember extends AppCompatActivity {
                         });
             }
             else{
-                Toast.makeText(InviteMember.this, "L'utente cercato non esiste", Toast.LENGTH_LONG).show();
+                if(found)
+                    Toast.makeText(InviteMember.this, "L'utente cercato non esiste", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -91,9 +104,11 @@ public class InviteMember extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         if(mAuth.getCurrentUser() != null) {
-
-            Intent email= new Intent(InviteMember.this, GroupMembers.class);
-            startActivity(email);
+            checkEmail();
+            Intent i= new Intent(InviteMember.this, GroupMembers.class);
+            i.putExtra("group_name", nomegruppo);
+            i.putExtra("group_id", idgruppo);
+            startActivity(i);
         }
     }
 }
