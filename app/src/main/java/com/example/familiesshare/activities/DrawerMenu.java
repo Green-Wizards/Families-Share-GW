@@ -76,6 +76,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                         }
                     });
         }
+        getMembers();
     }
 
     private void ShowUserGroups(Map<String,Object> mappaGruppi) {
@@ -106,6 +107,48 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
             }
         }
     }
+
+    private void getMembers(){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        if(mAuth.getCurrentUser() != null) {
+            mDatabase.child("Members").addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            ShowPartyGroupButton((Map<String,Object>) dataSnapshot.getValue());
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {}
+                    });
+        }
+    }
+    private void ShowPartyGroupButton(Map<String,Object> mappaGro) {
+        LinearLayout constr;
+        constr = (LinearLayout) findViewById(R.id.groupZone);
+        ArrayList<Button> bottoni = new ArrayList<>();
+        Integer counter = new Integer(0);
+            for (Map.Entry<String, Object> entry : mappaGro.entrySet()){
+                //Get user map
+                Map PartyGroTrovato = (Map) entry.getValue();
+                String idGruppo =  entry.getKey();
+                //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
+                if (PartyGroTrovato.get("user_id").equals(mAuth.getCurrentUser().getUid())){
+                    Button btn = new Button(this);
+                    btn.setText((String) PartyGroTrovato.get("name"));
+                    btn.setTag(counter);
+                    btn.setOnClickListener(v -> {
+                        Intent i = new Intent(DrawerMenu.this, Group.class);
+                        i.putExtra("group_id", idGruppo);
+                        startActivity(i);
+                    });
+                    constr.addView(btn);
+                    bottoni.add(btn);
+                    counter += 1;
+                }
+            }
+        }
 
 
     public void apriNotifiche(View vi){

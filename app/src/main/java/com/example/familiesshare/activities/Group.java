@@ -23,7 +23,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Group extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
-    public String nomegruppo;
     public TextView txtnomegruppo, txtdescgruppo, txtlocationgruppo, txtinfocontatto;
     public String idgruppo;
 
@@ -33,7 +32,6 @@ public class Group extends AppCompatActivity {
         setContentView(R.layout.activity_group);
 
         Intent intent = getIntent();
-        nomegruppo = intent.getStringExtra("group_name");
         idgruppo = intent.getStringExtra("group_id");
 
         txtnomegruppo = (TextView) findViewById(R.id.nomeGruppo);
@@ -46,7 +44,7 @@ public class Group extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         if(mAuth.getCurrentUser() != null) {
-            txtnomegruppo.setText(nomegruppo);
+            retrieveNomeGruppo();
             retrieveDescrizioneGruppo();
             retrieveLocation();
             retrieveInfoContatto();
@@ -65,6 +63,22 @@ public class Group extends AppCompatActivity {
                                                } else {
                                                    String descr = (String) task.getResult().getValue();
                                                    txtdescgruppo.setText(descr);
+                                               }
+                                           }
+                                       }
+                );
+    }
+
+    public void retrieveNomeGruppo(){
+        mDatabase.child("Groups").child(idgruppo).child("name").get()
+                .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                           @Override
+                                           public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                               if (!task.isSuccessful()) {
+                                                   Toast.makeText(Group.this, "Operazione fallita", Toast.LENGTH_LONG).show();
+                                               } else {
+                                                   String descr = (String) task.getResult().getValue();
+                                                   txtnomegruppo.setText(descr);
                                                }
                                            }
                                        }
@@ -111,21 +125,21 @@ public class Group extends AppCompatActivity {
 
     public void goInfo(View v){
         Intent i = new Intent(this, Group.class);
-        i.putExtra("group_name", nomegruppo);
+        i.putExtra("group_name", txtnomegruppo.getText());
         i.putExtra("group_id", idgruppo);
         startActivity(i);
     }
 
     public void goActivity(View v){
         Intent i = new Intent(this, GruppoAttivita.class);
-        i.putExtra("group_name", nomegruppo);
+        i.putExtra("group_name", txtnomegruppo.getText());
         i.putExtra("group_id", idgruppo);
         startActivity(i);
     }
 
     public void goMembers(View v){
         Intent i = new Intent(this, GroupMembers.class);
-        i.putExtra("group_name", nomegruppo);
+        i.putExtra("group_name", txtnomegruppo.getText());
         i.putExtra("group_id", idgruppo);
         startActivity(i);
     }
