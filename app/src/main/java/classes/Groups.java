@@ -5,7 +5,6 @@ import java.io.Serializable;
 public class Groups implements Serializable {
 
     /** ATTRIBUTI **/
-    public String group_id;
     public String name;
     public String description;
     public String location;
