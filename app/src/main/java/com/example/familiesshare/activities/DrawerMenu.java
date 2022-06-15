@@ -170,6 +170,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
     public void onSearch(View v){
         Intent i = new Intent(this, CercaGruppi.class);
         i.putExtra("sender", "drawer");
+        i.putExtra("input", "");
         startActivity(i);
     }
 

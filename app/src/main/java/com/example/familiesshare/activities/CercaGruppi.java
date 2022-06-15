@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,7 @@ import java.util.Map;
 public class CercaGruppi extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
+    private EditText search;
     private String sender;
     private String input = "";
 
@@ -33,8 +35,12 @@ public class CercaGruppi extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
+
+        search = (EditText) findViewById(R.id.et_search);
+
         Intent intent = getIntent();
         sender = intent.getStringExtra("sender");
+        input = intent.getStringExtra("input");
         showGroups();
     }
 
@@ -65,9 +71,11 @@ public class CercaGruppi extends AppCompatActivity {
                 //Get user map
                 Map groupTrovato = (Map) entry.getValue();
                 String idGroup =  entry.getKey();
-                //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
-                if ((Boolean) groupTrovato.get("visibility")){
-                    //if(input)
+
+
+                if ((Boolean) groupTrovato.get("visibility") 
+                    && (((String) groupTrovato.get("name")).toLowerCase().contains(input.toLowerCase()))){
+
                     Button btn = new Button(this);
                     String str = (String) groupTrovato.get("name");
                     btn.setText(str);
@@ -90,9 +98,12 @@ public class CercaGruppi extends AppCompatActivity {
     }
 
     public void onSearch(View v){
+
+        input = search.getText().toString().trim();
+
         Intent i = new Intent(this, CercaGruppi.class);
         i.putExtra("sender", "search");
-        i.putExtra("input",input);
+        i.putExtra("input", input);
         startActivity(i);
     }
 }
