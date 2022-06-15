@@ -25,6 +25,7 @@
         android:contentDescription="@string/back"
         android:minHeight="48dp"
         android:onClick="goBack"
+        android:tint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar6"

@@ -113,11 +113,6 @@ public class UtentiCarico extends AppCompatActivity {
                 //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
                 if (dependentTrovato.get("tutor_id").equals(mAuth.getCurrentUser().getUid())){
                     Button btn = new Button(this);
-                    //btn.setX(100);
-                    //btn.setY(200*(counter+1));
-                    //btn.setHeight(100);
-                    //btn.setWidth(875);
-                    //btn.setLayoutParams((new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
                     String str = (String) dependentTrovato.get("given_name") + " " + (String) dependentTrovato.get("family_name")
                             + " - " + (String) dependentTrovato.get("gradoParentela");
                     btn.setText(str);
