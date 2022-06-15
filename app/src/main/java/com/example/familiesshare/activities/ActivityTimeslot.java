@@ -47,9 +47,10 @@ public class  ActivityTimeslot extends Activity {
                 }
             });
         }
-        timeslot_id = savedInstanceState.getString("timeslot_id");
-        activity_id = savedInstanceState.getString("activity_id");
-        group_id = savedInstanceState.getString("group_id");
+        Intent intent = getIntent();
+        timeslot_id = intent.getStringExtra("timeslot_id");
+        activity_id = intent.getStringExtra("activity_id");
+        group_id = intent.getStringExtra("group_id");
         getData();
         setData();
     }
