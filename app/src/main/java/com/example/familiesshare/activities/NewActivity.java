@@ -187,7 +187,7 @@ public class NewActivity extends AppCompatActivity {
             Timeslots timeslot = new Timeslots(date, timeslotsArrayInizio.get(index), timeslotsArrayFine.get(index), uniqueID);
             String timeslot_id = UUID.randomUUID().toString();
             FirebaseDatabase.getInstance().getReference("Timeslots").child(timeslot_id).setValue(timeslot);
-            Subscriptions sub = new Subscriptions("", "", timeslot_id);
+            Subscriptions sub = new Subscriptions(" ", " ", timeslot_id);
             FirebaseDatabase.getInstance().getReference("Subscriptions").child(uniqueID).setValue(sub);
         }
 

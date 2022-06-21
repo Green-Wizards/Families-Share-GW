@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -26,7 +27,7 @@ public class  ActivityTimeslot extends Activity {
     private String activity_id;
     private String group_id;
     private String nome;
-    private String addDep;
+    private String addDep, timeslotName;
     private String str = "";
 
     @Override
@@ -38,9 +39,7 @@ public class  ActivityTimeslot extends Activity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null){
-            DatabaseReference m = mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("given_name").getRef();
-
-            m.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            mDatabase.child("Profiles").child(mAuth.getCurrentUser().getUid()).child("given_name").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     nome = (String) task.getResult().getValue();
@@ -50,50 +49,56 @@ public class  ActivityTimeslot extends Activity {
         Intent intent = getIntent();
         timeslot_id = intent.getStringExtra("timeslot_id");
         activity_id = intent.getStringExtra("activity_id");
+        timeslotName = intent.getStringExtra("timeslot_name");
         group_id = intent.getStringExtra("group_id");
         getData();
         setData();
     }
 
     private void getData(){
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null){
-            DatabaseReference m = mDatabase.child("Subscriptions").child(activity_id).child("timeslot_id").equalTo(timeslot_id).getRef();
 
-            m.child("dependents").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+
+            mDatabase.child("Subscriptions").child(activity_id).child("dependents").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     dependents = (String) task.getResult().getValue();
+                    //Toast.makeText(ActivityTimeslot.this, "-----" + dependents, Toast.LENGTH_LONG).show();
+
+                    ((TextView) findViewById(R.id.dependentsList)).setText(dependents);
                 }
             });
-            m.child("volunteers").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            mDatabase.child("Subscriptions").child(activity_id).child("volunteers").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     volunteers = (String) task.getResult().getValue();
+                    ((TextView) findViewById(R.id.volunteersList)).setText(volunteers);
                 }
             });
         }
     }
 
     private void setData(){
-        ((TextView) findViewById(R.id.timeslot)).setText(timeslot_id);
+        ((TextView) findViewById(R.id.timeslot)).setText(timeslotName);
         ((TextView) findViewById(R.id.volunteersList)).setText(volunteers);
         ((TextView) findViewById(R.id.dependentsList)).setText(dependents);
     }
 
     public void goBack(View v){
         Intent i = new Intent(this, Group.class);
-        i.putExtra("activity_id", "activity_id");
-        i.putExtra("group_id", "group_id");
+        i.putExtra("activity_id", activity_id);
+        i.putExtra("group_id", group_id);
         startActivity(i);
     }
 
     public void partecipare(View v){
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null) {
-            volunteers = volunteers + nome + "\n";
+
+            if (volunteers.equals(" ")){
+                volunteers = nome + "\n";
+            }else{
+                volunteers = volunteers + nome + "\n";
+            }
             mDatabase.child("Subscriptions").child(activity_id).child("volunteers").setValue(volunteers);
             goBack(v);
         }
@@ -103,9 +108,13 @@ public class  ActivityTimeslot extends Activity {
         addDep = ((EditText) findViewById(R.id.editDependent)).getText().toString().trim();
         str = str + addDep +"\n";
         String tmp = "Utenti a carico aggiunti:\n" + str;
-        ((TextView) findViewById(R.id.InfoList)).setText(tmp);
+        ((TextView) findViewById(R.id.addedDependents)).setText(tmp);
         findViewById(R.id.addedDependents).setVisibility(View.VISIBLE);
-        dependents = dependents + addDep + "\n";
+        if (dependents.equals(" ")){
+            dependents = addDep + "\n";
+        }else{
+            dependents = dependents + addDep + "\n";
+        }
         mDatabase.child("Subscriptions").child(activity_id).child("dependents").setValue(dependents);
     }
 }

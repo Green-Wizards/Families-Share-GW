@@ -70,7 +70,7 @@ public class CercaGruppi extends AppCompatActivity {
             for (Map.Entry<String, Object> entry : mappaGroup.entrySet()){
                 Map groupTrovato = (Map) entry.getValue();
                 String idGroup =  entry.getKey();
-                if(input.equals("")){
+                if(input.equals(" ")){
                     Button btn = new Button(this);
                     String str = (String) groupTrovato.get("name");
                     btn.setText(str);

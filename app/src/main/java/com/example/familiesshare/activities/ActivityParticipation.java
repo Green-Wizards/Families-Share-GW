@@ -42,6 +42,7 @@ public class ActivityParticipation extends Activity {
     private String status;
     private String group_id;
     private String name;
+    private String timeslotName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,7 +148,6 @@ public class ActivityParticipation extends Activity {
 
     private void setData(){
         ((TextView) findViewById(R.id.activityName)).setText(activity_name);
-        Toast.makeText(ActivityParticipation.this, "-----" + ((TextView) findViewById(R.id.activityName)).getText().toString(), Toast.LENGTH_LONG).show();
         ((TextView) findViewById(R.id.activityDescription)).setText(description);
         ((TextView) findViewById(R.id.activityLocation)).setText(location);
     }
@@ -187,16 +187,18 @@ public class ActivityParticipation extends Activity {
             Map timeslot = (Map) entry.getValue();
             //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
             if (((String) timeslot.get("activity_id")).equals(activity_id)){
-                String tmp = (String) (timeslot.get("date") + " " + timeslot.get("startTime") +" - "+ timeslot.get("endTime"));
-                timeslots.add((String) timeslot.get(tmp));
+                timeslotName = (String) (timeslot.get("date") + " " + timeslot.get("startTime") +" - "+ timeslot.get("endTime"));
+                timeslots.add((String) timeslot.get(timeslotName));
 
                 Button btn = new Button(this);
                 btn.setTag(counter);
-                btn.setText(tmp);
+                btn.setText(timeslotName);
                 btn.setOnClickListener(v -> {
                     Intent i = new Intent(ActivityParticipation.this, ActivityTimeslot.class);
                     i.putExtra("timeslot_id", entry.getKey());
                     i.putExtra("activity_id", activity_id);
+                    i.putExtra("timeslot_name", timeslotName);
+                    i.putExtra("group_id", group_id);
                     startActivity(i);
                 });
                 constr.addView(btn);
@@ -220,6 +222,7 @@ public class ActivityParticipation extends Activity {
         Intent i = new Intent(this, Group.class);
         i.putExtra("group_name", name);
         i.putExtra("group_id", group_id);
+
         startActivity(i);
     }
 }
