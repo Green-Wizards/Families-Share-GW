@@ -29,6 +29,10 @@ public class  ActivityTimeslot extends Activity {
     private String nome;
     private String addDep, timeslotName;
     private String str = "";
+    private long minUsers;
+    private long maxUsers;
+    private long minDependents;
+    private long maxDependents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,22 @@ public class  ActivityTimeslot extends Activity {
         activity_id = intent.getStringExtra("activity_id");
         timeslotName = intent.getStringExtra("timeslot_name");
         group_id = intent.getStringExtra("group_id");
+        minUsers = intent.getLongExtra("minV", 0);
+        maxUsers = intent.getLongExtra("maxV", 0);
+        minDependents = intent.getLongExtra("minD", 0);
+        maxDependents = intent.getLongExtra("maxD", 0);
+        if(maxUsers != -1) {
+            ((TextView) findViewById(R.id.maxV)).setText(minUsers + "/" + maxUsers);
+        }
+        else{
+            findViewById(R.id.maxV).setVisibility(View.GONE);
+        }
+        if(maxDependents != -1){
+            ((TextView) findViewById(R.id.maxD)).setText(minDependents + "/" + maxDependents);
+        }
+        else{
+            findViewById(R.id.maxD).setVisibility(View.GONE);
+        }
         getData();
         setData();
     }

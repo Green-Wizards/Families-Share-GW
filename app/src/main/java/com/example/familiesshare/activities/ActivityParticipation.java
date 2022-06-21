@@ -191,6 +191,10 @@ public class ActivityParticipation extends Activity {
                     i.putExtra("activity_id", activity_id);
                     i.putExtra("timeslot_name", timeslotName);
                     i.putExtra("group_id", group_id);
+                    i.putExtra("minV", minUsers);
+                    i.putExtra("maxV", maxUsers);
+                    i.putExtra("minD", minDependents);
+                    i.putExtra("maxD", maxDependents);
                     startActivity(i);
                 });
                 constr.addView(btn);
