@@ -35,11 +35,10 @@ public class ActivityParticipation extends Activity {
     private String description;
     private String location;
     private String color;
-    private String creator_id;
-    private boolean repetition;
-    private String repetition_type;
-    private boolean different_timeslot;
-    private String status;
+    private long minUsers;
+    private long maxUsers;
+    private long minDependents;
+    private long maxDependents;
     private String group_id;
     private String name;
     private String timeslotName;
@@ -55,7 +54,7 @@ public class ActivityParticipation extends Activity {
         activity_id = intent.getStringExtra("activity_id");
         group_id = intent.getStringExtra("group_id");
         getData();
-        setData();
+        //setData();
         getTimeslots();
 
     }
@@ -103,37 +102,6 @@ public class ActivityParticipation extends Activity {
                     ((TextView) findViewById(R.id.activityLocation)).setText(location);
                 }
             });
-            /*m.child("color").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    color=  (String) task.getResult().getValue();
-                }
-            });*/
-            /*m.child("creator_id").get().addOnCompleteListener(task -> creator_id=  (String) task.getResult().getValue());*/
-            /*m.child("repetition").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    repetition=  (boolean) task.getResult().getValue();
-                }
-            });*/
-            /*m.child("repetition_type").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    repetition_type=  (String) task.getResult().getValue();
-                }
-            });*/
-            /*m.child("different_timeslot").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    different_timeslot= (boolean) task.getResult().getValue();
-                }
-            });
-            m.child("status").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    status=  (String) task.getResult().getValue();
-                }
-            });*/
                 mDatabase.child("Activities").child(activity).child("activity_name").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -141,6 +109,30 @@ public class ActivityParticipation extends Activity {
                     ((TextView) findViewById(R.id.activityName)).setText(activity_name);
                 }
             });
+                mDatabase.child("Activities").child(activity).child("minUsers").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        minUsers = (Long) task.getResult().getValue();
+                    }
+                });
+                mDatabase.child("Activities").child(activity).child("maxUsers").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        maxUsers = (Long) task.getResult().getValue();
+                    }
+                });
+                mDatabase.child("Activities").child(activity).child("minDependents").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        minDependents = (Long) task.getResult().getValue();
+                    }
+                });
+                mDatabase.child("Activities").child(activity).child("maxDependents").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        maxDependents = (Long) task.getResult().getValue();
+                    }
+                });
 
             }
         }
@@ -219,7 +211,7 @@ public class ActivityParticipation extends Activity {
                 }
             });
         }
-        Intent i = new Intent(this, Group.class);
+        Intent i = new Intent(this, GruppoAttivita.class);
         i.putExtra("group_name", name);
         i.putExtra("group_id", group_id);
 

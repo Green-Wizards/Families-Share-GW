@@ -57,8 +57,6 @@ public class  ActivityTimeslot extends Activity {
 
     private void getData(){
         if(mAuth.getCurrentUser() != null){
-
-
             mDatabase.child("Subscriptions").child(activity_id).child("dependents").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -85,7 +83,7 @@ public class  ActivityTimeslot extends Activity {
     }
 
     public void goBack(View v){
-        Intent i = new Intent(this, Group.class);
+        Intent i = new Intent(this, ActivityParticipation.class);
         i.putExtra("activity_id", activity_id);
         i.putExtra("group_id", group_id);
         startActivity(i);

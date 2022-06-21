@@ -36,6 +36,7 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
     private DatabaseReference mDatabase;
     private FirebaseUser user;
     private FirebaseAuth mAuth;
+    private ArrayList<String> groupList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,9 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
+        groupList = new ArrayList<String>();
+        getMembers();
+
         if(mAuth.getCurrentUser() != null) {
             mDatabase.child("Groups").addListenerForSingleValueEvent( //gruppi a cui si partecipa
                     new ValueEventListener() {
@@ -76,7 +80,6 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                         }
                     });
         }
-        //getMembers();
     }
 
     private void ShowUserGroups(Map<String,Object> mappaGruppi) {
@@ -86,12 +89,12 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
         Integer counter = new Integer(0);
 
         //itera tutti i gruppi
-        for (Map.Entry<String, Object> entry : mappaGruppi.entrySet()){
+        for (Map.Entry<String, Object> entry : mappaGruppi.entrySet()) {
             //Get user map
             Map gruppoTrovato = (Map) entry.getValue();
-            String idGruppo =  entry.getKey();
+            String idGruppo = entry.getKey();
             //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
-            if (gruppoTrovato.get("owner_id").equals(mAuth.getCurrentUser().getUid())){ //modificare
+            if (groupList.contains(idGruppo)) {
                 Button btn = new Button(this);
                 btn.setText((String) gruppoTrovato.get("name"));
                 btn.setTag(counter);
@@ -104,13 +107,12 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
                 constr.addView(btn);
                 bottoni.add(btn);
                 counter += 1;
+
             }
         }
     }
-    /*
+
     private void getMembers(){
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null) {
             mDatabase.child("Members").addListenerForSingleValueEvent(
                     new ValueEventListener() {
@@ -126,32 +128,17 @@ public class DrawerMenu extends AppCompatActivity implements NavigationView.OnNa
     }
 
     private void ShowPartyGroupButton(Map<String,Object> mappaGro) {
-        LinearLayout constr;
-        constr = (LinearLayout) findViewById(R.id.groupZone);
-        ArrayList<Button> bottoni = new ArrayList<>();
-        Integer counter = new Integer(0);
             for (Map.Entry<String, Object> entry : mappaGro.entrySet()){
                 //Get user map
                 Map PartyGroTrovato = (Map) entry.getValue();
                 String idGruppo =  entry.getKey();
                 //Aggiungi alla lista dei gruppi se il gruppo è dell'utente
                 if (PartyGroTrovato.get("user_id").equals(mAuth.getCurrentUser().getUid())){
-                    Button btn = new Button(this);
-                    btn.setText((String) PartyGroTrovato.get("name"));
-                    btn.setTag(counter);
-                    btn.setOnClickListener(v -> {
-                        Intent i = new Intent(DrawerMenu.this, Group.class);
-                        i.putExtra("group_id", idGruppo);
-                        startActivity(i);
-                    });
-                    constr.addView(btn);
-                    bottoni.add(btn);
-                    counter += 1;
+                    groupList.add((String) PartyGroTrovato.get("group_id"));
                 }
             }
         }
 
-*/
     public void apriNotifiche(View vi){
         Intent io = new Intent(this, PopupNotifiche.class);
         startActivity(io);
