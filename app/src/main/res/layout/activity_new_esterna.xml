@@ -65,7 +65,8 @@
             android:hint="@string/nome"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:textColorHint="#757575"
+            android:textColor="#000000"
+            android:textColorHint="#7A7A7A"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="107dp" />
 
@@ -77,7 +78,8 @@
             android:hint="@string/descrizione"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:textColorHint="#757575"
+            android:textColor="#000000"
+            android:textColorHint="#7A7A7A"
             tools:layout_editor_absoluteX="84dp"
             tools:layout_editor_absoluteY="177dp" />
 
@@ -89,7 +91,8 @@
             android:hint="@string/luogo"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:textColorHint="#757575" />
+            android:textColor="#000000"
+            android:textColorHint="#7A7A7A" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -148,7 +151,9 @@
             android:layout_height="50dp"
             android:ems="10"
             android:hint="dd/mm/aaaa"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textColorHint="#7A7A7A" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -206,7 +211,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Orario di inizio:"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#000000"
+            android:textColorHint="#000000" />
 
         <EditText
             android:id="@+id/editStart"
@@ -214,14 +221,18 @@
             android:layout_height="50dp"
             android:ems="10"
             android:hint="hh:mm"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textColorHint="#7A7A7A" />
 
         <TextView
             android:id="@+id/textView28"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Orario di fine:"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#000000"
+            android:textColorHint="#000000" />
 
         <EditText
             android:id="@+id/editEnd"
@@ -229,7 +240,9 @@
             android:layout_height="50dp"
             android:ems="10"
             android:hint="hh:mm"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textColorHint="#7A7A7A" />
 
         <Button
             android:id="@+id/button29"
@@ -244,6 +257,8 @@
             android:id="@+id/showTimeslots"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
             tools:ignore="SpeakableTextPresentCheck"
             tools:text=" " />
 
@@ -302,7 +317,9 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Numero minimo volontari"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textColorHint="#7A7A7A" />
 
         <EditText
             android:id="@+id/et_maxVolontari"
@@ -311,7 +328,9 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Numero massimi volontari"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textColorHint="#7A7A7A" />
 
         <EditText
             android:id="@+id/et_minUtentiCarico"
@@ -320,7 +339,9 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Numero minimo utenti a carico"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textColorHint="#7A7A7A" />
 
         <EditText
             android:id="@+id/et_maxUtentiCarico"
@@ -329,7 +350,9 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Numero massimo utenti a carico"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textColorHint="#7A7A7A" />
 
         <Spinner
             android:id="@+id/spinner_tipoAttivita"
