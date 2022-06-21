@@ -109,6 +109,7 @@
         <activity android:name="com.example.familiesshare.activities.PopupNF" />
         <activity android:name="com.example.familiesshare.activities.ListaAttivitàEsterne" />
         <activity android:name="com.example.familiesshare.activities.NuovaAttivitàEsterna" />
+        <activity android:name="com.example.familiesshare.activities.ActivityTimeslot" />
     </application>
 
 </manifest>
